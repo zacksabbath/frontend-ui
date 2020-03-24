@@ -1,0 +1,51 @@
+
+.newsfeed-card {
+    width: 100%;
+    font-family: GalanoGrotesque, Futura, "Trebuchet MS", Arial, sans-serif;
+    background-color: #3C266E;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.30);
+    border-radius: 8px;
+    text-align: left;
+}
+
+.newsfeed-image {
+    width: 100%;
+    position: relative;
+
+    img {
+        border-radius: 8px 8px 0 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .topic {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+    }
+}
+
+.newsfeed-text {
+    padding: 10px;
+}
+
+.card-heading {
+    font-weight: medium;
+    text-align: left;
+    // font-family: GalanoGrotesque-Medium;
+    font-size: 20px;
+    color: #FFFFFF;
+    line-height: 26px;
+}
+
+.right-margin {
+    margin-right: 10px;
+}
+
+.news-source {
+    font-weight: semibold;
+    // font-family: GalanoGrotesque-SemiBold;
+    font-size: 14px;
+    color: #A082E3;
+    padding-bottom: 10px;
+}

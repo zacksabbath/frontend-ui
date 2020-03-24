@@ -1,0 +1,17 @@
+@use "../../../style/colors.scss";
+
+.thumbs {
+    display: flex;
+    flex-direction: row;
+
+    :first-child {
+        margin-right: 10px;
+    }
+}
+
+.icon-text {
+    background: map-get($primary, $purple);
+    border-radius: 13px;
+    color: white;
+    margin-left: 2px;
+}
