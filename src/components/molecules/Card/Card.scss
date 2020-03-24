@@ -8,23 +8,6 @@
     text-align: left;
 }
 
-.newsfeed-image {
-    width: 100%;
-    position: relative;
-
-    img {
-        border-radius: 8px 8px 0 0;
-        width: 100%;
-        height: auto;
-    }
-
-    .topic {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-    }
-}
-
 .newsfeed-text {
     padding: 10px;
 }

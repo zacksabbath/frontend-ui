@@ -1,4 +1,4 @@
-@use "../../../style/colors.scss";
+// @use "../../../style/colors.scss";
 
 .thumbs {
     display: flex;
@@ -10,7 +10,7 @@
 }
 
 .icon-text {
-    background: map-get($primary, $purple);
+    background: #6340B2;
     border-radius: 13px;
     color: white;
     margin-left: 2px;
