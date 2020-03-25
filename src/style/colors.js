@@ -26,7 +26,7 @@ const yellowDarkText = '#564810';
 
 // Secondary Text
 const tealDarkText = '#203735';
-const orangeDarkText = '#5E351C'; //001700
+const orangeDarkText = '#5E351C';
 const aquaDarkText = '#1E4F37';
 const violetDarkText = '#412C5E';
 const oliveDarkText = '#39521F';
@@ -94,12 +94,11 @@ export const cardThemes = {
 }
 
 export const colors = {
+    //greyscale
     white,
     black,
     middleGrey,
     darkGrey,
-
-    everSoSlightlyBlueText,
 
     //primary
     purple,
