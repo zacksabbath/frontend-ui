@@ -1,6 +1,4 @@
-// import React from 'react';
 import styled from 'styled-components';
-// import './Bubble.scss';
 
 const Bubble = styled.button`
     background: #6340B2;
@@ -15,19 +13,7 @@ const Bubble = styled.button`
     :focus {
         outline: none;
     }
-    outline-width: 0px;
+    border: none;
 `;
 
 export default Bubble;
-
-// type BubbleProps = {
-//     children: React.ReactNode,
-//     onClick?: ()=>void,
-//     // className?: string,
-// }
-
-// export default function Button(props:BubbleProps) {
-//     const {children} = props;
-//     return <Bubble>{children}</Bubble>;
-//     // return <div className="bubble">{children}</div>
-// }

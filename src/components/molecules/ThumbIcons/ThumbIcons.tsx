@@ -1,7 +1,7 @@
 import React from 'react';
-import './ThumbIcons.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Bubble from '../../atoms/Bubble';
+import { Bubble } from '../../atoms';
+import styled from 'styled-components';
 
 type ThumbIconsProps = {
     likes: number,
@@ -10,22 +10,37 @@ type ThumbIconsProps = {
     onDislike: ()=>void,
 }
 
+const Thumbs = styled.div`
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+
+    .icon-text {
+        background: #6340B2;
+        border-radius: 13px;
+        color: white;
+        margin-left: 2px;
+    }
+
+`;
+
+
 export default function ThumbIcons(props:ThumbIconsProps) {
     const {likes, dislikes, onLike, onDislike} = props;
     return (
-        <div className="thumbs">
+        <Thumbs>
 
             <Bubble onClick={onLike}>
                 <FontAwesomeIcon icon="thumbs-up" />
                 <div className="icon-text">{likes}</div>
             </Bubble>
 
-            <Bubble onClick={onDislike}>
+            <Bubble onClick={onDislike} style={{marginLeft:10}}>
                 <FontAwesomeIcon icon="thumbs-down" />
                 <div className="icon-text">{dislikes}</div>
             </Bubble>
 
-        </div>
+        </Thumbs>
     );
 
 }
