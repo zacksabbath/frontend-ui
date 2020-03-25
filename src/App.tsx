@@ -1,8 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.scss';
 
-import {NewsfeedItem} from './components/molecules';
+import {NewsfeedItem} from './components';
 import CardContent from './components/molecules/Cards/NewsCard';
 
 function App() {
