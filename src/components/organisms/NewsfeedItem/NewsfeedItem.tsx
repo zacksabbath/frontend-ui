@@ -1,7 +1,12 @@
 import React, {useState} from 'react';
 import styled/*, { useTheme }*/ from 'styled-components';
-import {ThumbIcons} from '..';
+import {ThumbIcons} from '../../molecules';
 import {Bubble} from '../../atoms';
+
+type CardProps = {
+    newsFeedImage?: string,
+    children?: React.ReactNode,
+}
 
 const CardWrapper = styled.div`
     width: 100%;
@@ -16,11 +21,6 @@ const CardWrapper = styled.div`
         padding: 10px;
     }
 `;
-
-type CardProps = {
-    newsFeedImage?: string,
-    children?: React.ReactNode,
-}
 
 const TopWrapper = styled.div`
     width: 100%;
@@ -42,7 +42,7 @@ const BubbleWrap = styled.div`
     }
 `;
 
-export default function Card(props: CardProps) {
+export default function NewsfeedItem(props: CardProps) {
     const [likes, setLikes] = useState(Math.floor((Math.random() * 20) + 1));
     const [dislikes, setDislikes] = useState(Math.floor((Math.random() * 20) + 1));
     const {newsFeedImage, children} = props;
