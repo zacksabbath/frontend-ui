@@ -11,7 +11,8 @@ export default [
             heading: 'Colorado State Advances Death Penalty Repeal Bill',
             source: 'The Denver Channel',
         },
-        date: 'Yesterday'
+        date: 'Yesterday',
+        key: 'newsFeed1',
     },
     {
         type: 'question',
@@ -26,7 +27,8 @@ export default [
             },
             question: 'How long will bars and restaurants be shut down for during the COVID-19 epidemic?'
         },
-        date: 'Yesterday'
+        date: 'Yesterday',
+        key: 'NewsFeed2',
     },
     {
         type: 'contribution',
@@ -43,7 +45,8 @@ export default [
             acceptedAmount: '$200,000',
             contributor: 'Extraction Industries',
         },
-        date: 'Yesterday'
+        date: 'Yesterday',
+        key: 'newsFeed3',
 
     },
     {
@@ -63,7 +66,9 @@ export default [
                 image: 'http://stump.zackrose.net/images/avatar1.png',
             },
             vote: 'support local control over fracking.'
-        }
+        },
+        date: 'Yesterday',
+        key: 'newsFeed4',
     },
     {
         type: 'history',
@@ -78,6 +83,8 @@ export default [
                 image: 'http://stump.zackrose.net/images/avatar1.png',
             },
             blurb: 'was the Chairwoman of the Colorado Oil & Gas Conservation Commision'
-        }
+        },
+        date: 'Yesterday',
+        key: 'newsFeed5',
     }
 ];

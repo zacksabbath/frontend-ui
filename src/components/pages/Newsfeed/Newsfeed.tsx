@@ -42,7 +42,8 @@ function getComponent(type:TypeOptions, content: Object) {
         case 'history': return [<NewsFeedContent.HistoryCard content={content}/>, cardThemes.history];
         case 'news': return [<NewsFeedContent.NewsCard content={content}/>, cardThemes.news];
         case 'question': return [<NewsFeedContent.QuestionCard content={content}/>, cardThemes.question];
-        default: return [<div />, cardThemes.news]
+        case 'vote': return [<NewsFeedContent.VoteCard content={content} />, cardThemes.vote]
+        default: return [<div />, cardThemes.vote]
     };
 }
 
@@ -53,21 +54,21 @@ export default function NewsFeed(props: NewsfeedProps) {
 
     return <>
         {newsfeedItems.map(item=>{
-            const {type, topic, image, content, date} = item;
+            const {type, topic, image, content, date, key} = item;
 
             // const FeedComponent: JSX.Element = GetNewsFeedComponent(type)
 
             const [$feedElement, colorScheme] = getComponent(type, content);
 
             return (
-                <ThemeProvider theme={colorScheme}>
+                <ThemeProvider theme={colorScheme} key={key}>
                     <NewsfeedItem
                         topic = {topic} 
                         type = {type} 
                         image = {image}
                         date = {date}
                         content = {content}
-                        > 
+                        >
                             { $feedElement }
                     </NewsfeedItem>
                 </ThemeProvider>
