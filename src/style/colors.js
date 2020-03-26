@@ -45,7 +45,7 @@ const darkGrey = '#333333';
 const news = {
     primary: purpleDark,
     secondary: purple,
-    text: purpleLightText,
+    text: white,
     secondaryText: purpleLightText,
 };
 
