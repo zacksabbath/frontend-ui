@@ -56,7 +56,7 @@ const question = {
     secondaryText: tealDarkText,
 };
 
-const donation = {
+const contribution = {
     primary: aqua,
     secondary: aquaDark,
     text: black,
@@ -87,7 +87,7 @@ const event = {
 export const cardThemes = {
     news,
     question,
-    donation,
+    contribution,
     vote,
     history,
     event,

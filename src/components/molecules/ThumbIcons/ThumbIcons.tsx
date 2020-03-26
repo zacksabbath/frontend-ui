@@ -16,7 +16,6 @@ const Thumbs = styled.div`
     margin: 10px 0;
 
     .icon-text {
-        background: #6340B2;
         border-radius: 13px;
         color: white;
         margin-left: 2px;

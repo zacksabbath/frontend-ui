@@ -20,16 +20,18 @@ const Card = styled.div`
     }
 `
 
-export default function NewsCard(){
+export default function NewsCard({content}:any){
+
+    const {heading, source} = content;
 
     return (
         <Card>
             <div className="news-source">
-                The Denver Channel
+                {source}
             </div>
 
             <div className="card-heading">
-                Colorado State Senate Advances Death Penalty Repeal Bill
+                {heading}
             </div>
         </Card>
 )

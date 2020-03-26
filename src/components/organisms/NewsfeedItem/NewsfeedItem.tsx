@@ -1,21 +1,29 @@
 import React, {useState} from 'react';
-import styled/*, { useTheme }*/ from 'styled-components';
+import styled, { ThemedStyledFunction, StyledFunction }/*, { useTheme }*/ from 'styled-components';
 import {ThumbIcons} from '../../molecules';
 import {Bubble} from '../../atoms';
 
-type CardProps = {
-    newsFeedImage?: string,
+import {Entity, ColorScheme} from '../../../types';
+
+interface CardProps {
+    topic: Entity,
+    image?: string,
     children?: React.ReactNode,
+    type: string,
+    content: Object,
+    date: string,
 }
 
 const CardWrapper = styled.div`
     width: 100%;
     font-family: GalanoGrotesque, Futura, "Trebuchet MS", Arial, sans-serif;
-    background-color: #3C266E;
+    background-color: ${({theme})=> theme.primary};
     box-shadow: 0 0 5px 0 rgba(0,0,0,0.30);
     border-radius: 8px;
     text-align: left;
     position: relative;
+
+    margin-bottom: 10px;
 
     .newsfeed-content {
         padding: 10px;
@@ -45,15 +53,15 @@ const BubbleWrap = styled.div`
 export default function NewsfeedItem(props: CardProps) {
     const [likes, setLikes] = useState(Math.floor((Math.random() * 20) + 1));
     const [dislikes, setDislikes] = useState(Math.floor((Math.random() * 20) + 1));
-    const {newsFeedImage, children} = props;
+    const {image, topic, children} = props;
 
     return <CardWrapper>
         
         <TopWrapper>
-            <BubbleWrap className={newsFeedImage?'absolute':''}>
-                <Bubble>Death Penalty</Bubble>
+            <BubbleWrap className={image?'absolute':''}>
+                <Bubble>{topic.name}</Bubble>
             </BubbleWrap>
-            { newsFeedImage && <img src={newsFeedImage} /> }
+            { image && <img src={image} /> }
         </TopWrapper>
         
         <div className="newsfeed-content">

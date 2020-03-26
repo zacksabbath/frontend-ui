@@ -5,10 +5,10 @@ export default [
             name: 'Death Penalty',
             id: 2
         },
-        newsFeedImage:'http://stump.zackrose.net/images/press_capital.png',
+        image: 'http://stump.zackrose.net/images/press_capital.png',
 
         content: {
-            headling: 'Colorado State Advances Death Penalty Repeal Bill',
+            heading: 'Colorado State Advances Death Penalty Repeal Bill',
             source: 'The Denver Channel',
         },
         date: 'Yesterday'
@@ -38,7 +38,7 @@ export default [
             politician: {
                 name: 'Sen J. Gonzalez',
                 id: 45,
-                avatarImage: 'http://stump.zackrose.net/images/avatar1.png',
+                image: 'http://stump.zackrose.net/images/avatar1.png',
             },
             acceptedAmount: '$200,000',
             contributor: 'Extraction Industries',
@@ -60,7 +60,7 @@ export default [
             politician: {
                 name: 'Sen J. Gonzalez',
                 id: 45,
-                avatarImage: 'http://stump.zackrose.net/images/avatar1.png',
+                image: 'http://stump.zackrose.net/images/avatar1.png',
             },
             vote: 'support local control over fracking.'
         }
@@ -75,7 +75,7 @@ export default [
             politician: {
                 name: 'Sen J. Gonzalez',
                 id: 45,
-                avatarImage: 'http://stump.zackrose.net/images/avatar1.png',
+                image: 'http://stump.zackrose.net/images/avatar1.png',
             },
             blurb: 'was the Chairwoman of the Colorado Oil & Gas Conservation Commision'
         }

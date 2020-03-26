@@ -2,8 +2,8 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.scss';
 
-import {NewsfeedItem} from './components';
-import CardContent from './components/molecules/Cards/NewsCard';
+import {Newsfeed} from './components'
+import newsFeedItems from './components/pages/Newsfeed/NewsfeedItems';
 
 function App() {
   return (
@@ -12,9 +12,7 @@ function App() {
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
 
         <div style={{width:"90%"}}>
-          <NewsfeedItem newsFeedImage="http://stump.zackrose.net/images/press_capital.png">
-            <CardContent />
-          </NewsfeedItem>
+          <Newsfeed newsfeedItems = {newsFeedItems} />
         </div>
 
       </header>

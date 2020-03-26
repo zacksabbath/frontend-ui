@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Bubble = styled.button`
-    background: #6340B2;
+    background: ${({theme})=>theme.secondary};
     border-radius: 50px;
     font-weight: normal;
     font-size: 13px;
