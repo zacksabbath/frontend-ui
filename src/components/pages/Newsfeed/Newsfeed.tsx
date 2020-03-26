@@ -25,7 +25,9 @@ const NewsFeedItems = styled.div`
 //         case ''
 //     }
 // }
-function getComponent(type:TypeOptions, content: Object) {
+function getComponent(
+    type:TypeOptions, content: Object
+    ) {
     // switch(type) {
     //     case 'event': return NewsFeedContent.EventCard;
     //     case 'contribution': return NewsFeedContent.ContributionCard;

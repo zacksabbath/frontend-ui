@@ -2,7 +2,7 @@ import React from 'react';
 // import styled from 'styled-components';
 import {Entity} from '../../../types';
 
-type EventCardProps = {
+export type EventCardProps = {
     bill: Entity,
     content: {
         date: string,

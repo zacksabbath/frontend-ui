@@ -18,7 +18,14 @@ const Card = styled.div`
         color: #A082E3;
         padding-bottom: 10px;
     }
-`
+`;
+
+export type NewsCardProps = {
+    content: {
+        source: string,
+        heading: string,
+    }
+}
 
 export default function NewsCard({content}:any){
 

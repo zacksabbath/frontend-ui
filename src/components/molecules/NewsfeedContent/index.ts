@@ -1,9 +1,9 @@
-import ContributionCard from './ContributionCard';
-import EventCard from './EventCard';
-import HistoryCard from './HistoryCard';
-import NewsCard from './NewsCard';
-import QuestionCard from './QuestionCard';
-import VoteCard from './VoteCard';
+import ContributionCard, {ContributionCardProps} from './ContributionCard';
+import EventCard, {EventCardProps} from './EventCard';
+import HistoryCard, {HistoryCardProps} from './HistoryCard';
+import NewsCard, {NewsCardProps} from './NewsCard';
+import QuestionCard, {QuestionCardProps} from './QuestionCard';
+import VoteCard, {VoteCardProps} from './VoteCard';
 
 export {
     ContributionCard,
@@ -13,6 +13,15 @@ export {
     QuestionCard,
     VoteCard,
 }
+
+// export type {
+//     ContributionCardProps,
+//     EventCardProps,
+//     HistoryCardProps,
+//     NewsCardProps,
+//     QuestionCardProps,
+//     VoteCardProps,
+// }
 
 // type MapType = {
 //         'contribution': ReactNode,

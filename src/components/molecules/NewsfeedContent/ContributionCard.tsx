@@ -2,7 +2,7 @@ import React from 'react';
 // import styled from 'styled-components';
 import {Entity} from '../../../types';
 
-type ContributionCardProps = {
+export type ContributionCardProps = {
     content: {
         politician: Entity,
         acceptedAmount: string,
@@ -10,7 +10,7 @@ type ContributionCardProps = {
     }
 }
 
-export default function ContributionCard({content}:ContributionCardProps){
+export default function ContributionCard({content}:any){
     console.log("Contribution content", content)
     return <div>ContributionCard</div>
 }

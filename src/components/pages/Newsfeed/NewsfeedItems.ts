@@ -24,6 +24,7 @@ export default [
             askedBy: {
                 name: 'Bridget Miller',
                 id: 3,
+                image: 'http://stump.zackrose.net/images/avatar_sm.png',
             },
             question: 'How long will bars and restaurants be shut down for during the COVID-19 epidemic?'
         },
