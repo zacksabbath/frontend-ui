@@ -86,5 +86,22 @@ export default [
         },
         date: 'Yesterday',
         key: 'newsFeed5',
-    }
+    },
+    {
+        type: 'event',
+        topic: {
+            name: 'Fracking',
+            id: 15,
+        },
+        bill: {
+            name: 'HB-1090',
+            id: 10,
+        },
+        content: {
+            date: 'Feb 18, 2020 - 10:00am',
+            name: 'House open comment on local control over fracking',
+        },
+        date: 'Yesterday',
+        key: 'newsFeed6',
+    },
 ];
