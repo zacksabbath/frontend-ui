@@ -13,8 +13,6 @@ interface NewsfeedProps {
     newsfeedItems: Array<any>
 };
 
-
-
 const NewsFeedItems = styled.div`
     /* styles applying to the list would go here */
 `;
@@ -26,7 +24,7 @@ const NewsFeedItems = styled.div`
 //     }
 // }
 function getComponent(
-    type:TypeOptions, content: Object
+    type: TypeOptions, content: Object
     ) {
     // switch(type) {
     //     case 'event': return NewsFeedContent.EventCard;
