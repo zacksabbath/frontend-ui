@@ -7,6 +7,7 @@ import {Entity, ColorScheme} from '../../../types';
 
 interface CardProps {
     topic: Entity,
+    bill?: Entity,
     image?: string,
     children?: React.ReactNode,
     type: string,
@@ -44,22 +45,27 @@ const TopWrapper = styled.div`
 
 const BubbleWrap = styled.div`
     padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
     &.absolute {
         position: absolute;
     }
+
 `;
 
 export default function NewsfeedItem(props: CardProps) {
     const [likes, setLikes] = useState(Math.floor((Math.random() * 20) + 1));
     const [dislikes, setDislikes] = useState(Math.floor((Math.random() * 20) + 1));
-    const {image, topic, children} = props;
+    const {image, topic, bill, children} = props;
 
     return <CardWrapper>
         
         <TopWrapper>
             <BubbleWrap className={image?'absolute':''}>
                 <Bubble>{topic.name}</Bubble>
+                {bill?.name && <Bubble>{bill.name}</Bubble>}
             </BubbleWrap>
             { image && <img src={image} /> }
         </TopWrapper>

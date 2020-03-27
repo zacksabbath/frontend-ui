@@ -54,7 +54,7 @@ export default function NewsFeed(props: NewsfeedProps) {
 
     return <>
         {newsfeedItems.map(item=>{
-            const {type, topic, image, content, date, key} = item;
+            const {type, topic, image, content, date, bill, key} = item;
 
             // const FeedComponent: JSX.Element = GetNewsFeedComponent(type)
 
@@ -63,7 +63,8 @@ export default function NewsFeed(props: NewsfeedProps) {
             return (
                 <ThemeProvider theme={colorScheme} key={key}>
                     <NewsfeedItem
-                        topic = {topic} 
+                        topic = {topic}
+                        bill = {bill}
                         type = {type} 
                         image = {image}
                         date = {date}

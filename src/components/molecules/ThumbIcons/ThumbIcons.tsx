@@ -23,7 +23,6 @@ const Thumbs = styled.div`
 
 `;
 
-
 export default function ThumbIcons(props:ThumbIconsProps) {
     const {likes, dislikes, onLike, onDislike} = props;
     return (
