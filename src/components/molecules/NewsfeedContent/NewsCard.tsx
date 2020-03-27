@@ -25,7 +25,7 @@ export type NewsCardProps = {
         source: string,
         heading: string,
     }
-}
+};
 
 export default function NewsCard({content}:any){
 
@@ -41,5 +41,5 @@ export default function NewsCard({content}:any){
                 {heading}
             </div>
         </Card>
-)
-}
+    );
+};

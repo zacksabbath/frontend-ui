@@ -91,7 +91,7 @@ export const cardThemes = {
     vote,
     history,
     event,
-}
+};
 
 export const colors = {
     //greyscale
@@ -132,4 +132,4 @@ export const colors = {
     aquaDarkText,
     violetDarkText,
     oliveDarkText,
-}
+};

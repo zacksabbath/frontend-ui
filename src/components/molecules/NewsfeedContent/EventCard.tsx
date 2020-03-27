@@ -1,5 +1,6 @@
 import React from 'react';
-// import styled from 'styled-components';
+import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {Entity} from '../../../types';
 
 export type EventCardProps = {
@@ -10,9 +11,30 @@ export type EventCardProps = {
     }
 }
 
-export default function EventCard({content}:any){
-    console.log("Event content", content);
+const Main = styled.div`
+    display: flex;
+    flex-direction: row;
+    .calendar-icon {
+        color: ${({theme})=> theme.secondary};
+    }
+`;
 
-    return <div>EventCard</div>;
+export default function EventCard({bill, content}:any){
+    console.log("Event content", content, bill);
+
+    const {date, name} = content;
+    return (
+        <Main>
+            <div className="calendar-icon">
+                <FontAwesomeIcon icon="calendar-alt" />
+            </div>
+            <div>
+                <p>{date}</p>
+                <p>{name}</p>
+                <p>{bill?.name}</p>
+            </div>
+
+        </Main>
+    );
 
 }

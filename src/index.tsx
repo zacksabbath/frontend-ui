@@ -4,10 +4,13 @@ import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faThumbsUp, faThumbsDown, faEllipsisH } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faThumbsUp, faThumbsDown, faEllipsisH, faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+// import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 
-library.add(faThumbsUp, faThumbsDown, faEllipsisH);
+library.add(faThumbsUp, faThumbsDown, faEllipsisH, faCalendarAlt);
+
+// console.log("!!!!!!!", {faThumbsUp, faThumbsDown, faEllipsisH, faCalendarAlt})
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
