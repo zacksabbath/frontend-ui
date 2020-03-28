@@ -26,7 +26,7 @@ export default function EventCard({bill, content}:any){
     return (
         <Main>
             <div className="calendar-icon">
-                <FontAwesomeIcon icon="calendar-alt" />
+                <FontAwesomeIcon icon="calendar-alt" size="4x"/>
             </div>
             <div>
                 <p>{date}</p>
