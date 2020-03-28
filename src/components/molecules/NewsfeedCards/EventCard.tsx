@@ -16,15 +16,13 @@ const Main = styled.div`
     display: flex;
     flex-direction: row;
     .calendar-icon {
-        color: ${({theme})=> theme.secondary};
+        color: ${({theme})=> theme.cardTheme?.secondary};
     }
 `;
 
 export default function EventCard(props:any){
 
     const {bill, content, ...rest} = props;
-
-    console.log("Event content", content, bill);
 
     const {date, name} = content;
     return (

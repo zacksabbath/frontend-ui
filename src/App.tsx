@@ -4,13 +4,8 @@ import theme from 'theme';
 import {ThemeProvider} from 'styled-components';
 
 import {Newsfeed} from 'components'
-// import {getNewsfeed} from 'services/newsfeedAPI';
-
-import newsFeedItems from 'components/pages/Newsfeed/NewsfeedItems'
 
 function App() {
-
-
   const [newsFeedItems, setNewsFeedItems] = useState()
 
   async function getNewsfeed() {
@@ -23,13 +18,9 @@ function App() {
     getNewsfeed();
   }, []);
 
-  console.log('!!!!', newsFeedItems);
-
   if (!newsFeedItems) {
     return <div>Loading...</div>;
   }
-
-  console.log("heyyyyyy");
 
   return (
     <div className="App">

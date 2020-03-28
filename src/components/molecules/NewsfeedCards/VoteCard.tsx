@@ -12,7 +12,7 @@ export type VoteCardProps = {
 
 export default function VoteCard(props:any){
     const { content, ...rest } = props;
-    console.log("Vote content", content);
+
     const {politician, vote} = content;
     return (
         <NewsfeedItem {...rest} >

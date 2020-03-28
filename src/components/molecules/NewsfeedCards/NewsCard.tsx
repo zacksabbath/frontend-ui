@@ -8,7 +8,7 @@ const Main = styled.div`
         text-align: left;
         /* font-family: GalanoGrotesque-Medium;*/
         font-size: 20px;
-        color: ${({theme})=> theme.primaryText};
+        color: ${({theme})=> theme.cardTheme?.primaryText};
         line-height: 26px;
     }
 
@@ -16,7 +16,7 @@ const Main = styled.div`
         font-weight: semibold;
         /* font-family: GalanoGrotesque-SemiBold;*/
         font-size: 14px;
-        color: ${({theme})=> theme.secondaryText}; /* #A082E3;*/
+        color: ${({theme})=> theme.cardTheme?.secondaryText}; /* #A082E3;*/
         padding-bottom: 10px;
     }
 `;

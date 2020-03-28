@@ -12,7 +12,6 @@ export type ContributionCardProps = {
 
 export default function ContributionCard(props:any){
     const { content, ...rest } = props;
-    console.log("Contribution content", content);
     const {politician, acceptedAmount, contributor} = content;
     return (
         <NewsfeedItem {...rest} >

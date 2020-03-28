@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import styled, { ThemedStyledFunction, StyledFunction } from 'styled-components';
-import {ThumbIcons} from '..';
-import {Bubble} from 'components';
+import styled from 'styled-components';
+import {ThumbIcons, Bubble} from 'components';
 
 import {Entity} from 'types';
 import {cardTypes} from 'theme';
@@ -20,7 +19,7 @@ export type NewsfeedItemProps = {
 const CardWrapper = styled.div`
     width: 100%;
     font-family: GalanoGrotesque, Futura, "Trebuchet MS", Arial, sans-serif;
-    background-color: ${({theme})=> theme.primary};
+    background-color: ${({theme})=> theme.cardTheme?.primary};
     box-shadow: 0 0 5px 0 rgba(0,0,0,0.30);
     border-radius: 8px;
     text-align: left;
@@ -60,7 +59,7 @@ const BubbleWrap = styled.div`
 export default function NewsfeedItem(props: NewsfeedItemProps) {
     const [likes, setLikes] = useState(Math.floor((Math.random() * 20) + 1));
     const [dislikes, setDislikes] = useState(Math.floor((Math.random() * 20) + 1));
-    const {image, topic, bill, type, children} = props;
+    const {image, topic, bill, children} = props;
 
     return <CardWrapper>
         

@@ -11,7 +11,7 @@ export type HistoryCardProps = {
 
 export default function HistoryCard(props:any){
     const {content, ...rest} = props
-    console.log("History content", content);
+
     const {politician, blurb} = content;
     return (
         <NewsfeedItem {...rest} >

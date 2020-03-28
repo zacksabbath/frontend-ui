@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Bubble = styled.button`
-    background: ${({theme})=>theme.secondary};
+    background: ${({theme})=>theme.cardTheme?.secondary};
     border-radius: 50px;
     font-weight: normal;
     font-size: 13px;
