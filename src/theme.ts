@@ -93,6 +93,10 @@ export const cardThemes = {
     event,
 };
 
+export type cardTypes = 'news' | 'question' | 'contribution' | 'vote' | 'history' | 'event';
+
+export const getCardTheme = (key:cardTypes) => cardThemes[key];
+
 export const colors = {
     //greyscale
     white,
@@ -133,3 +137,10 @@ export const colors = {
     violetDarkText,
     oliveDarkText,
 };
+
+export default {
+    main: {
+        colors,
+        cardThemes,
+    }  
+}

@@ -1,5 +1,6 @@
 import React from 'react';
-// import styled, {ThemeProvider} from 'styled-components';
+import {ThemeProvider} from 'styled-components';
+import {cardTypes, getCardTheme} from 'theme';
 // import  * as NewsFeedContent from 'components'; //{ GetNewsFeedComponent, TypeOptions }
 
 import {
@@ -13,18 +14,17 @@ import {
     // NewsfeedItem,
 } from 'components';
 
-
 import {NewsfeedItemProps} from 'components/molecules/NewsfeedItem/NewsfeedItem';
 
 interface NewsfeedProps {
-    newsfeedItems: Array<NewsfeedItemProps>
+    newsfeedItems?: NewsfeedItemProps[]
 };
 
 // const NewsFeedItems = styled.div`
 //     /* styles applying to the list would go here */
 // `;
 
-function getComponent( newsfeedItemProps: NewsfeedItemProps ) {
+function getComponent( newsfeedItemProps: any ) {
     const {type} = newsfeedItemProps;
     switch(type) {
         case 'event': return <EventCard {...newsfeedItemProps} />
@@ -33,7 +33,7 @@ function getComponent( newsfeedItemProps: NewsfeedItemProps ) {
         case 'news': return <NewsCard {...newsfeedItemProps}/>;
         case 'question': return <QuestionCard {...newsfeedItemProps}/>;
         case 'vote': return <VoteCard {...newsfeedItemProps} />;
-        default: return <div />;
+        default: return <div>Card Error... Type: {type}</div>;
     };
 }
 
@@ -43,14 +43,25 @@ export default function NewsFeed(props: NewsfeedProps) {
     const {newsfeedItems} = props;
 
     return <>
-        {newsfeedItems.map(item=>{
-            const {key, ...newsfeedItemProps} = item;
+        {newsfeedItems?.map(item=>{
+            const {key, type, ...newsfeedItemProps} = item;
+
+            // const cardTheme: Object = cardThemes[type] || {};
+
+            const nestedTheme = (currentTheme: Object) => ({
+                ...currentTheme,
+                cardTheme: getCardTheme(type),
+              });
 
             // const FeedComponent: JSX.Element = GetNewsFeedComponent(type)
 
             // const [$feedElement, colorScheme] = getComponent(type, content);
 
-            return  getComponent(newsfeedItemProps);
+            return (
+                <ThemeProvider theme = {nestedTheme} key={key}>
+                    {getComponent(item)}
+                </ThemeProvider>
+            );
             
             
             // (

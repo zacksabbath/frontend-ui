@@ -4,13 +4,14 @@ import {ThumbIcons} from '..';
 import {Bubble} from 'components';
 
 import {Entity} from 'types';
+import {cardTypes} from 'theme';
 
 export type NewsfeedItemProps = {
     topic: Entity,
     bill?: Entity,
     image?: string,
     children?: React.ReactNode,
-    type: string,
+    type: cardTypes,
     content?: Object,
     date: string,
     key?: string,
@@ -59,7 +60,7 @@ const BubbleWrap = styled.div`
 export default function NewsfeedItem(props: NewsfeedItemProps) {
     const [likes, setLikes] = useState(Math.floor((Math.random() * 20) + 1));
     const [dislikes, setDislikes] = useState(Math.floor((Math.random() * 20) + 1));
-    const {image, topic, bill, children} = props;
+    const {image, topic, bill, type, children} = props;
 
     return <CardWrapper>
         
