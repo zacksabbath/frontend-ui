@@ -1,18 +1,19 @@
 import React, {useState} from 'react';
-import styled, { ThemedStyledFunction, StyledFunction }/*, { useTheme }*/ from 'styled-components';
-import {ThumbIcons} from '../../molecules';
-import {Bubble} from '../../atoms';
+import styled, { ThemedStyledFunction, StyledFunction } from 'styled-components';
+import {ThumbIcons} from '..';
+import {Bubble} from 'components';
 
-import {Entity, ColorScheme} from '../../../types';
+import {Entity} from 'types';
 
-interface CardProps {
+export type NewsfeedItemProps = {
     topic: Entity,
     bill?: Entity,
     image?: string,
     children?: React.ReactNode,
     type: string,
-    content: Object,
+    content?: Object,
     date: string,
+    key?: string,
 }
 
 const CardWrapper = styled.div`
@@ -55,7 +56,7 @@ const BubbleWrap = styled.div`
 
 `;
 
-export default function NewsfeedItem(props: CardProps) {
+export default function NewsfeedItem(props: NewsfeedItemProps) {
     const [likes, setLikes] = useState(Math.floor((Math.random() * 20) + 1));
     const [dislikes, setDislikes] = useState(Math.floor((Math.random() * 20) + 1));
     const {image, topic, bill, children} = props;

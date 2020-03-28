@@ -1,9 +1,9 @@
-import ContributionCard, {ContributionCardProps} from './ContributionCard';
-import EventCard, {EventCardProps} from './EventCard';
-import HistoryCard, {HistoryCardProps} from './HistoryCard';
-import NewsCard, {NewsCardProps} from './NewsCard';
-import QuestionCard, {QuestionCardProps} from './QuestionCard';
-import VoteCard, {VoteCardProps} from './VoteCard';
+import ContributionCard from './ContributionCard';
+import EventCard from './EventCard';
+import HistoryCard from './HistoryCard';
+import NewsCard from './NewsCard';
+import QuestionCard from './QuestionCard';
+import VoteCard from './VoteCard';
 
 export {
     ContributionCard,

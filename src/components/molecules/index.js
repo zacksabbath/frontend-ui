@@ -1,1 +1,0 @@
-export {default as ThumbIcons} from './ThumbIcons/ThumbIcons';

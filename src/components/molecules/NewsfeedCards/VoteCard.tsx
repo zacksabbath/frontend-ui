@@ -1,7 +1,7 @@
 import React from 'react';
-// import styled from 'styled-components';
-import {Entity} from '../../../types';
-import {Avatar} from '../../atoms';
+import {Entity} from 'types';
+import styled from 'styled-components';
+import {Avatar, NewsfeedItem} from 'components';
 
 export type VoteCardProps = {
     content: {
@@ -10,13 +10,14 @@ export type VoteCardProps = {
     }
 }
 
-export default function VoteCard({content}:any){
+export default function VoteCard(props:any){
+    const { content, ...rest } = props;
     console.log("Vote content", content);
     const {politician, vote} = content;
     return (
-        <div style={{color:'black'}}>
+        <NewsfeedItem {...rest} >
             <Avatar image={politician.image} />
             <p><strong>{politician.name}</strong> voted to <strong>{vote}</strong></p>
-        </div>
+        </NewsfeedItem>
         )
 }

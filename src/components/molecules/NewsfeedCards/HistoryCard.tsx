@@ -1,7 +1,6 @@
 import React from 'react';
-// import styled from 'styled-components';
-import {Entity} from '../../../types';
-import {Avatar} from '../../atoms';
+import {Entity} from 'types';
+import {Avatar, NewsfeedItem} from 'components';
 
 export type HistoryCardProps = {
     content: {
@@ -10,13 +9,14 @@ export type HistoryCardProps = {
     }
 }
 
-export default function HistoryCard({content}:any){
+export default function HistoryCard(props:any){
+    const {content, ...rest} = props
     console.log("History content", content);
     const {politician, blurb} = content;
     return (
-        <div>
+        <NewsfeedItem {...rest} >
             <Avatar image={politician.image} />
             <p><strong>{politician.name}</strong> {blurb}</p>
-        </div>
+        </NewsfeedItem>
     );
 }

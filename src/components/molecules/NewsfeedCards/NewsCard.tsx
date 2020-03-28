@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import {NewsfeedItem} from 'components';
 
-const Card = styled.div`
+const Main = styled.div`
     .card-heading {
         font-weight: medium;
         text-align: left;
@@ -27,19 +28,21 @@ export type NewsCardProps = {
     }
 };
 
-export default function NewsCard({content}:any){
-
-    const {heading, source} = content;
+export default function NewsCard(props:any){
+    const { content, ...rest } = props;
+    const { heading, source } = content;
 
     return (
-        <Card>
-            <div className="news-source">
-                {source}
-            </div>
+        <NewsfeedItem {...rest} >
+            <Main>
+                <div className="news-source">
+                    {source}
+                </div>
 
-            <div className="card-heading">
-                {heading}
-            </div>
-        </Card>
+                <div className="card-heading">
+                    {heading}
+                </div>
+            </Main>
+        </NewsfeedItem>
     );
 };
