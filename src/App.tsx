@@ -6,7 +6,7 @@ import {ThemeProvider} from 'styled-components';
 import {Newsfeed} from 'components'
 
 function App() {
-  const [newsFeedItems, setNewsFeedItems] = useState()
+  const [newsFeedItems, setNewsFeedItems] = useState();
 
   async function getNewsfeed() {
     let response = await fetch(`http://my-json-server.typicode.com/stump-vote/mock-fe-api/newsFeed`);
