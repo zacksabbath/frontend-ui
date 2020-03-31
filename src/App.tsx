@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './App.scss';
-import theme from 'theme';
+import theme from 'global/theme';
 import {ThemeProvider} from 'styled-components';
 
 import {Newsfeed} from 'components'

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Entity} from 'types';
+import {Entity} from 'global/types';
 import styled from 'styled-components';
 import {Avatar, NewsfeedItem} from 'components';
 

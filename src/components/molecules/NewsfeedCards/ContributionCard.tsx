@@ -1,5 +1,5 @@
 import React from 'react';
-import {Entity} from 'types';
+import {Entity} from 'global/types';
 import {Avatar, NewsfeedItem} from 'components';
 
 export type ContributionCardProps = {

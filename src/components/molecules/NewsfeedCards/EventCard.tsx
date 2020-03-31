@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {NewsfeedItem} from 'components';
-import {Entity} from 'types';
+import {Entity} from 'global/types';
 
 export type EventCardProps = {
     bill: Entity,

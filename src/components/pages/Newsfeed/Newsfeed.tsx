@@ -1,7 +1,6 @@
 import React from 'react';
 import {ThemeProvider} from 'styled-components';
-import {cardTypes, getCardTheme} from 'theme';
-// import  * as NewsFeedContent from 'components'; //{ GetNewsFeedComponent, TypeOptions }
+import {getCardTheme} from 'global/theme';
 
 import {
     EventCard,
@@ -10,8 +9,6 @@ import {
     NewsCard,
     QuestionCard,
     VoteCard,
-    // TypeOptions,
-    // NewsfeedItem,
 } from 'components';
 
 import {NewsfeedItemProps} from 'components/molecules/NewsfeedItem/NewsfeedItem';
@@ -19,10 +16,6 @@ import {NewsfeedItemProps} from 'components/molecules/NewsfeedItem/NewsfeedItem'
 interface NewsfeedProps {
     newsfeedItems?: NewsfeedItemProps[]
 };
-
-// const NewsFeedItems = styled.div`
-//     /* styles applying to the list would go here */
-// `;
 
 function getComponent( newsfeedItemProps: any ) {
     const {type} = newsfeedItemProps;
@@ -35,9 +28,7 @@ function getComponent( newsfeedItemProps: any ) {
         case 'vote': return <VoteCard {...newsfeedItemProps} />;
         default: return <div>Card Error... Type: {type}</div>;
     };
-}
-
-                    
+} 
 
 export default function NewsFeed(props: NewsfeedProps) {
     const {newsfeedItems} = props;
@@ -46,43 +37,17 @@ export default function NewsFeed(props: NewsfeedProps) {
         {newsfeedItems?.map(item=>{
             const {key, type, ...newsfeedItemProps} = item;
 
-            // const cardTheme: Object = cardThemes[type] || {};
-
             const nestedTheme = (currentTheme: Object) => ({
                 ...currentTheme,
-                cardTheme: getCardTheme(type),
+                cardTheme: getCardTheme(item.type),
               });
-
-            // const FeedComponent: JSX.Element = GetNewsFeedComponent(type)
-
-            // const [$feedElement, colorScheme] = getComponent(type, content);
 
             return (
                 <ThemeProvider theme = {nestedTheme} key={key}>
-                    {getComponent(item)}
+                    {getComponent(newsfeedItemProps)}
                 </ThemeProvider>
             );
-            
-            
-            // (
 
-            //     { getComponent(type:any, content:any) }
-                
-            //     // <ThemeProvider theme={colorScheme} key={key}>
-            //     //     <NewsfeedItem
-            //     //         topic = {topic}
-            //     //         bill = {bill}
-            //     //         type = {type} 
-            //     //         image = {image}
-            //     //         date = {date}
-            //     //         content = {content}
-            //     //         >
-            //     //             { $feedElement }
-            //     //     </NewsfeedItem>
-            //     // </ThemeProvider>
-
-
-            // );
         })}
     </>;
 }

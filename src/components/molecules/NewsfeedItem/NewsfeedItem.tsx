@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import {ThumbIcons, Bubble} from 'components';
 
-import {Entity} from 'types';
-import {cardTypes} from 'theme';
+import {Entity} from 'global/types';
+import {cardTypes} from 'global/theme';
 
 export type NewsfeedItemProps = {
     topic: Entity,
