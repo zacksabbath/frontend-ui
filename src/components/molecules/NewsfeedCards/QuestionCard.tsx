@@ -1,7 +1,6 @@
 import React from 'react';
-// import styled from 'styled-components';
 import {Entity} from 'global/types';
-import {Avatar, NewsfeedItem} from 'components';
+import {Avatar, NewsfeedItem, Clickable} from 'components';
 
 export type QuestionCardProps = {
     content: {
@@ -12,13 +11,12 @@ export type QuestionCardProps = {
 
 export default function QuestionCard(props:any){
     const { content, ...rest } = props;
-
-    const {askedBy, question} = content;
+    const { askedBy, question } = content;
 
     return (
         <NewsfeedItem {...rest} >
             <Avatar image = {askedBy.image} />
-            <p><strong>{askedBy.name}</strong> asked <em>"{question}"</em></p>
+            <p><Clickable>{askedBy.name}</Clickable> asked <em>"{question}"</em></p>
         </NewsfeedItem>
     );
 }

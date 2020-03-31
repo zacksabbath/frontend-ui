@@ -19,6 +19,7 @@ interface NewsfeedProps {
 
 function getComponent( newsfeedItemProps: any ) {
     const {type} = newsfeedItemProps;
+
     switch(type) {
         case 'event': return <EventCard {...newsfeedItemProps} />
         case 'contribution': return <ContributionCard {...newsfeedItemProps}/>;
@@ -35,16 +36,16 @@ export default function NewsFeed(props: NewsfeedProps) {
 
     return <>
         {newsfeedItems?.map(item=>{
-            const {key, type, ...newsfeedItemProps} = item;
+            const {key, type} = item;
 
             const nestedTheme = (currentTheme: Object) => ({
                 ...currentTheme,
-                cardTheme: getCardTheme(item.type),
+                cardTheme: getCardTheme(type),
               });
 
             return (
                 <ThemeProvider theme = {nestedTheme} key={key}>
-                    {getComponent(newsfeedItemProps)}
+                    {getComponent(item)}
                 </ThemeProvider>
             );
 

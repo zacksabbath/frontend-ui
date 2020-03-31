@@ -3,7 +3,7 @@ import './App.scss';
 import theme from 'global/theme';
 import {ThemeProvider} from 'styled-components';
 
-import {Newsfeed} from 'components'
+import {Newsfeed} from 'components';
 
 function App() {
   const [newsFeedItems, setNewsFeedItems] = useState();

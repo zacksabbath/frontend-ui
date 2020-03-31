@@ -10,8 +10,6 @@ import { faThumbsUp, faThumbsDown, faEllipsisH, faCalendarAlt } from '@fortaweso
 
 library.add(faThumbsUp, faThumbsDown, faEllipsisH, faCalendarAlt);
 
-// console.log("!!!!!!!", {faThumbsUp, faThumbsDown, faEllipsisH, faCalendarAlt})
-
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
