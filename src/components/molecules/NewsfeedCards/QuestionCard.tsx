@@ -10,6 +10,7 @@ export type QuestionCardProps = {
 }
 
 export default function QuestionCard(props:any){
+    //Question or answer
     const { content, ...rest } = props;
     const { askedBy, question } = content;
 

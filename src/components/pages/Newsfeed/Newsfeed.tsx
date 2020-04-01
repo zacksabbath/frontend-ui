@@ -4,7 +4,7 @@ import {getCardTheme} from 'global/theme';
 
 import {
     EventCard,
-    ContributionCard,
+    FinanceCard,
     HistoryCard,
     NewsCard,
     QuestionCard,
@@ -22,7 +22,7 @@ function getComponent( newsfeedItemProps: any ) {
 
     switch(type) {
         case 'event': return <EventCard {...newsfeedItemProps} />
-        case 'contribution': return <ContributionCard {...newsfeedItemProps}/>;
+        case 'contribution': return <FinanceCard {...newsfeedItemProps}/>;
         case 'history': return <HistoryCard {...newsfeedItemProps}/>;
         case 'news': return <NewsCard {...newsfeedItemProps}/>;
         case 'question': return <QuestionCard {...newsfeedItemProps}/>;

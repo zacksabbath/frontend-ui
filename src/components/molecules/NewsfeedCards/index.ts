@@ -1,4 +1,4 @@
-import ContributionCard from './ContributionCard';
+import FinanceCard from './FinanceCard';
 import EventCard from './EventCard';
 import HistoryCard from './HistoryCard';
 import NewsCard from './NewsCard';
@@ -6,41 +6,10 @@ import QuestionCard from './QuestionCard';
 import VoteCard from './VoteCard';
 
 export {
-    ContributionCard,
+    FinanceCard,
     EventCard,
     HistoryCard,
     NewsCard,
     QuestionCard,
     VoteCard,
 }
-
-// export type {
-//     ContributionCardProps,
-//     EventCardProps,
-//     HistoryCardProps,
-//     NewsCardProps,
-//     QuestionCardProps,
-//     VoteCardProps,
-// }
-
-// type MapType = {
-//         'contribution': ReactNode,
-//         'event': ReactNode,
-//         'history': ReactNode,
-//         'news': ReactNode,
-//         'question': ReactNode,
-//         'vote': ReactNode,
-// };
-
-
-
-// export const NewsfeedCardMap = {
-//     'contribution': ContributionCard,
-//     'event': EventCard,
-//     'history': HistoryCard,
-//     'news': NewsCard,
-//     'question': QuestionCard,
-//     'vote': VoteCard,
-// };
-
-// export const GetNewsFeedComponent = (type: TypeOptions):JSX.Element => NewsfeedCardMap[type];
