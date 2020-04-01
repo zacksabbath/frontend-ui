@@ -2,14 +2,14 @@ import React from 'react';
 import {Entity} from 'global/types';
 import {Avatar, NewsfeedItem, Clickable} from 'components';
 
-export type QuestionCardProps = {
+export type QuestionAnswerCardProps = {
     content: {
         askedBy: Entity,
         question: string,
     }
 }
 
-export default function QuestionCard(props:any){
+export default function QuestionAnswerCard(props:any){
     //Question or answer
     const { content, ...rest } = props;
     const { askedBy, question } = content;

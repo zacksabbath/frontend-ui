@@ -7,7 +7,7 @@ import {
     FinanceCard,
     HistoryCard,
     NewsCard,
-    QuestionCard,
+    QuestionAnswerCard,
     VoteCard,
 } from 'components';
 
@@ -25,7 +25,7 @@ function getComponent( newsfeedItemProps: any ) {
         case 'contribution': return <FinanceCard {...newsfeedItemProps}/>;
         case 'history': return <HistoryCard {...newsfeedItemProps}/>;
         case 'news': return <NewsCard {...newsfeedItemProps}/>;
-        case 'question': return <QuestionCard {...newsfeedItemProps}/>;
+        case 'question': return <QuestionAnswerCard {...newsfeedItemProps}/>;
         case 'vote': return <VoteCard {...newsfeedItemProps} />;
         default: return <div>Card Error... Type: {type}</div>;
     };
