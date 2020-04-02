@@ -3,7 +3,8 @@ import './App.scss';
 import theme from 'global/theme';
 import {ThemeProvider} from 'styled-components';
 
-import {Newsfeed} from 'components';
+// import {Newsfeed} from 'components';
+import {Homepage} from 'components';
 
 function App() {
   const [newsFeedItems, setNewsFeedItems] = useState();
@@ -28,7 +29,7 @@ function App() {
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <ThemeProvider theme={theme}>
           <div style={{width:"90%"}}>
-           
+            <Homepage/>
             {/* REPLACE BEFORE PUSH */}
             {/* <Newsfeed newsfeedItems = {newsFeedItems} /> */}
           </div>

@@ -1,9 +1,10 @@
 import React from 'react'
 
-export const Homepage = () => {
+export default function Homepage(props:any) {
+    
     return (
-        <div>
-            
+        <div className="homepage-main">
+            Hello World
         </div>
     )
 }
