@@ -5,16 +5,18 @@ import {ImageButton} from 'components';
 export default function Homepage(props:any) {
     
     return (
-        <div className="homepage-main">
+        <>
+            <h1>Stump</h1>
+        
             <ImageButton >
-                <h2>My Voting Ballot</h2>
+                <h2>My Voting<br/> Ballot</h2>
             </ImageButton>
-            <div className="homepage-A2">
+            <ImageButton >
                 <h2>Browse Issues</h2>
-            </div>
+            </ImageButton>
             <div className="homepage-B">
                 <h2> News & Activities</h2>
             </div>
-        </div>
+        </>
     )
 }
