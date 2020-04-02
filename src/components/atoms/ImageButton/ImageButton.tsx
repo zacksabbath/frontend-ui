@@ -1,26 +1,22 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const ImgBtnWrapper = styled.div`
-    img {
-        vertical-align: middle;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-    }
+const ImageButton = styled.div`
+background-color: red ;
+border-radius: 50px;
+font-weight: normal;
+font-size: 20px;
+color: #FFFFFF;
+padding: 8px;
+// display: flex;
+flex-direction: col;
+// align-items: center;
+height: 400px;
+width: 400px;
+:focus {
+    outline: none;
+}
+border: none;
 `;
 
-// type ImgBtnProps = {
-//     image: string,
-//     text: string,
+export default ImageButton;
 
-// };
-
-export default function ImageButton (props:any){
-    const {image, onClick} = props;
-    return (
-        <ImgBtnWrapper onClick={onClick}>
-            <img src={image} />
-        </ImgBtnWrapper>
-    );
-}
