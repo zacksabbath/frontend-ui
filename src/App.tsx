@@ -11,6 +11,7 @@ import {
 } from 'react-router-dom';
 
 import {Newsfeed} from 'components';
+import {Homepage} from 'components';
 
 function App() {
   const [newsFeedItems, setNewsFeedItems] = useState();
@@ -46,7 +47,7 @@ function App() {
 
               <Route path="/" exact={true}>
                 <div>
-                  <h1>Put Homepage here</h1>
+                  <Homepage />
                   <Link to="/newsfeed" style={{color:'white'}}>Newsfeed</Link>
                 </div>
               </Route>
