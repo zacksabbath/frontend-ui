@@ -28,7 +28,9 @@ function App() {
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <ThemeProvider theme={theme}>
           <div style={{width:"90%"}}>
-            <Newsfeed newsfeedItems = {newsFeedItems} />
+           
+            {/* REPLACE BEFORE PUSH */}
+            {/* <Newsfeed newsfeedItems = {newsFeedItems} /> */}
           </div>
         </ThemeProvider>
 
