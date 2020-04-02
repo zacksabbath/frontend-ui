@@ -72,7 +72,7 @@ export default function NewsfeedItem(props: NewsfeedItemProps) {
         </TopWrapper>
         
         <div className="newsfeed-content">
-            {children}
+            {children}  
 
             <ThumbIcons likes={likes} dislikes={dislikes} onLike={()=>setLikes(likes+1)} onDislike={()=>setDislikes(dislikes+1)} />
         </div>

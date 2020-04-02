@@ -35,7 +35,7 @@ export default function NewsFeed(props: NewsfeedProps) {
 
     return <>
         {newsfeedItems?.map(item=>{
-            const {key, type, ...newsfeedItemProps} = item;
+            const {key, type} = item;
 
             const nestedTheme = (currentTheme: Object) => ({
                 ...currentTheme,
@@ -44,7 +44,7 @@ export default function NewsFeed(props: NewsfeedProps) {
 
             return (
                 <ThemeProvider theme = {nestedTheme} key={key}>
-                    {getComponent(newsfeedItemProps)}
+                    {getComponent(item)}
                 </ThemeProvider>
             );
 
