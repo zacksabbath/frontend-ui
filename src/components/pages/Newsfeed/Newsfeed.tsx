@@ -4,10 +4,10 @@ import {getCardTheme} from 'global/theme';
 
 import {
     EventCard,
-    ContributionCard,
+    FinanceCard,
     HistoryCard,
     NewsCard,
-    QuestionCard,
+    QuestionAnswerCard,
     VoteCard,
 } from 'components';
 
@@ -19,12 +19,13 @@ interface NewsfeedProps {
 
 function getComponent( newsfeedItemProps: any ) {
     const {type} = newsfeedItemProps;
+
     switch(type) {
         case 'event': return <EventCard {...newsfeedItemProps} />
-        case 'contribution': return <ContributionCard {...newsfeedItemProps}/>;
+        case 'contribution': return <FinanceCard {...newsfeedItemProps}/>;
         case 'history': return <HistoryCard {...newsfeedItemProps}/>;
         case 'news': return <NewsCard {...newsfeedItemProps}/>;
-        case 'question': return <QuestionCard {...newsfeedItemProps}/>;
+        case 'question': return <QuestionAnswerCard {...newsfeedItemProps}/>;
         case 'vote': return <VoteCard {...newsfeedItemProps} />;
         default: return <div>Card Error... Type: {type}</div>;
     };
@@ -39,7 +40,7 @@ export default function NewsFeed(props: NewsfeedProps) {
 
             const nestedTheme = (currentTheme: Object) => ({
                 ...currentTheme,
-                cardTheme: getCardTheme(item.type),
+                cardTheme: getCardTheme(type),
               });
 
             return (

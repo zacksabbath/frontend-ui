@@ -9,6 +9,7 @@ export type EventCardProps = {
     content: {
         date: string,
         name: string,
+        // location?: Location Type,
     }
 }
 
@@ -22,11 +23,11 @@ const Main = styled.div`
 
 export default function EventCard(props:any){
 
-    const {bill, content, ...rest} = props;
+    const {content, ...rest} = props;
 
     const {date, name} = content;
     return (
-        <NewsfeedItem {...rest} bill={bill} >
+        <NewsfeedItem {...rest}>
             <Main>
                 <div className="calendar-icon">
                     <FontAwesomeIcon icon="calendar-alt" size="4x"/>
@@ -34,7 +35,7 @@ export default function EventCard(props:any){
                 <div>
                     <p>{date}</p>
                     <p>{name}</p>
-                    <p>{bill?.name}</p>
+                    {/* <p>{location}</p> */}
                 </div>
 
             </Main>

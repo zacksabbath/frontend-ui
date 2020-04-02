@@ -2,15 +2,14 @@ import React from 'react';
 import {Entity} from 'global/types';
 import {Avatar, NewsfeedItem} from 'components';
 
-export type ContributionCardProps = {
+export type FinanceCardProps = {
     content: {
         politician: Entity,
         acceptedAmount: string,
-        contributor: string,
     }
 }
 
-export default function ContributionCard(props:any){
+export default function FinanceCard(props:any){
     const { content, ...rest } = props;
     const {politician, acceptedAmount, contributor} = content;
     return (

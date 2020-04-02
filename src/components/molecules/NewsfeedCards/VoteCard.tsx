@@ -10,6 +10,13 @@ export type VoteCardProps = {
     }
 }
 
+
+//creator
+
+
+//support or oppose
+
+//bill title
 export default function VoteCard(props:any){
     const { content, ...rest } = props;
 
