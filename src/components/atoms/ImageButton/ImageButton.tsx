@@ -10,14 +10,16 @@ const ImgBtnWrapper = styled.div`
     }
 `;
 
-type ImgBtnProps = {
-    image: string,
-};
+// type ImgBtnProps = {
+//     image: string,
+//     text: string,
 
-export default function ImageButton (props:ImgBtnProps){
-    const {image} = props;
+// };
+
+export default function ImageButton (props:any){
+    const {image, onClick} = props;
     return (
-        <ImgBtnWrapper>
+        <ImgBtnWrapper onClick={onClick}>
             <img src={image} />
         </ImgBtnWrapper>
     );
