@@ -1,6 +1,11 @@
 import React from 'react'
 import styled from 'styled-components';
 import {ImageButton} from 'components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+// const text = styled.p`
+//     position: absolute;
+// `;
 
 export default function Homepage(props:any) {
     
@@ -14,9 +19,9 @@ export default function Homepage(props:any) {
             <ImageButton >
                 <h2>Browse Issues</h2>
             </ImageButton>
-            <div className="homepage-B">
+            <ImageButton>
                 <h2> News & Activities</h2>
-            </div>
+            </ImageButton>
         </>
     )
 }

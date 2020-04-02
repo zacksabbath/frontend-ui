@@ -4,20 +4,21 @@ const ImageButton = styled.div`
 
 background-color: red ;
 border-radius: 50px;
+font-weight: heavy;
 font-size: 20px;
 color: #FFFFFF;
 padding: 8px;
 margin:20px;
 display: flex;
+justify-content: space-between;
+flex-direction: row;
 float: left;
-flex-flow: row nowrap;
 text-align: center;
 height: 400px;
 width: 400px;
-:focus {
-    outline: none;
+:hover {
+    background: blue;
 }
-border: none;
 `;
 
 export default ImageButton;
