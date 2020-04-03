@@ -5,18 +5,17 @@ const EllipsisWrapper = styled.div`
     width: 95px;
     height: 52px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    padding: 5px;
-    position: relative; 
+    padding-right: 8px;
 `;
 
 const EllipsisDot = styled.div`
     background: ${({theme})=>theme.cardTheme?.secondary};
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-radius: 100px;
-    margin-left: 5px;
+    margin-left: 10px;
 `;
 
 // type EllipsisProps = {
