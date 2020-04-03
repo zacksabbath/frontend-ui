@@ -13,13 +13,9 @@ export default function Homepage(props:any) {
         <div>
             <h1>Stump</h1> <FontAwesomeIcon icon="star" size="3x"/>     
             <ImageButton text="My Voting Ballot" image="http://stump.zackrose.net/images/voting_ballot.png"/>
-                
-            {/* <ImageButton >
-                <h2>Browse Issues</h2>
-            </ImageButton>
-            <ImageButton>
-                <h2> News & Activities</h2>
-            </ImageButton> */}
+            <ImageButton text="Browse Issues" image="http://stump.zackrose.net/images/issues.png"/>    
+            <ImageButton text="News & Activities" image="http://stump.zackrose.net/images/news.png"/>
+
         </div>
     )
 }

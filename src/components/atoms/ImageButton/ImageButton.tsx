@@ -2,27 +2,23 @@ import styled from 'styled-components';
 import React from 'react';
 
 const ImageButtonWrapper = styled.div`
-
-background-color: red ;
-border-radius: 50px;
-font-weight: heavy;
-font-size: 20px;
-color: #FFFFFF;
-padding: 8px;
-margin:20px;
-display: flex;
-justify-content: space-between;
-flex-direction: row;
-float: left;
-text-align: center;
-height: 400px;
-width: 400px;
-:hover {
-    background: blue;
+img {
+    border-radius: 50px;
+    margin:20px;
+    height: 400px;
+    width: 100%;
+    float: left;
+    :hover {
+        background: blue;
+    }
+    .text {
+        text-align: center;
+        font-weight: heavy;
+        font-size: 20px;
+        color: #FFFFFF;
+    }
 }
-.text {
 
-}
 
 `;
 
