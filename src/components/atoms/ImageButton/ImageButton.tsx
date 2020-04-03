@@ -5,7 +5,13 @@ const ImageButtonWrapper = styled.div`
 img{
     height: 100%;
     width: 100%;
+    object-fit: contain;
+    
     }
+    :hover {
+        background-color: orange;
+    }
+    
 `;
 
 type ImageButtonProps  = {

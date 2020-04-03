@@ -4,18 +4,15 @@ import {ImageButton} from 'components';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ContainerWrapper = styled.div`
-    
-
     .logo img { 
         width: 50%;
         margin: 80px;
         
         }
-    .container {    
-        display: flex;
-        margin: 100px;
-        justify-content: space-between;
+    .top {    
+        float: left;
      }
+      
      
 
 `;
@@ -28,7 +25,7 @@ export default function Homepage(props:any) {
                 <div className="logo">
             <img src="http://stump.zackrose.net/images/stump_logo.png" />
                 </div>
-                <div className="container" >
+                <div className="top" >
                     <ImageButton text="My Voting Ballot" image="http://stump.zackrose.net/images/voting_ballot.png"/>                  
                     <ImageButton text="Browse Issues" image="http://stump.zackrose.net/images/issues.png"/> 
                 </div>
