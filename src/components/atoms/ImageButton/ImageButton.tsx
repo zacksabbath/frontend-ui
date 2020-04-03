@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import React from 'react';
 
-const ImageButton = styled.div`
+const ImageButtonWrapper = styled.div`
 
 background-color: red ;
 border-radius: 50px;
@@ -19,7 +20,29 @@ width: 400px;
 :hover {
     background: blue;
 }
+.text {
+
+}
+
 `;
 
-export default ImageButton;
+type ImageButtonProps  = {
+    image: string,
+    text: string,
+};
+
+
+
+export default function ImageButton(props:ImageButtonProps) {
+    const { image, text } = props
+    return (
+    <ImageButtonWrapper>
+        <img src={image}/>
+    <p className="text">
+        {text}
+    </p>
+    </ImageButtonWrapper>
+    )
+   
+};
 
