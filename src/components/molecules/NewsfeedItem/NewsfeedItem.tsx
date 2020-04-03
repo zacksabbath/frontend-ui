@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import {ThumbIcons, Bubble} from 'components';
+import {ThumbIcons, Bubble, Ellipsis} from 'components';
 
 import {Entity} from 'global/types';
 import {cardTypes} from 'global/theme';
@@ -29,6 +29,8 @@ const CardWrapper = styled.div`
 
     .newsfeed-content {
         padding: 10px;
+        display: flex;
+        justify-content: around;
     }
 `;
 
@@ -75,6 +77,7 @@ export default function NewsfeedItem(props: NewsfeedItemProps) {
             {children}
 
             <ThumbIcons likes={likes} dislikes={dislikes} onLike={()=>setLikes(likes+1)} onDislike={()=>setDislikes(dislikes+1)} />
+            <Ellipsis></Ellipsis>
         </div>
 
         
