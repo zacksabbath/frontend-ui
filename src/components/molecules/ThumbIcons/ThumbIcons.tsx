@@ -14,6 +14,7 @@ const Thumbs = styled.div`
     display: flex;
     flex-direction: row;
     margin: 10px 0;
+    width: 95px;
 
     .icon-text {
         border-radius: 13px;

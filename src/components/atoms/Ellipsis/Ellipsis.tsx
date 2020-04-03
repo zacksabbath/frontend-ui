@@ -2,10 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const EllipsisWrapper = styled.div`    
-    width: 100px;
-    height: 30px;
+    width: 95px;
+    height: 52px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 5px;
+    position: relative; 
 `;
 
 const EllipsisDot = styled.div`
@@ -23,10 +26,9 @@ const EllipsisDot = styled.div`
 export default function Ellipsis(){
     return (
         <EllipsisWrapper>
-            <EllipsisDot></EllipsisDot>
-            <EllipsisDot></EllipsisDot>
-            <EllipsisDot></EllipsisDot>
-
+            <EllipsisDot />
+            <EllipsisDot />
+            <EllipsisDot />
         </EllipsisWrapper>
     )
 }

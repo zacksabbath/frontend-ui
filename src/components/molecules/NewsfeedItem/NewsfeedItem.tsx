@@ -44,6 +44,20 @@ const TopWrapper = styled.div`
     }
 `;
 
+const BottomWrapper = styled.div`
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .card-bottom-group {
+        display: flex;
+        justify-content: space-around;
+    }
+`
+
 const BubbleWrap = styled.div`
     padding: 10px;
     display: flex;
@@ -74,8 +88,15 @@ export default function NewsfeedItem(props: NewsfeedItemProps) {
         <div className="newsfeed-content">
             {children}
 
-            <ThumbIcons likes={likes} dislikes={dislikes} onLike={()=>setLikes(likes+1)} onDislike={()=>setDislikes(dislikes+1)} />
-            <Ellipsis></Ellipsis>
+            <BottomWrapper>
+                <div className={"card-bottom-group"}>
+                    <ThumbIcons likes={likes} dislikes={dislikes} onLike={()=>setLikes(likes+1)} onDislike={()=>setDislikes(dislikes+1)} />
+                </div>
+                <div className={"card-bottom-group"}>
+                    <Ellipsis></Ellipsis>
+                </div>
+            </BottomWrapper>
+            
         </div>
 
         
