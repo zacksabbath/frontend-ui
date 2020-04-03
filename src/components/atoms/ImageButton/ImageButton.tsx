@@ -6,7 +6,12 @@ img{
     height: 100%;
     width: 100%;
     object-fit: contain;
-    
+    text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
     :hover {
         background-color: orange;
