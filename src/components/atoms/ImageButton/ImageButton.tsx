@@ -2,21 +2,18 @@ import styled from 'styled-components';
 import React from 'react';
 
 const ImageButtonWrapper = styled.div`
-img {
+image {
     border-radius: 50px;
     margin:20px;
     height: 400px;
     width: 100%;
     float: left;
-    :hover {
-        background: blue;
-    }
-    .text {
-        text-align: center;
-        font-weight: heavy;
-        font-size: 20px;
-        color: #FFFFFF;
-    }
+}
+.text {
+    text-align: center;
+    font-weight: heavy;
+    font-size: 20px;
+    color: #FFFFFF;
 }
 
 
