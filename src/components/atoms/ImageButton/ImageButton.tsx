@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import React from 'react';
 
 const ImageButtonWrapper = styled.div`
+img{
+    height: 100%;
+    width: 100%;
+    }
 `;
 
 type ImageButtonProps  = {
