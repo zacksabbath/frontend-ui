@@ -2,21 +2,18 @@ import styled from 'styled-components';
 import React from 'react';
 
 const ImageButtonWrapper = styled.div`
-image {
-    border-radius: 50px;
-    margin:20px;
-    height: 400px;
-    width: 100%;
-    float: left;
-}
-.text {
-    text-align: center;
-    font-weight: heavy;
-    font-size: 20px;
-    color: #FFFFFF;
-}
+.container{
+    .polImg {
+        border-radius: 20px;
+        margin:20px;
+        width: 100%;
 
+        :hover {
+            background-color: blue;
+        }
+    }
 
+}
 `;
 
 type ImageButtonProps  = {
@@ -29,9 +26,10 @@ type ImageButtonProps  = {
 export default function ImageButton(props:ImageButtonProps) {
     const { image, text } = props
     return (
-    <ImageButtonWrapper>
-        <img src={image}/>
+    <ImageButtonWrapper className="container">
+
     <p className="text">
+    <img src={image} className="polImg"/>
         {text}
     </p>
     </ImageButtonWrapper>

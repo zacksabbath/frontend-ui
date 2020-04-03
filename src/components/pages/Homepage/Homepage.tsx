@@ -5,8 +5,7 @@ import {ImageButton} from 'components';
 
 const ContainerWrapper = styled.div`
     .container {
-        
-        
+        float: left;
     }
 
 `;
@@ -15,9 +14,8 @@ export default function Homepage(props:any) {
     
     return (
         <div>
-            <img src="http://stump.zackrose.net/images/stump_logo.png" style={{marginTop: 80}} />
+            <img src="http://stump.zackrose.net/images/stump_logo.png" style={{margin: 80}} />
 
-            {/* <h1>Stump</h1> <FontAwesomeIcon icon="star" size="3x"/>      */}
             <ContainerWrapper className="container">
             <ImageButton text="My Voting Ballot" image="http://stump.zackrose.net/images/voting_ballot.png"/>
             <ImageButton text="Browse Issues" image="http://stump.zackrose.net/images/issues.png"/> 
