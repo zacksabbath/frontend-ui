@@ -13,12 +13,8 @@ export default function Homepage(props:any) {
     return (
         <div>
             <img src="http://stump.zackrose.net/images/stump_logo.png" style={{margin: 80}} />
-
-            <div>
             <ImageButton text="My Voting Ballot" image="http://stump.zackrose.net/images/voting_ballot.png"/>
             <ImageButton text="Browse Issues" image="http://stump.zackrose.net/images/issues.png"/> 
-            </div>  
-
             <ImageButton text="News & Activities" image="http://stump.zackrose.net/images/news.png"/>
 
         </div>
