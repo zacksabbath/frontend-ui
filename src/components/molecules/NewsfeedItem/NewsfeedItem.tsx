@@ -29,8 +29,6 @@ const CardWrapper = styled.div`
 
     .newsfeed-content {
         padding: 10px;
-        display: flex;
-        justify-content: around;
     }
 `;
 
