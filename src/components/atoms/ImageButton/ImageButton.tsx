@@ -4,12 +4,11 @@ import React from "react";
 const ImageButtonWrapper = styled.button`
   position: relative;
   text-align: center;
-  image {
+  img {
     height: 100%;
     width: 100%;
-    object-fit: contain;
-    position: absolute;
-    top: 0;
+    //object-fit: contain;
+    //position: absolute;
   }
   :hover {
     background-color: orange;
