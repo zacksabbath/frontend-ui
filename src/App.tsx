@@ -3,6 +3,9 @@ import './App.scss';
 import theme from 'global/theme';
 import {ThemeProvider} from 'styled-components';
 
+import AccordionList from './components/molecules/AccordionList/AccordionList';
+
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -42,6 +45,11 @@ function App() {
               <Route path ="/newsfeed">
                 <Link to="/" style={{color:'white'}}>Home</Link>
                 <Newsfeed newsfeedItems = {newsFeedItems} />
+              </Route>
+
+              <Route path ="/AccordionList">
+                <Link to="/AccordionList" style={{color:'white'}}>Local Issues</Link>
+                <AccordionList />
               </Route>
 
               <Route path="/" exact={true}>
