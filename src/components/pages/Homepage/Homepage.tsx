@@ -2,14 +2,14 @@ import React from "react";
 // import styled from "styled-components";
 // import { ImageButton } from "components";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './Homepage.css';
 
 export default function Homepage(props: any) {
   return (
     <div>
-
-      <div className="logo">
         <img src="http://stump.zackrose.net/images/stump_logo.png" />
-      </div>
+        <h2>Your organic, local source for democracy.</h2>
+      
 
       <div className="container">
         <button className="vote">My Voting Ballot</button>
