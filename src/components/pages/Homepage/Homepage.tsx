@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 // import styled from "styled-components";
 // import { ImageButton } from "components";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import "./Homepage.css";
+import './Homepage.css';
 
 export default function Homepage(props: any) {
   return (
@@ -11,10 +11,12 @@ export default function Homepage(props: any) {
       <h2>Your organic, local source for democracy.</h2>
 
       <div className="container">
-        <button className="vote"
-        // onClick={onClick}
+        <button
+          className="vote"
+          // onClick={onClick}
         >
-          My Voting<br/>
+          My Voting
+          <br />
           Ballot
         </button>
         <button className="issues">Browse Issues</button>
