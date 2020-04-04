@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import {ThumbIcons, Bubble, Ellipsis} from 'components';
+import { ThumbIcons, Bubble, Ellipsis } from 'components';
 
-import {Entity} from 'global/types';
-import {cardTypes} from 'global/theme';
+import { describeISODate } from 'util/dates';
+import { Entity } from 'global/types';
+import { cardTypes } from 'global/theme';
+
 
 export type NewsfeedItemProps = {
     topic: Entity,
@@ -19,7 +21,7 @@ export type NewsfeedItemProps = {
 const CardWrapper = styled.div`
     width: 100%;
     font-family: GalanoGrotesque, Futura, "Trebuchet MS", Arial, sans-serif;
-    background-color: ${({theme})=> theme.cardTheme?.primary};
+    background-color: ${({ theme }) => theme.cardTheme?.primary};
     box-shadow: 0 0 5px 0 rgba(0,0,0,0.30);
     border-radius: 8px;
     text-align: left;
@@ -55,6 +57,11 @@ const BottomWrapper = styled.div`
     .card-bottom-group {
         display: flex;
         justify-content: space-around;
+
+        .date-description {
+            margin: auto;
+            color: ${({ theme }) => theme.cardTheme?.secondaryText};
+        }
     }
 `
 
@@ -73,32 +80,36 @@ const BubbleWrap = styled.div`
 export default function NewsfeedItem(props: NewsfeedItemProps) {
     const [likes, setLikes] = useState(Math.floor((Math.random() * 20) + 1));
     const [dislikes, setDislikes] = useState(Math.floor((Math.random() * 20) + 1));
-    const {image, topic, bill, children} = props;
+    const { image, topic, bill, children, date } = props;
+
+    // TODO: customize date descriptions e.g 'Yesterday' instead of 'a day ago'
+    let dateDescription = describeISODate(date);
 
     return <CardWrapper>
-        
+
         <TopWrapper>
-            <BubbleWrap className={image?'absolute':''}>
+            <BubbleWrap className={image ? 'absolute' : ''}>
                 <Bubble>{topic.name}</Bubble>
                 {bill?.name && <Bubble>{bill.name}</Bubble>}
             </BubbleWrap>
-            { image && <img src={image} /> }
+            {image && <img src={image} />}
         </TopWrapper>
-        
+
         <div className="newsfeed-content">
             {children}
 
             <BottomWrapper>
                 <div className={"card-bottom-group"}>
-                    <ThumbIcons likes={likes} dislikes={dislikes} onLike={()=>setLikes(likes+1)} onDislike={()=>setDislikes(dislikes+1)} />
+                    <ThumbIcons likes={likes} dislikes={dislikes} onLike={() => setLikes(likes + 1)} onDislike={() => setDislikes(dislikes + 1)} />
                 </div>
                 <div className={"card-bottom-group"}>
+                    <div className="date-description">{dateDescription}</div>
                     <Ellipsis></Ellipsis>
                 </div>
             </BottomWrapper>
-            
+
         </div>
 
-        
-    </CardWrapper>
+
+    </CardWrapper >
 }
