@@ -2,21 +2,24 @@ import React from "react";
 // import styled from "styled-components";
 // import { ImageButton } from "components";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './Homepage.css';
+import "./Homepage.css";
 
 export default function Homepage(props: any) {
   return (
     <div>
-        <img src="http://stump.zackrose.net/images/stump_logo.png" />
-        <h2>Your organic, local source for democracy.</h2>
-      
+      <img src="http://stump.zackrose.net/images/stump_logo.png" />
+      <h2>Your organic, local source for democracy.</h2>
 
       <div className="container">
-        <button className="vote">My Voting Ballot</button>
+        <button className="vote"
+        // onClick={onClick}
+        >
+          My Voting<br/>
+          Ballot
+        </button>
         <button className="issues">Browse Issues</button>
       </div>
-        <button className="news">News & Activities</button>
-
+      <button className="news">News & Activities</button>
     </div>
   );
 }
