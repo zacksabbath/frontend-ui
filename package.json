@@ -18,7 +18,9 @@
     "@types/styled-components": "^5.0.1",
     "docz": "^2.3.0",
     "moment": "^2.24.0",
+    "husky": "^4.2.3",
     "node-sass": "^4.13.1",
+    "pretty-quick": "^2.0.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2",
@@ -53,5 +55,10 @@
   },
   "devDependencies": {
     "prettier": "1.19.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }
