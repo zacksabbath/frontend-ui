@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 const EllipsisWrapper = styled.div`    
     width: 95px;
@@ -8,26 +10,16 @@ const EllipsisWrapper = styled.div`
     justify-content: flex-end;
     align-items: center;
     padding-right: 8px;
+    .ellipsis-dots {
+        color: ${ ({ theme }) => theme.cardTheme?.secondary};
+    }
 `;
 
-const EllipsisDot = styled.div`
-    background: ${({theme})=>theme.cardTheme?.secondary};
-    width: 12px;
-    height: 12px;
-    border-radius: 100px;
-    margin-left: 10px;
-`;
 
-// type EllipsisProps = {
-
-// };
-
-export default function Ellipsis(){
+export default function Ellipsis() {
     return (
         <EllipsisWrapper>
-            <EllipsisDot />
-            <EllipsisDot />
-            <EllipsisDot />
+            <FontAwesomeIcon icon="ellipsis-h" size="2x" className="ellipsis-dots" />
         </EllipsisWrapper>
     )
 }
