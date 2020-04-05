@@ -55,16 +55,19 @@ export default function AccordionListFeed() {
       issue: 'economy',
       subIssue: ['taxes', 'wall street'],
       open: false,
+      like: false,
     },
     {
       issue: 'education',
       subIssue: '',
       open: false,
+      like: false,
     },
     {
       issue: 'environment',
       subIssue: 'Clean Air',
       open: false,
+      like: false,
     },
   ]);
 
