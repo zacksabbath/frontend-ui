@@ -3,6 +3,7 @@ import React from 'react';
 // import { ImageButton } from "components";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Homepage.css';
+import { Avatar } from 'components';
 
 // votePage = () => {
 //   this.props.history.push()
@@ -11,18 +12,31 @@ import './Homepage.css';
 export default function Homepage(props: any) {
   return (
     <div>
-      <img src="http://stump.zackrose.net/images/stump_logo.png" />
-      <h2>Your organic, local source for democracy.</h2>
+      <div className="avatar-corner">
+        <Avatar image="http://stump.zackrose.net/images/avatar1.png" />
+      </div>
+      <div className="logo">
+        <img src="http://stump.zackrose.net/images/stump_logo.png" />
+      </div>
+      <h2 style={{ marginBottom: 100 }}>
+        Your organic, local source for democracy.
+      </h2>
 
       <div className="container">
         <button className="vote">
-          My Voting
-          <br />
-          Ballot
+          <h2 className="btn-id">
+            My Voting
+            <br />
+            Ballot
+          </h2>
         </button>
-        <button className="issues">Browse Issues</button>
+        <button className="issues">
+          <h2 className="btn-id">Browse Issues</h2>
+        </button>
       </div>
-      <button className="news">News & Activities</button>
+      <button className="news">
+        <h2 className="btn-id">News & Activities</h2>
+      </button>
     </div>
   );
 }
