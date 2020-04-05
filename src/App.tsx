@@ -37,14 +37,14 @@ function App() {
               <Switch>
                 <Route path="/newsfeed">
                   <Link to="/" style={{ color: 'white' }}>
-                    <Homepage />
+                    Home
                   </Link>
                   <Newsfeed newsfeedItems={newsFeedItems} />
                 </Route>
 
                 <Route path="/" exact={true}>
                   <div>
-                    <h1>Put Homepage here</h1>
+                    <Homepage />
                     <Link to="/newsfeed" style={{ color: 'white' }}>
                       Newsfeed
                     </Link>
