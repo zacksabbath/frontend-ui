@@ -43,104 +43,110 @@ const darkGrey = '#333333';
 // secondary text: Date in bottom right
 
 const news = {
-    primary: purpleDark,
-    secondary: purple,
-    text: white,
-    secondaryText: purpleLightText,
+  primary: purpleDark,
+  secondary: purple,
+  text: white,
+  secondaryText: purpleLightText,
 };
 
 const question = {
-    primary: teal,
-    secondary: tealDark,
-    text: black,
-    secondaryText: tealDarkText,
+  primary: teal,
+  secondary: tealDark,
+  text: black,
+  secondaryText: tealDarkText,
 };
 
 const contribution = {
-    primary: aqua,
-    secondary: aquaDark,
-    text: black,
-    secondaryText: tealDarkText,
+  primary: aqua,
+  secondary: aquaDark,
+  text: black,
+  secondaryText: tealDarkText,
 };
 
 const vote = {
-    primary: white,
-    secondary: middleGrey,
-    text: black,
-    secondaryText: darkGrey,
+  primary: white,
+  secondary: middleGrey,
+  text: black,
+  secondaryText: darkGrey,
 };
 
 const history = {
-    primary: orange,
-    secondary: orangeDark,
-    text: black,
-    secondaryText: orangeDarkText,
+  primary: orange,
+  secondary: orangeDark,
+  text: black,
+  secondaryText: orangeDarkText,
 };
 
 const event = {
-    primary: violet,
-    secondary: violetDark,
-    text: white,
-    secondaryText: violetDarkText,
+  primary: violet,
+  secondary: violetDark,
+  text: white,
+  secondaryText: violetDarkText,
 };
 
 export const cardThemes = {
-    news,
-    question,
-    contribution,
-    vote,
-    history,
-    event,
+  news,
+  question,
+  contribution,
+  vote,
+  history,
+  event,
 };
 
-export type cardTypes = 'news' | 'question' | 'contribution' | 'vote' | 'history' | 'event';
+export type cardTypes =
+  | 'news'
+  | 'question'
+  | 'contribution'
+  | 'vote'
+  | 'history'
+  | 'event';
 
-export const getCardTheme = (key:cardTypes) => cardThemes[key];
+export const getCardTheme = (key: cardTypes) => cardThemes[key];
 
 export const colors = {
-    //greyscale
-    white,
-    black,
-    middleGrey,
-    darkGrey,
+  //greyscale
+  white,
+  black,
+  middleGrey,
+  darkGrey,
 
-    //primary
-    purple,
-    purpleDark,
-    purpleDarker,
-    purpleDarkest,
-    pink,
-    yellow,
-    yellowDark,
+  //primary
+  purple,
+  purpleDark,
+  purpleDarker,
+  purpleDarkest,
+  pink,
+  yellow,
+  yellowDark,
 
-    //secondary
-    teal,
-    tealDark,
-    orange,
-    orangeDark,
-    aqua,
-    aquaDark,
-    violet,
-    violetDark,
-    olive,
-    oliveDark,
+  //secondary
+  teal,
+  tealDark,
+  orange,
+  orangeDark,
+  aqua,
+  aquaDark,
+  violet,
+  violetDark,
+  olive,
+  oliveDark,
 
-    //primary text
-    purpleLightText,
-    purpleDarkText,
-    yellowDarkText,
-    
-    //secondary text
-    tealDarkText,
-    orangeDarkText,
-    aquaDarkText,
-    violetDarkText,
-    oliveDarkText,
+  //primary text
+  purpleLightText,
+  purpleDarkText,
+  yellowDarkText,
+
+  //secondary text
+  tealDarkText,
+  orangeDarkText,
+  aquaDarkText,
+  violetDarkText,
+  oliveDarkText,
 };
 
 export default {
-    main: {
-        colors,
-        cardThemes,
-    }  
-}
+  main: {
+    colors,
+    cardThemes,
+  },
+};
