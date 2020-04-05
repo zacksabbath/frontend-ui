@@ -47,7 +47,7 @@ const Main = styled.div`
     top: 50%;
     right: 0px;
     transform: translateY(-50%);
-    width: 10px;
+    width: 0px;
     height: 30px;
 
     background-position: center;

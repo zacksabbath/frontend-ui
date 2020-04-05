@@ -8,7 +8,6 @@ const Main = styled.div`
   .accordions .accordion .accordion-issue {
     position: relative;
     font-size: 20px;
-    padding-right: 80px;
 
     transition: all 0.4s ease;
   }
@@ -20,6 +19,7 @@ const Main = styled.div`
     right: 0px;
     transform: translateY(-50%);
     height: 30px;
+    width: 0px;
 
     background-position: center;
     background-size: contain;
