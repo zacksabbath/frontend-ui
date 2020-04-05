@@ -19,7 +19,6 @@ const Main = styled.div`
     top: 50%;
     right: 0px;
     transform: translateY(-50%);
-    width: 30px;
     height: 30px;
 
     background-position: center;
@@ -54,18 +53,18 @@ export default function AccordionListFeed() {
   const [accordions, setAccordion] = useState([
     {
       issue: 'economy',
-      subIssue: 'taxes',
-      open: true,
+      subIssue: ['taxes', 'wall street'],
+      open: false,
     },
     {
       issue: 'education',
-      subIssue: 'College',
-      open: true,
+      subIssue: '',
+      open: false,
     },
     {
       issue: 'environment',
       subIssue: 'Clean Air',
-      open: true,
+      open: false,
     },
   ]);
 

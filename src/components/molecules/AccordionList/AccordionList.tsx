@@ -3,26 +3,22 @@ import styled from 'styled-components';
 
 import { AccordionCount, AccordionSubList, Icon } from 'components';
 
-const accordionProps = ['economy', 'educaiton', 'environment'];
-
-const Main = styled.ul`
+const Main = styled.div`
   display: flex;
   flex-direction: row;
   margin: 0;
   font: GalanoGrotesque;
 
   button {
-    width: 100%;
+    width: 720px;
     flex-direction: row;
     font-size: 15px;
     font-family: GalanoGrotesque-Regular;
     line-height: 22px;
     border-radius: 1px;
-    padding: 0px 20px;
     height: 50px;
     display: block;
     position: relative;
-    width: 100%;
     text-align: left;
     background-color: ${({ theme }) => theme.main.colors.purple};
     color: ${({ theme }) => theme.main.colors.white};
@@ -34,10 +30,13 @@ const Main = styled.ul`
     float: right;
   }
 
+  .accordionCount {
+    float: right;
+  }
+
   .accordions .accordion .accordion-issue {
     position: relative;
     font-size: 20px;
-    padding-right: 80px;
 
     transition: all 0.4s ease;
   }
@@ -48,7 +47,7 @@ const Main = styled.ul`
     top: 50%;
     right: 0px;
     transform: translateY(-50%);
-    width: 30px;
+    width: 10px;
     height: 30px;
 
     background-position: center;
