@@ -32,6 +32,9 @@ img {
   margin: 20px;
   opacity: 0.5;
 }
+.vote:hover {
+  opacity: 1;
+}
 
 .issues {
   background-image: url('http://stump.zackrose.net/images/issues.png');
@@ -46,6 +49,9 @@ img {
   color: white;
   opacity: 0.5;
 }
+.issues:hover {
+  opacity: 1;
+}
 
 .news {
   background-image: url('http://stump.zackrose.net/images/news.png');
@@ -59,4 +65,7 @@ img {
   font-weight: bold;
   color: white;
   opacity: 0.5;
+}
+.news:hover {
+  opacity: 1;
 }
