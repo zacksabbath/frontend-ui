@@ -4,7 +4,10 @@ import React from 'react';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Homepage.css';
 
-// jknkjnvckjbv
+// votePage = () => {
+//   this.props.history.push()
+// }
+
 export default function Homepage(props: any) {
   return (
     <div>
@@ -12,10 +15,7 @@ export default function Homepage(props: any) {
       <h2>Your organic, local source for democracy.</h2>
 
       <div className="container">
-        <button
-          className="vote"
-          // onClick={onClick}
-        >
+        <button className="vote">
           My Voting
           <br />
           Ballot

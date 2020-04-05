@@ -5,12 +5,8 @@ import { ThemeProvider } from 'styled-components';
 
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-<<<<<<< HEAD
-import {Newsfeed} from 'components';
-import {Homepage} from 'components';
-=======
 import { Newsfeed } from 'components';
->>>>>>> origin
+import { Homepage } from 'components';
 
 function App() {
   const [newsFeedItems, setNewsFeedItems] = useState();
@@ -36,37 +32,12 @@ function App() {
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <Router>
-<<<<<<< HEAD
-        <ThemeProvider theme={theme}>
-          <div style={{width:"90%"}}>
-            <Switch>
-
-              <Route path ="/newsfeed">
-                <Link to="/" style={{color:'white'}}>Home</Link>
-                <Newsfeed newsfeedItems = {newsFeedItems} />
-              </Route>
-
-              <Route path="/" exact={true}>
-                <div>
-                  <Homepage />
-                  
-                  {/* <Link to="/newsfeed" style={{color:'white'}}>Newsfeed</Link> */}
-                </div>
-              </Route>
-
-
-
-            </Switch>
-            
-          </div>
-        </ThemeProvider>
-=======
           <ThemeProvider theme={theme}>
             <div style={{ width: '90%' }}>
               <Switch>
                 <Route path="/newsfeed">
                   <Link to="/" style={{ color: 'white' }}>
-                    Home
+                    <Homepage />
                   </Link>
                   <Newsfeed newsfeedItems={newsFeedItems} />
                 </Route>
@@ -82,7 +53,6 @@ function App() {
               </Switch>
             </div>
           </ThemeProvider>
->>>>>>> origin
         </Router>
       </header>
     </div>
