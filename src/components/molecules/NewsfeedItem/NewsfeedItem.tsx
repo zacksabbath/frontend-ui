@@ -1,6 +1,7 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { ThumbIcons, Bubble, Ellipsis } from 'components';
+import { ThumbIcons, Bubble } from 'components';
 
 import { describeISODate } from 'util/dates';
 import { Entity } from 'global/types';
@@ -77,6 +78,20 @@ const BubbleWrap = styled.div`
 
 `;
 
+const EllipsesDropDownMenu = styled.div`    
+    width: 95px;
+    height: 52px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 8px;
+    .ellipsis-dots {
+        color: ${ ({ theme }) => theme.cardTheme?.secondary};
+    }
+`;
+
+
+
 export default function NewsfeedItem(props: NewsfeedItemProps) {
     const [likes, setLikes] = useState(Math.floor((Math.random() * 20) + 1));
     const [dislikes, setDislikes] = useState(Math.floor((Math.random() * 20) + 1));
@@ -104,7 +119,9 @@ export default function NewsfeedItem(props: NewsfeedItemProps) {
                 </div>
                 <div className={"card-bottom-group"}>
                     <div className="date-description">{dateDescription}</div>
-                    <Ellipsis></Ellipsis>
+                    <EllipsesDropDownMenu>
+                        <FontAwesomeIcon icon="ellipsis-h" size="2x" className="ellipsis-dots" />
+                    </EllipsesDropDownMenu>
                 </div>
             </BottomWrapper>
 
