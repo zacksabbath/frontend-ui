@@ -1,28 +1,24 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.scss';
 import theme from 'global/theme';
-import {ThemeProvider} from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 
-import AccordionList from './components/molecules/AccordionList/AccordionList';
+import AccordionListFeed from './components/pages/Accordion/Accordion';
 
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from 'react-router-dom';
-
-import {Newsfeed} from 'components';
+import { Newsfeed } from 'components';
 
 function App() {
   const [newsFeedItems, setNewsFeedItems] = useState();
 
   async function getNewsfeed() {
-    let response = await fetch(`http://my-json-server.typicode.com/stump-vote/mock-fe-api/newsFeed`);
+    let response = await fetch(
+      `http://my-json-server.typicode.com/stump-vote/mock-fe-api/newsFeed`
+    );
     let data = await response.json();
     setNewsFeedItems(data);
-};
+  }
 
   useEffect(() => {
     getNewsfeed();
@@ -33,44 +29,41 @@ function App() {
   }
 
   return (
-    
     <div className="App">
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <Router>
-        <ThemeProvider theme={theme}>
-          <div style={{width:"90%"}}>
-            <Switch>
+          <ThemeProvider theme={theme}>
+            <div style={{ width: '90%' }}>
+              <Switch>
+                <Route path="/newsfeed">
+                  <Link to="/" style={{ color: 'white' }}>
+                    Home
+                  </Link>
+                  <Newsfeed newsfeedItems={newsFeedItems} />
+                </Route>
 
-              <Route path ="/newsfeed">
-                <Link to="/" style={{color:'white'}}>Home</Link>
-                <Newsfeed newsfeedItems = {newsFeedItems} />
-              </Route>
+                <Route path="/AccordionListFeed">
+                  <Link to="/AccordionListFeed" style={{ color: 'white' }}>
+                    Local Issues
+                  </Link>
+                  <AccordionListFeed />
+                </Route>
 
-              <Route path ="/AccordionList">
-                <Link to="/AccordionList" style={{color:'white'}}>Local Issues</Link>
-                <AccordionList />
-              </Route>
-
-              <Route path="/" exact={true}>
-                <div>
-                  <h1>Put Homepage here</h1>
-                  <Link to="/newsfeed" style={{color:'white'}}>Newsfeed</Link>
-                </div>
-              </Route>
-
-
-
-            </Switch>
-            
-          </div>
-        </ThemeProvider>
+                <Route path="/" exact={true}>
+                  <div>
+                    <h1>Put Homepage here</h1>
+                    <Link to="/newsfeed" style={{ color: 'white' }}>
+                      Newsfeed
+                    </Link>
+                  </div>
+                </Route>
+              </Switch>
+            </div>
+          </ThemeProvider>
         </Router>
-
       </header>
-
     </div>
-
   );
 }
 

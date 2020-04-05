@@ -1,64 +1,102 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import { AccordionCount, AccordionSubList, Icon } from 'components';
+
+const accordionProps = ['economy', 'educaiton', 'environment'];
+
 const Main = styled.ul`
-    display: flex;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  font: GalanoGrotesque;
+
+  button {
+    width: 100%;
     flex-direction: row;
+    font-size: 15px;
+    font-family: GalanoGrotesque-Regular;
+    line-height: 22px;
+    border-radius: 1px;
+    padding: 0px 20px;
+    height: 50px;
+    display: block;
+    position: relative;
+    width: 100%;
+    text-align: left;
+    background-color: ${({ theme }) => theme.main.colors.purple};
+    color: ${({ theme }) => theme.main.colors.white};
+    border-color: ${({ theme }) => theme.main.colors.purple};
+  }
 
-    .container{
-        width: 100%;
-        margin: 0px;
-        
-    }
+  div {
+    margin: 2px;
+    float: right;
+  }
 
-    .localIssues{
-        border-radius: 1px;
-        padding: 0px 20px;
-        height: 50px;
-        display: block;
-        background-color: ${({theme})=> theme.cardTheme?.primary};
-        position: relative;
-    }
+  .accordions .accordion .accordion-issue {
+    position: relative;
+    font-size: 20px;
+    padding-right: 80px;
 
-    button.localIssues{
-        width: 100%;
-        text-align: left;
-        background-color: ${({theme})=> theme.cardTheme?.primary};
+    transition: all 0.4s ease;
+  }
 
-    }
+  .accordions .accordion .accordion-issue::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
 
-    button.localIssues:hover{
-        box-shadow: 0px 2px 1px white inset, 
-        0px -2px 20px white, 
-        0px 2px 5px rgba(0, 0, 0, 0.1), 
-        0px 8px 10px rgba(0, 0, 0, 0.1);
-    }
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    transition: all 0.4s ease-out;
+  }
+
+  .accordions .accordion .accordion-subIssue {
+    opacity: 0;
+    max-height: 0;
+    overflow-y: hidden;
+    transition: all 0.4s ease-out;
+  }
+
+  .accordions .accordion.open .accordion-issue {
+    margin-bottom: 15px;
+  }
+
+  .accordions .accordion.open .accordion-issue::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .accordions .accordion.open .accordion-subIssue {
+    max-height: 1000px;
+    opacity: 1;
+  }
 `;
 
-
-function AccordionList(props:any){
-
-    return (
-        <Main>
-            <ul className='container'>
-                <li className='localIssues'>
-                    <button className='localIssues'>
-                        Economy
-                    </button>
-                </li>
-                <li className='localIssues'>
-                    <button className='localIssues'>
-                        Economy
-                    </button>
-                </li>
-                <li className='localIssues'>
-                    <button className='localIssues'>
-                        Economy
-                    </button>
-                </li>
-            </ul>
-        </Main>
-    )
+export default function AccordionList({
+  accordion,
+  index,
+  toggleAccordion,
+}: any) {
+  return (
+    <Main>
+      <div
+        className={'accordion' + (accordion.open ? 'open' : '')}
+        key={index}
+        onClick={() => toggleAccordion(index)}
+      >
+        <button className="accordion-issue">
+          {accordion.issue}
+          <AccordionCount />
+        </button>
+        <button className="accordion-subIssue">{accordion.subIssue}</button>
+      </div>
+    </Main>
+  );
 }
-
-export default AccordionList;
