@@ -6,10 +6,10 @@ import QuestionAnswerCard from './QuestionAnswerCard';
 import VoteCard from './VoteCard';
 
 export {
-    FinanceCard,
-    EventCard,
-    HistoryCard,
-    NewsCard,
-    QuestionAnswerCard,
-    VoteCard,
-}
+  FinanceCard,
+  EventCard,
+  HistoryCard,
+  NewsCard,
+  QuestionAnswerCard,
+  VoteCard,
+};

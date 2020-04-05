@@ -1,3 +1,3 @@
-export {default as Newsfeed} from './Newsfeed/Newsfeed';
+export { default as Newsfeed } from './Newsfeed/Newsfeed';
 
-export {default as Homepage} from './Homepage/Homepage';
+export { default as Homepage } from './Homepage/Homepage';
