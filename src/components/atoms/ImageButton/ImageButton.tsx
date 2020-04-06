@@ -6,14 +6,17 @@ const ImageButtonWrapper = styled.div``;
 type ImageButtonProps = {
   image: string;
   text: string;
+  onClick: any;
 };
 
 export default function ImageButton(props: ImageButtonProps) {
-  const { image, text } = props;
+  const { image, text, onClick } = props;
   return (
     <ImageButtonWrapper>
-      <img src={image} />
-      <p className="text"> {text} </p>
+      <button onClick={onClick}>
+        <img src={image} />
+        <p className="text"> {text} </p>
+      </button>
     </ImageButtonWrapper>
   );
 }
