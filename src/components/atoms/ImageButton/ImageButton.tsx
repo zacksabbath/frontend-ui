@@ -13,7 +13,7 @@ export default function ImageButton(props: ImageButtonProps) {
   return (
     <ImageButtonWrapper>
       <img src={image} />
-      <p className="text">{text}</p>
+      <p className="text">{text} </p>
     </ImageButtonWrapper>
   );
 }
