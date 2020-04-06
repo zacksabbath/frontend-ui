@@ -16,6 +16,10 @@ const HomeWrapper = styled.div`
       width: 60%;
     }
   }
+  .top-two {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 export default function Homepage(props: any) {
@@ -31,6 +35,10 @@ export default function Homepage(props: any) {
         <ImageButton
           image="http://stump.zackrose.net/images/voting_ballot.png"
           text="My Voting Ballot"
+        />
+        <ImageButton
+          image="http://stump.zackrose.net/images/issues.png"
+          text="Brose Issues"
         />
       </div>
     </HomeWrapper>
