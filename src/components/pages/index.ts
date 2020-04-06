@@ -1,3 +1,3 @@
 export { default as Newsfeed } from './Newsfeed/Newsfeed';
-
-export { default as Homepage } from './Homepage/Homepage';
+// change before commit
+export { default as Homepage } from './Homepage/HomepageTest';

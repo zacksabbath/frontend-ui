@@ -1,22 +1,7 @@
-import styled from "styled-components";
-import React from "react";
+import styled from 'styled-components';
+import React from 'react';
 
-const ImageButtonWrapper = styled.button`
-  position: relative;
-  text-align: center;
-  img {
-    height: 100%;
-    width: 100%;
-    //object-fit: contain;
-    //position: absolute;
-  }
-  :hover {
-    background-color: orange;
-  }
-  text {
-    position: absolute;
-  }
-`;
+const ImageButtonWrapper = styled.button``;
 
 type ImageButtonProps = {
   image: string;
