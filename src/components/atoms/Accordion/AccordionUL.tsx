@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Main = styled.ul`
+const Main = styled.button`
+  background-color: ${({ theme }) => theme.main.colors.purple};
+  color: ${({ theme }) => theme.main.colors.white};
+  border-color: ${({ theme }) => theme.main.colors.purple};
   display: flex;
   flex-direction: row;
   margin: 0;
@@ -15,15 +18,22 @@ const Main = styled.ul`
   display: block;
   position: relative;
   text-align: left;
-  background-color: ${({ theme }) => theme.main.colors.purple};
-  color: ${({ theme }) => theme.main.colors.white};
-  border-color: ${({ theme }) => theme.main.colors.purple};
 `;
 
-export default function AccordionUL() {
+export default function AccordionUL({
+  accordionFill,
+  index,
+}: {
+  accordionFill: any;
+  index: any;
+}) {
   return (
     <Main>
-      <ul className="accoridonUl"></ul>
+      <ul className="accordionUl">
+        <li className="accordionLI">
+          <button>{accordionFill.issue}</button>
+        </li>
+      </ul>
     </Main>
   );
 }

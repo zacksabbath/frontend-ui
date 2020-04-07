@@ -1,14 +1,31 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react';
 
-import { Accordion } from 'components';
-
-const Main = styled.div``;
+import { AccordionUL, Bubble } from 'components';
 
 export default function LocalIssues() {
+  const [accordionFill, setAccordion] = useState([
+    {
+      issue: 'Education',
+      subIssues: {},
+      open: false,
+    },
+    {
+      issue: 'Environment',
+      subIssues: {},
+      open: false,
+    },
+    {
+      issue: 'Education',
+      subIssues: {},
+      open: false,
+    },
+  ]);
+
   return (
-    <Main>
-      <Accordion />
-    </Main>
+    <>
+      {accordionFill.map((accordionFill: any, i: any) => (
+        <AccordionUL accordionFill={accordionFill} index={i} />
+      ))}
+    </>
   );
 }

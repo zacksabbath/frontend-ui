@@ -55,6 +55,7 @@ function App() {
                     <Link to="/LocalIssues" style={{ color: 'white' }}>
                       LocalIssues
                     </Link>
+                    <LocalIssues />
                   </div>
                 </Route>
               </Switch>
