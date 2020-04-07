@@ -1,22 +1,26 @@
 import styled from 'styled-components';
 import React from 'react';
 
-const ImageButtonWrapper = styled.div``;
+const ImageButtonWrapper = styled.button`
+  border-radius: 80px;
+  height: 100%;
+  width: 100%;
+  font-weight: bold;
+  font-size: 30px;
+`;
 
 type ImageButtonProps = {
   image: string;
   text: string;
-  onClick: any;
+  // onClick: any;
 };
 
 export default function ImageButton(props: ImageButtonProps) {
-  const { image, text, onClick } = props;
+  const { image, text } = props;
   return (
     <ImageButtonWrapper>
-      <button onClick={onClick}>
-        <img src={image} />
-        <p className="text"> {text} </p>
-      </button>
+      <img src={image} />
+      <p className="text"> {text} </p>
     </ImageButtonWrapper>
   );
 }

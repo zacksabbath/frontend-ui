@@ -45,9 +45,9 @@ function App() {
                 <Route path="/" exact={true}>
                   <div>
                     <Homepage />
-                    <Link to="/newsfeed" style={{ color: 'white' }}>
+                    {/* <Link to="/newsfeed" style={{ color: 'white' }}>
                       Newsfeed
-                    </Link>
+                    </Link> */}
                   </div>
                 </Route>
               </Switch>
