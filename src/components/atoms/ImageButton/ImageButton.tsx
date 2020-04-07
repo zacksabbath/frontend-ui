@@ -3,11 +3,18 @@ import React from 'react';
 
 const ImageButtonWrapper = styled.button`
   border-radius: 80px;
-  height: auto;
-  width: 100%;
-  background-color: green;
+  width: 50%;
+  padding-bottom: 50%;
+  position: relative;
+  background-color: #2980b9;
+  background-image: ;
   font-weight: bold;
   font-size: 30px;
+  opacity: 0.5;
+  margin: 100px;
+  :hover {
+    opacity: 1;
+  }
 `;
 
 type ImageButtonProps = {
