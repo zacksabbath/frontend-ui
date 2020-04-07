@@ -11,8 +11,10 @@ const ImageButtonWrapper = styled.button`
   opacity: 0.5;
   margin: 10px;
   border-width: 0;
+
   :hover {
     opacity: 1;
+    cursor: pointer;
   }
   .text {
     text-align: center;
