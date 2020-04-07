@@ -10,6 +10,7 @@ const ImageButtonWrapper = styled.button`
   background-image: ;
   opacity: 0.5;
   margin: 10px;
+  border-width: 0;
   :hover {
     opacity: 1;
   }
