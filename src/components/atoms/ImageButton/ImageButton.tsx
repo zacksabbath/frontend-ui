@@ -3,25 +3,25 @@ import React from 'react';
 
 const ImageButtonWrapper = styled.button`
   border-radius: 80px;
-  width: 50%;
+  width: 100%;
   padding-bottom: 50%;
   position: relative;
   background-color: #2980b9;
   background-image: ;
   opacity: 0.5;
-  margin: 100px;
+  margin: 10px;
   :hover {
     opacity: 1;
   }
   .text {
     text-align: center;
     position: absolute;
-    top: 45%;
+    top: 40 %;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 40px;
   }
 `;
 
