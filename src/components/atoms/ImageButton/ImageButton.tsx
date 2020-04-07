@@ -8,12 +8,20 @@ const ImageButtonWrapper = styled.button`
   position: relative;
   background-color: #2980b9;
   background-image: ;
-  font-weight: bold;
-  font-size: 30px;
   opacity: 0.5;
   margin: 100px;
   :hover {
     opacity: 1;
+  }
+  .text {
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    font-weight: bold;
+    font-size: 30px;
   }
 `;
 
