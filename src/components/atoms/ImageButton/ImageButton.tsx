@@ -3,8 +3,9 @@ import React from 'react';
 
 const ImageButtonWrapper = styled.button`
   border-radius: 80px;
-  height: 100%;
+  height: auto;
   width: 100%;
+  background-color: green;
   font-weight: bold;
   font-size: 30px;
 `;
@@ -12,7 +13,7 @@ const ImageButtonWrapper = styled.button`
 type ImageButtonProps = {
   image: string;
   text: string;
-  // onClick: any;
+  onClick: any;
 };
 
 export default function ImageButton(props: ImageButtonProps) {
