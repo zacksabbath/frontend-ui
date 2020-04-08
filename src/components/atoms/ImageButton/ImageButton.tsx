@@ -6,20 +6,25 @@ type ImageButtonWrapperProps = {
 };
 
 const ImageButtonWrapper = styled.button<ImageButtonWrapperProps>`
-  border-radius: 80px;
+  border-radius: 170px;
   width: 100%;
   padding-bottom: 50%;
   position: relative;
   background-color: #2980b9;
-  background-image: ${props => props.backgroundImage};
+  background-image: URL(${props => props.backgroundImage});
+  background-repeat: no-repeat;
+  background-size: cover;
   opacity: 0.5;
   margin: 10px;
   border-width: 0;
-
   :hover {
     opacity: 1;
     cursor: pointer;
   }
+  :focus {
+    outline: none;
+  }
+
   .text {
     text-align: center;
     position: absolute;
