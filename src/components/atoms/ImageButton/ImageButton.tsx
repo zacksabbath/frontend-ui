@@ -15,7 +15,7 @@ const ImageButtonWrapper = styled.button<ImageButtonWrapperProps>`
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.5;
-  margin: 10px;
+  margin-bottom: 50px;
   border-width: 0;
   :hover {
     opacity: 1;
@@ -26,6 +26,7 @@ const ImageButtonWrapper = styled.button<ImageButtonWrapperProps>`
   }
 
   .text {
+    color: white;
     text-align: center;
     position: absolute;
     top: 40%;
@@ -33,7 +34,7 @@ const ImageButtonWrapper = styled.button<ImageButtonWrapperProps>`
     transform: translate(-50%, -50%);
     width: 100%;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 50px;
   }
 `;
 
