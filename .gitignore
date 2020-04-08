@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 .docz
+
+# Sublime
+*.sublime-workspace

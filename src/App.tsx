@@ -12,7 +12,7 @@ function App() {
 
   async function getNewsfeed() {
     let response = await fetch(
-      `http://my-json-server.typicode.com/stump-vote/mock-fe-api/newsFeed`
+      `http://localhost:8000/api/v0/frontend/`
     );
     let data = await response.json();
     setNewsFeedItems(data);
