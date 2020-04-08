@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 import React from 'react';
 
-const ImageButtonWrapper = styled.button`
+type ImageButtonWrapperProps = {
+  backgroundImage: string;
+};
+
+const ImageButtonWrapper = styled.button<ImageButtonWrapperProps>`
   border-radius: 80px;
   width: 100%;
   padding-bottom: 50%;
   position: relative;
   background-color: #2980b9;
-  background-image: ;
+  background-image: ${props => props.backgroundImage};
   opacity: 0.5;
   margin: 10px;
   border-width: 0;
@@ -29,16 +33,15 @@ const ImageButtonWrapper = styled.button`
 `;
 
 type ImageButtonProps = {
-  image: string;
+  imageSrc: string;
   text: string;
   onClick: any;
 };
 
 export default function ImageButton(props: ImageButtonProps) {
-  const { image, text } = props;
+  const { imageSrc, text } = props;
   return (
-    <ImageButtonWrapper>
-      <img src={image} />
+    <ImageButtonWrapper backgroundImage={imageSrc}>
       <p className="text"> {text} </p>
     </ImageButtonWrapper>
   );

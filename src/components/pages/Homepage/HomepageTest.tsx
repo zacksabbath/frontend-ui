@@ -1,8 +1,17 @@
 import React from 'react';
-// import styled from 'styled-components';
-// import { Avatar } from 'components';
 import { ImageButton } from 'components';
+//import { useHistory } from 'react-router-dom';
+
+const voteBallot = () => {
+  console.log(' voted ');
+};
 
 export default function Homepage(props: any) {
-  return <ImageButton image="" text="My Voteing Ballot" onClick={''} />;
+  return (
+    <ImageButton
+      imageSrc="http://stump.zackrose.net/images/voting_ballot.png"
+      text="My Voteing Ballot"
+      onClick={voteBallot}
+    />
+  );
 }
