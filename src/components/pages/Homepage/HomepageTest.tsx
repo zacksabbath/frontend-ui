@@ -10,7 +10,7 @@ export default function Homepage(props: any) {
   return (
     <ImageButton
       imageSrc="http://stump.zackrose.net/images/voting_ballot.png"
-      text="My Voteing Ballot"
+      text="My Voting Ballot"
       onClick={voteBallot}
     />
   );
