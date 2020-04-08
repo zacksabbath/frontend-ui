@@ -45,10 +45,13 @@ type ImageButtonProps = {
 };
 
 export default function ImageButton(props: ImageButtonProps) {
-  const { imageSrc, text } = props;
+  const { imageSrc, text, onClick } = props;
   return (
     <ImageButtonWrapper backgroundImage={imageSrc}>
-      <p className="text"> {text} </p>
+      <p className="text" onClick={onClick}>
+        {' '}
+        {text}{' '}
+      </p>
     </ImageButtonWrapper>
   );
 }
