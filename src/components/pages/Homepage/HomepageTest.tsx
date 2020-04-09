@@ -1,6 +1,11 @@
 import React from 'react';
 import { ImageButton } from 'components';
+import styled from 'styled-components';
 //import { useHistory } from 'react-router-dom';
+
+const flexWrapper = styled.div`
+  display: flex;
+`;
 
 const voteBallot = () => {
   alert(' voted ');
