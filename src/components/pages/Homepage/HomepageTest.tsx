@@ -3,8 +3,9 @@ import { ImageButton } from 'components';
 import styled from 'styled-components';
 //import { useHistory } from 'react-router-dom';
 
-const flexWrapper = styled.div`
+const FlexWrapper = styled.div`
   display: flex;
+  justify-content: absolute;
 `;
 
 const voteBallot = () => {
@@ -21,7 +22,7 @@ const newsActivites = () => {
 
 export default function Homepage(props: any) {
   return (
-    <div>
+    <FlexWrapper>
       <ImageButton
         imageSrc="http://stump.zackrose.net/images/voting_ballot.png"
         text="My Voting Ballot"
@@ -39,6 +40,6 @@ export default function Homepage(props: any) {
         text="News & Activities"
         onClick={newsActivites}
       />
-    </div>
+    </FlexWrapper>
   );
 }
