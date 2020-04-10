@@ -5,7 +5,8 @@ import styled from 'styled-components';
 
 const FlexWrapper = styled.div`
   display: flex;
-  justify-content: absolute;
+  align-content: center;
+  justify-content: space-evenly;
 `;
 
 const voteBallot = () => {
@@ -22,24 +23,26 @@ const newsActivites = () => {
 
 export default function Homepage(props: any) {
   return (
-    <FlexWrapper>
-      <ImageButton
-        imageSrc="http://stump.zackrose.net/images/voting_ballot.png"
-        text="My Voting Ballot"
-        onClick={voteBallot}
-      />
+    <div>
+      <FlexWrapper>
+        <ImageButton
+          imageSrc="http://stump.zackrose.net/images/voting_ballot.png"
+          text="My Voting Ballot"
+          onClick={voteBallot}
+        />
 
-      <ImageButton
-        imageSrc="http://stump.zackrose.net/images/issues.png"
-        text="Browse Issues"
-        onClick={browseIssues}
-      />
+        <ImageButton
+          imageSrc="http://stump.zackrose.net/images/issues.png"
+          text="Browse Issues"
+          onClick={browseIssues}
+        />
+      </FlexWrapper>
 
       <ImageButton
         imageSrc="http://stump.zackrose.net/images/news.png"
         text="News & Activities"
         onClick={newsActivites}
       />
-    </FlexWrapper>
+    </div>
   );
 }
