@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const FlexWrapper = styled.div`
   .top-two {
     display: flex;
-    justify-content: space-around;
+    margin: 20px;
   }
 `;
 
