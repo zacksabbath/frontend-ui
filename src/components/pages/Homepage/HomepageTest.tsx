@@ -4,9 +4,10 @@ import styled from 'styled-components';
 //import { useHistory } from 'react-router-dom';
 
 const FlexWrapper = styled.div`
-  display: flex;
-  align-content: center;
-  justify-content: space-evenly;
+  .top-two {
+    display: flex;
+    justify-content: space-around;
+  }
 `;
 
 const voteBallot = () => {
@@ -23,8 +24,8 @@ const newsActivites = () => {
 
 export default function Homepage(props: any) {
   return (
-    <div>
-      <FlexWrapper>
+    <FlexWrapper>
+      <div className="top-two">
         <ImageButton
           imageSrc="http://stump.zackrose.net/images/voting_ballot.png"
           text="My Voting Ballot"
@@ -36,13 +37,13 @@ export default function Homepage(props: any) {
           text="Browse Issues"
           onClick={browseIssues}
         />
-      </FlexWrapper>
+      </div>
 
       <ImageButton
         imageSrc="http://stump.zackrose.net/images/news.png"
         text="News & Activities"
         onClick={newsActivites}
       />
-    </div>
+    </FlexWrapper>
   );
 }
