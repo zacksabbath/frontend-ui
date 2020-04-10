@@ -6,6 +6,7 @@ import { ThemeProvider } from 'styled-components';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import { Newsfeed } from 'components';
+import { Homepage } from 'components';
 
 function App() {
   const [newsFeedItems, setNewsFeedItems] = useState();
@@ -43,10 +44,10 @@ function App() {
 
                 <Route path="/" exact={true}>
                   <div>
-                    <h1>Put Homepage here</h1>
-                    <Link to="/newsfeed" style={{ color: 'white' }}>
+                    <Homepage />
+                    {/* <Link to="/newsfeed" style={{ color: 'white' }}>
                       Newsfeed
-                    </Link>
+                    </Link> */}
                   </div>
                 </Route>
               </Switch>

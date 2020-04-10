@@ -10,10 +10,11 @@ import {
   faThumbsDown,
   faEllipsisH,
   faCalendarAlt,
+  faStar,
 } from '@fortawesome/free-solid-svg-icons';
 // import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 
-library.add(faThumbsUp, faThumbsDown, faEllipsisH, faCalendarAlt);
+library.add(faThumbsUp, faThumbsDown, faEllipsisH, faCalendarAlt, faStar);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
