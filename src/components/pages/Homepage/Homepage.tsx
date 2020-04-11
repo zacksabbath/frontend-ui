@@ -3,12 +3,11 @@ import { ImageButton } from 'components';
 import styled from 'styled-components';
 //import { useHistory } from 'react-router-dom';
 
-const FlexWrapper = styled.div`
-  .top-two {
-    display: flex;
-    margin: 20px;
-  }
+const HomeWrapper = styled.div`
+  width: 100%;
 `;
+
+const FlexWrapper = styled.div``;
 
 const voteBallot = () => {
   alert(' voted ');
@@ -24,8 +23,8 @@ const newsActivites = () => {
 
 export default function Homepage(props: any) {
   return (
-    <FlexWrapper>
-      <div className="top-two">
+    <HomeWrapper>
+      <>
         <ImageButton
           imageSrc="http://stump.zackrose.net/images/voting_ballot.png"
           text="My Voting Ballot"
@@ -37,13 +36,13 @@ export default function Homepage(props: any) {
           text="Browse Issues"
           onClick={browseIssues}
         />
-      </div>
+      </>
 
       <ImageButton
         imageSrc="http://stump.zackrose.net/images/news.png"
         text="News & Activities"
         onClick={newsActivites}
       />
-    </FlexWrapper>
+    </HomeWrapper>
   );
 }
