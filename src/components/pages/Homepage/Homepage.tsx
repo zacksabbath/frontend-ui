@@ -8,9 +8,10 @@ const HomeWrapper = styled.section`
   display: flex;
   flex-direction: column;
   img {
+    position: relative;
     display: flex;
     width: 50%;
-    justify-content: center;
+    img: center;
   }
 `;
 
