@@ -7,12 +7,17 @@ const HomeWrapper = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
+  img {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+  }
 `;
 
 const FlexWrapper = styled.div`
   display: flex;
-  width: 100%;
   flex-direction: row;
+  justify-content: space-between;
 `;
 
 const voteBallot = () => {
@@ -30,6 +35,7 @@ const newsActivites = () => {
 export default function Homepage(props: any) {
   return (
     <HomeWrapper>
+      <img src="http://stump.zackrose.net/images/stump_logo.png" />
       <FlexWrapper>
         <ImageButton
           imageSrc="http://stump.zackrose.net/images/voting_ballot.png"
