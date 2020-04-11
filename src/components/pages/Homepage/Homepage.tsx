@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const HomeWrapper = styled.section`
   width: 100%;
   display: flex;
-  margin: auto;
+  flex-direction: column;
 `;
 
 const FlexWrapper = styled.div`
