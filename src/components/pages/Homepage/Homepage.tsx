@@ -8,14 +8,15 @@ const HomeWrapper = styled.section`
   display: flex;
   flex-direction: column;
   img {
-    position: relative;
     display: flex;
     width: 50%;
-    img: center;
+    margin: 50px;
+    justify-content: center;
   }
 `;
 
 const FlexWrapper = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

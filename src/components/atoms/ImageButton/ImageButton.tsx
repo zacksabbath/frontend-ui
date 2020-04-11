@@ -6,7 +6,7 @@ type ImageButtonWrapperProps = {
 };
 
 const ImageButtonWrapper = styled.button<ImageButtonWrapperProps>`
-  border-radius: 170px;
+  border-radius: 90px;
   width: 100%;
   padding-bottom: 50%;
   position: relative;
@@ -15,7 +15,7 @@ const ImageButtonWrapper = styled.button<ImageButtonWrapperProps>`
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.5;
-  margin-bottom: 50px;
+  margin: 20px;
   border-width: 0;
   :hover {
     opacity: 1;
