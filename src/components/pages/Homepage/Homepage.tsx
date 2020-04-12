@@ -4,6 +4,10 @@ import styled from 'styled-components';
 import { Avatar } from 'components';
 //import { useHistory } from 'react-router-dom';
 
+const HomeWrapper = styled.div`
+  margin: 20px;
+`;
+
 const FlexWrapper = styled.section`
   width: 100%;
   display: flex;
@@ -14,12 +18,6 @@ const FlexWrapper = styled.section`
     flex-direction: row;
     justify-content: space-between;
   }
-  // img {
-  //   // display: flex;
-  //   width: 50%;
-  //   margin: 50px;
-  //   justify-content: center;
-  // }
 `;
 
 const voteBallot = () => {
@@ -36,9 +34,12 @@ const newsActivites = () => {
 
 export default function Homepage(props: any) {
   return (
-    <div>
+    <HomeWrapper>
       <Avatar image="http://stump.zackrose.net/images/avatar_sm.png" />
-      <img src="http://stump.zackrose.net/images/stump_logo.png" />
+      <img
+        src="http://stump.zackrose.net/images/stump_logo.png"
+        className="logo"
+      />
       <FlexWrapper>
         <div className="top-two">
           <ImageButton
@@ -60,6 +61,6 @@ export default function Homepage(props: any) {
           onClick={newsActivites}
         />
       </FlexWrapper>
-    </div>
+    </HomeWrapper>
   );
 }
