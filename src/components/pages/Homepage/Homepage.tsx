@@ -5,7 +5,17 @@ import { Avatar } from 'components';
 //import { useHistory } from 'react-router-dom';
 
 const HomeWrapper = styled.div`
-  margin: 20px;
+  .userImg {
+    margin: 40px;
+    margin-right: 0px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .logo {
+    width: 50%;
+    margin: 50px;
+  }
 `;
 
 const FlexWrapper = styled.section`
@@ -35,7 +45,9 @@ const newsActivites = () => {
 export default function Homepage(props: any) {
   return (
     <HomeWrapper>
-      <Avatar image="http://stump.zackrose.net/images/avatar_sm.png" />
+      <div className="userImg">
+        <Avatar image="http://stump.zackrose.net/images/avatar_sm.png" />
+      </div>
       <img
         src="http://stump.zackrose.net/images/stump_logo.png"
         className="logo"

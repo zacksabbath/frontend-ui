@@ -6,8 +6,9 @@ type ImageButtonWrapperProps = {
 };
 
 const ImageButtonWrapper = styled.button<ImageButtonWrapperProps>`
-  border-radius: 90px;
+  border-radius: 115px;
   width: 100%;
+
   padding-bottom: 50%;
   position: relative;
   background-color: #2980b9;
@@ -34,7 +35,7 @@ const ImageButtonWrapper = styled.button<ImageButtonWrapperProps>`
     transform: translate(-50%, -50%);
     width: 100%;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 60px;
   }
 `;
 
