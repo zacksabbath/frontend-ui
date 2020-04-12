@@ -4,23 +4,22 @@ import styled from 'styled-components';
 import { Avatar } from 'components';
 //import { useHistory } from 'react-router-dom';
 
-const HomeWrapper = styled.section`
+const FlexWrapper = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
-  img {
-    // display: flex;
-    width: 50%;
-    margin: 50px;
-    justify-content: center;
+  .top-two {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
-`;
-
-const FlexWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  // img {
+  //   // display: flex;
+  //   width: 50%;
+  //   margin: 50px;
+  //   justify-content: center;
+  // }
 `;
 
 const voteBallot = () => {
@@ -37,28 +36,30 @@ const newsActivites = () => {
 
 export default function Homepage(props: any) {
   return (
-    <HomeWrapper>
+    <div>
       <Avatar image="http://stump.zackrose.net/images/avatar_sm.png" />
       <img src="http://stump.zackrose.net/images/stump_logo.png" />
       <FlexWrapper>
-        <ImageButton
-          imageSrc="http://stump.zackrose.net/images/voting_ballot.png"
-          text="My Voting Ballot"
-          onClick={voteBallot}
-        />
+        <div className="top-two">
+          <ImageButton
+            imageSrc="http://stump.zackrose.net/images/voting_ballot.png"
+            text="My Voting Ballot"
+            onClick={voteBallot}
+          />
+
+          <ImageButton
+            imageSrc="http://stump.zackrose.net/images/issues.png"
+            text="Browse Issues"
+            onClick={browseIssues}
+          />
+        </div>
 
         <ImageButton
-          imageSrc="http://stump.zackrose.net/images/issues.png"
-          text="Browse Issues"
-          onClick={browseIssues}
+          imageSrc="http://stump.zackrose.net/images/news.png"
+          text="News & Activities"
+          onClick={newsActivites}
         />
       </FlexWrapper>
-
-      <ImageButton
-        imageSrc="http://stump.zackrose.net/images/news.png"
-        text="News & Activities"
-        onClick={newsActivites}
-      />
-    </HomeWrapper>
+    </div>
   );
 }
