@@ -9,30 +9,65 @@ const Main = styled.button`
   flex-direction: row;
   margin: 0;
   width: 720px;
-  flex-direction: row;
   font-size: 15px;
-  font-family: GalanoGrotesque-Regular;
   line-height: 22px;
   border-radius: 1px;
   height: 50px;
-  display: block;
   position: relative;
   text-align: left;
+
+  ul {
+    list-style-type: none;
+  }
 `;
 
+//this is inplace of the API
+const issues = [
+  {
+    name: 'Economy',
+    subIssues: [],
+  },
+  {
+    name: 'Education',
+    subIssues: [],
+  },
+  {
+    name: 'Environment',
+    subIssues: [
+      {
+        name: 'Air Quality',
+      },
+      {
+        name: 'Flooding',
+      },
+      {
+        name: 'Fracking',
+      },
+    ],
+  },
+  {
+    name: 'Government',
+    subIssues: [],
+  },
+  {
+    name: 'Health',
+    subIssues: [],
+  },
+  {
+    name: 'Social',
+    subIssues: [],
+  },
+];
+
 export default function AccordionUL({
-  accordionFill,
-  index,
+  issues,
 }: {
-  accordionFill: any;
-  index: any;
+  issues: any; //find the exact type, "typescript array"
 }) {
   return (
     <Main>
       <ul className="accordionUl">
-        <li className="accordionLI">
-          <button>{accordionFill.issue}</button>
-        </li>
+        <li className="accordionLI">{issues.name}</li>
       </ul>
     </Main>
   );

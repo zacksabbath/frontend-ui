@@ -1,31 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { AccordionUL, Bubble } from 'components';
 
+import localIssuesAPI from './localIssuesAPI';
+
 export default function LocalIssues() {
-  const [accordionFill, setAccordion] = useState([
-    {
-      issue: 'Education',
-      subIssues: {},
-      open: false,
-    },
-    {
-      issue: 'Environment',
-      subIssues: {},
-      open: false,
-    },
-    {
-      issue: 'Education',
-      subIssues: {},
-      open: false,
-    },
-  ]);
+  const [localIssuesList, setLocalIssues] = useState();
+
+  async function issuesAPI() {
+    let response = await fetch(
+      'http://my-json-server.typicode.com/stump-vote/mock-fe-api/issueDetail'
+    );
+    const data = await response.json();
+    setLocalIssues(data);
+  }
+
+  useEffect(() => {
+    issuesAPI();
+  }, []);
+
+  if (!localIssuesList) {
+    return <div>Loading...</div>;
+  }
+
+  let response = localIssuesAPI;
 
   return (
     <>
-      {accordionFill.map((accordionFill: any, i: any) => (
-        <AccordionUL accordionFill={accordionFill} index={i} />
-      ))}
+      {response?.map(response => {
+        return <AccordionUL issues={response} />;
+      })}
     </>
   );
 }
