@@ -1,6 +1,7 @@
 import React from 'react';
 import { ImageButton } from 'components';
 import styled from 'styled-components';
+import { Avatar } from 'components';
 //import { useHistory } from 'react-router-dom';
 
 const HomeWrapper = styled.section`
@@ -8,7 +9,7 @@ const HomeWrapper = styled.section`
   display: flex;
   flex-direction: column;
   img {
-    display: flex;
+    // display: flex;
     width: 50%;
     margin: 50px;
     justify-content: center;
@@ -37,6 +38,7 @@ const newsActivites = () => {
 export default function Homepage(props: any) {
   return (
     <HomeWrapper>
+      <Avatar image="http://stump.zackrose.net/images/avatar_sm.png" />
       <img src="http://stump.zackrose.net/images/stump_logo.png" />
       <FlexWrapper>
         <ImageButton
