@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import './App.scss';
+import React from 'react';
 import theme from 'global/theme';
 import styled, { ThemeProvider } from 'styled-components';
 import GlobalStyle from './GlobalStyle';
@@ -19,24 +18,6 @@ const AppWrapper = styled.div`
 `;
 
 function App() {
-  const [newsFeedItems, setNewsFeedItems] = useState();
-
-  async function getNewsfeed() {
-    let response = await fetch(
-      `http://my-json-server.typicode.com/stump-vote/mock-fe-api/newsFeed`
-    );
-    let data = await response.json();
-    setNewsFeedItems(data);
-  }
-
-  useEffect(() => {
-    getNewsfeed();
-  }, []);
-
-  if (!newsFeedItems) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <ThemeProvider theme={theme}>
       <AppWrapper>
