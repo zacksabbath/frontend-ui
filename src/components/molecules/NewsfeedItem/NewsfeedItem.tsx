@@ -103,7 +103,7 @@ export default function NewsfeedItem(props: NewsfeedItemProps) {
           <Bubble>{topic.name}</Bubble>
           {bill?.name && <Bubble>{bill.name}</Bubble>}
         </BubbleWrap>
-        {image && <img src={image} />}
+        {image && <img src={image} alt="Background" />}
       </TopWrapper>
 
       <div className="newsfeed-content">
