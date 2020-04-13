@@ -5,12 +5,14 @@ type ImageButtonWrapperProps = {
   backgroundImage: string;
 };
 
-const ImageButtonWrapper = styled.button<ImageButtonWrapperProps>`
-  border-radius: 170px;
+const ImageButtonWrapper = styled.div<ImageButtonWrapperProps>`
+  border-radius: 50px;
   width: 100%;
   padding-bottom: 50%;
   position: relative;
   background-color: #2980b9;
+
+  /* Gonna want to factor this out into its own div for performance */
   background-image: URL(${props => props.backgroundImage});
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,18 +26,18 @@ const ImageButtonWrapper = styled.button<ImageButtonWrapperProps>`
   :focus {
     outline: none;
   }
+`;
 
-  .text {
-    color: white;
-    text-align: center;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    font-weight: bold;
-    font-size: 50px;
-  }
+const ImageText = styled.div`
+  color: white;
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  font-weight: bold;
+  font-size: 50px;
 `;
 
 type ImageButtonProps = {
@@ -47,11 +49,8 @@ type ImageButtonProps = {
 export default function ImageButton(props: ImageButtonProps) {
   const { imageSrc, text, onClick } = props;
   return (
-    <ImageButtonWrapper backgroundImage={imageSrc}>
-      <p className="text" onClick={onClick}>
-        {' '}
-        {text}{' '}
-      </p>
+    <ImageButtonWrapper backgroundImage={imageSrc} onClick={onClick}>
+      <ImageText>{text}</ImageText>
     </ImageButtonWrapper>
   );
 }
