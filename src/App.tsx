@@ -11,9 +11,7 @@ function App() {
   const [newsFeedItems, setNewsFeedItems] = useState();
 
   async function getNewsfeed() {
-    let response = await fetch(
-      `http://localhost:8000/api/v0/frontend/`
-    );
+    let response = await fetch(`/api/v0/demonewsitems/`);
     let data = await response.json();
     setNewsFeedItems(data);
   }
