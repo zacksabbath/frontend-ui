@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
@@ -10,11 +9,19 @@ import {
   faThumbsDown,
   faEllipsisH,
   faCalendarAlt,
+  faStar,
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
 // import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 
-library.add(faThumbsUp, faThumbsDown, faEllipsisH, faCalendarAlt, faUser);
+library.add(
+  faThumbsUp,
+  faThumbsDown,
+  faEllipsisH,
+  faCalendarAlt,
+  faStar,
+  faUser
+);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

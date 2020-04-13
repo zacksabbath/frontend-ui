@@ -1,0 +1,24 @@
+---
+name: ImageButton
+---
+
+import ImageButton from './ImageButton';
+import { Playground, Props } from 'docz';
+
+# ImageButton
+
+## Properties
+
+<Props of={ImageButton} />
+
+## Basic usage
+
+<Playground>
+  <ImageButton
+    imageSrc="http://stump.zackrose.net/images/voting_ballot.png"
+    text="My Voting Ballot"
+    onClick={() => {
+      alert(' voted ');
+    }}
+  />
+</Playground>
