@@ -20,7 +20,8 @@ export type NewsfeedItemProps = {
 
 const CardWrapper = styled.div`
   width: 100%;
-  font-family: GalanoGrotesque, Futura, 'Trebuchet MS', Arial, sans-serif;
+  font-family: 'Galano Grotesque Regular', Futura, 'Trebuchet MS', Arial,
+    sans-serif;
   background-color: ${({ theme }) => theme.cardTheme?.primary};
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
   border-radius: 8px;
@@ -103,7 +104,7 @@ export default function NewsfeedItem(props: NewsfeedItemProps) {
           <Bubble>{topic.name}</Bubble>
           {bill?.name && <Bubble>{bill.name}</Bubble>}
         </BubbleWrap>
-        {image && <img src={image} />}
+        {image && <img src={image} alt="Background" />}
       </TopWrapper>
 
       <div className="newsfeed-content">
