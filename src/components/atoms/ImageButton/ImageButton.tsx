@@ -5,7 +5,7 @@ type ImageButtonWrapperProps = {
   backgroundImage: string;
 };
 
-const ImageButtonWrapper = styled.button<ImageButtonWrapperProps>`
+const ImageButtonWrapper = styled.div<ImageButtonWrapperProps>`
   border-radius: 115px;
   width: 100%;
 
@@ -27,17 +27,18 @@ const ImageButtonWrapper = styled.button<ImageButtonWrapperProps>`
   :focus {
     outline: none;
   }
-  .text {
-    color: white;
-    text-align: center;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    font-weight: bold;
-    font-size: 60px;
-  }
+`;
+
+const ImageText = styled.div`
+  color: white;
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  font-weight: bold;
+  font-size: 60px;
 `;
 
 type ImageButtonProps = {

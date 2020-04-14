@@ -2,32 +2,31 @@ import React from 'react';
 import { ImageButton } from 'components';
 import styled from 'styled-components';
 import { Avatar } from 'components';
-//import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
-const HomeWrapper = styled.div`
-  .userImg {
-    margin: 40px;
-    margin-right: 0px;
-    display: flex;
-    justify-content: flex-end;
-  }
+const AvatarContainer = styled.div`
+  margin: 40px;
+  margin-right: 0px;
+  display: flex;
+  justify-content: flex-end;
+`;
 
-  .logo {
-    width: 60%;
-    margin: 40px;
-  }
+const LogoImg = styled.img`
+  width: 60%;
+  margin: 40px;
 `;
 
 const FlexWrapper = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
-  .top-two {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
+`;
+
+const TopRow = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 
 //Push to history once I have somewhere for them to go
@@ -39,24 +38,16 @@ const browseIssues = () => {
   alert(' Browse Issues ');
 };
 
-const newsActivites = () => {
-  alert(' News & Activities ');
-};
-//end
-
-export default function Homepage(props: any) {
+export default function Homepage() {
   const history = useHistory();
   return (
-    <HomeWrapper>
-      <div className="userImg">
+    <>
+      <AvatarContainer>
         <Avatar image="http://stump.zackrose.net/images/avatar_sm.png" />
-      </div>
-      <img
-        src="http://stump.zackrose.net/images/stump_logo.png"
-        className="logo"
-      />
+      </AvatarContainer>
+      <LogoImg src="http://stump.zackrose.net/images/stump_logo.png" />
       <FlexWrapper>
-        <div className="top-two">
+        <TopRow>
           <ImageButton
             imageSrc="http://stump.zackrose.net/images/voting_ballot.png"
             text="My Voting Ballot"
@@ -68,14 +59,14 @@ export default function Homepage(props: any) {
             text="Browse Issues"
             onClick={browseIssues}
           />
-        </div>
+        </TopRow>
 
         <ImageButton
           imageSrc="http://stump.zackrose.net/images/news.png"
           text="News & Activities"
-          onClick={newsActivites}
+          onClick={() => history.push('/newsfeed')}
         />
       </FlexWrapper>
-    </HomeWrapper>
+    </>
   );
 }
