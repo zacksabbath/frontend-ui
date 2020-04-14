@@ -12,6 +12,8 @@ const ImageButtonWrapper = styled.button<ImageButtonWrapperProps>`
   padding-bottom: 50%;
   position: relative;
   background-color: #2980b9;
+
+  /* Gonna want to factor this out into its own div for performance */
   background-image: URL(${props => props.backgroundImage});
   background-repeat: no-repeat;
   background-size: cover;
@@ -25,7 +27,6 @@ const ImageButtonWrapper = styled.button<ImageButtonWrapperProps>`
   :focus {
     outline: none;
   }
-
   .text {
     color: white;
     text-align: center;
@@ -48,11 +49,8 @@ type ImageButtonProps = {
 export default function ImageButton(props: ImageButtonProps) {
   const { imageSrc, text, onClick } = props;
   return (
-    <ImageButtonWrapper backgroundImage={imageSrc}>
-      <p className="text" onClick={onClick}>
-        {' '}
-        {text}{' '}
-      </p>
+    <ImageButtonWrapper backgroundImage={imageSrc} onClick={onClick}>
+      <ImageText>{text}</ImageText>
     </ImageButtonWrapper>
   );
 }

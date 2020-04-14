@@ -45,6 +45,7 @@ const newsActivites = () => {
 //end
 
 export default function Homepage(props: any) {
+  const history = useHistory();
   return (
     <HomeWrapper>
       <div className="userImg">
