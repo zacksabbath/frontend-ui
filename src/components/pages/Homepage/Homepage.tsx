@@ -14,7 +14,7 @@ const HomeWrapper = styled.div`
 
   .logo {
     width: 60%;
-    margin: 50px;
+    margin: 40px;
   }
 `;
 
