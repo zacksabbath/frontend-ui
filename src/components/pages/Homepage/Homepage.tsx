@@ -30,6 +30,7 @@ const FlexWrapper = styled.section`
   }
 `;
 
+//Push to history once I have somewhere for them to go
 const voteBallot = () => {
   alert(' voted ');
 };
@@ -41,6 +42,7 @@ const browseIssues = () => {
 const newsActivites = () => {
   alert(' News & Activities ');
 };
+//end
 
 export default function Homepage(props: any) {
   return (
