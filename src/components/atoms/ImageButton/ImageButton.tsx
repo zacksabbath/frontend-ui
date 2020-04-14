@@ -6,12 +6,16 @@ type ImageButtonWrapperProps = {
 };
 
 const ImageButtonWrapper = styled.div<ImageButtonWrapperProps>`
-  border-radius: 115px;
-  width: 100%;
+  border-radius: 35px;
+  flex: 1 1 200px;
 
-  padding-bottom: 50%;
+  display: flex;
+  justify-content: center;
+
   position: relative;
   background-color: #2980b9;
+
+  height: 250px;
 
   /* Gonna want to factor this out into its own div for performance */
   background-image: URL(${props => props.backgroundImage});
@@ -27,18 +31,19 @@ const ImageButtonWrapper = styled.div<ImageButtonWrapperProps>`
   :focus {
     outline: none;
   }
+
+  @media (max-width: 500px) {
+    height: 200px;
+    flex: 1 1 100px;
+  }
 `;
 
 const ImageText = styled.div`
   color: white;
-  text-align: center;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  font-weight: bold;
-  font-size: 60px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 type ImageButtonProps = {
