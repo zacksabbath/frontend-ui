@@ -13,7 +13,7 @@ const HomeWrapper = styled.div`
   }
 
   .logo {
-    width: 50%;
+    width: 60%;
     margin: 50px;
   }
 `;
