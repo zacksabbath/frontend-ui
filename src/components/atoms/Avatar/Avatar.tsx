@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -47,6 +47,7 @@ const AvatarWrapper = styled.div<AvatarProps>`
       border-radius: ${borderRadius};
       width: ${avatarSize};
       height: ${avatarSize};
+      background-color: gray;
     `;
   }}
 `;
@@ -116,12 +117,16 @@ function Avatar(props: any) {
 
   // Use a hook instead of onError on the img element to support server-side rendering.
   // const loaded = useLoaded({ src, srcSet });
-  const hasImg = src || srcSet;
   // const hasImgNotFailing = hasImg && loaded !== 'error';
 
   // console.log('!!!!!!!', { loaded, hasImg, hasImgNotFailing });
 
-  if (hasImg) {
+  const hasImg = !!(src || srcSet);
+
+  const [imageWorks, setImageWorks] = useState(true);
+  console.log({ hasImg });
+
+  if (hasImg && imageWorks) {
     children = (
       <AvatarImage
         alt={alt}
@@ -129,16 +134,18 @@ function Avatar(props: any) {
         srcSet={srcSet}
         // sizes={sizes}
         // className={classes.img}
+        onError={() => setImageWorks(false)}
         {...imgProps}
       />
     );
   } else if (childrenProp != null) {
     children = childrenProp;
   } else if (hasImg && alt) {
+    console.log('alt!!!');
     children = alt[0];
   } else {
     console.log('Fallback image!!!!!!!');
-    children = <FontAwesomeIcon icon="user" />;
+    children = <FontAwesomeIcon icon="user" size="lg" />;
   }
 
   return (
