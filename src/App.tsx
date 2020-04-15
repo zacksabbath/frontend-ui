@@ -1,60 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import './App.scss';
+import React from 'react';
 import theme from 'global/theme';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
+import GlobalStyle from './GlobalStyle';
+import Routes from './Routes';
 
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-
-import { Newsfeed } from 'components';
+const AppWrapper = styled.div`
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 50px;
+`;
 
 function App() {
-  const [newsFeedItems, setNewsFeedItems] = useState();
-
-  async function getNewsfeed() {
-    let response = await fetch(
-      `http://my-json-server.typicode.com/stump-vote/mock-fe-api/newsFeed`
-    );
-    let data = await response.json();
-    setNewsFeedItems(data);
-  }
-
-  useEffect(() => {
-    getNewsfeed();
-  }, []);
-
-  if (!newsFeedItems) {
-    return <div>Loading...</div>;
-  }
-
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <Router>
-          <ThemeProvider theme={theme}>
-            <div style={{ width: '90%' }}>
-              <Switch>
-                <Route path="/newsfeed">
-                  <Link to="/" style={{ color: 'white' }}>
-                    Home
-                  </Link>
-                  <Newsfeed newsfeedItems={newsFeedItems} />
-                </Route>
-
-                <Route path="/" exact={true}>
-                  <div>
-                    <h1>Put Homepage here</h1>
-                    <Link to="/newsfeed" style={{ color: 'white' }}>
-                      Newsfeed
-                    </Link>
-                  </div>
-                </Route>
-              </Switch>
-            </div>
-          </ThemeProvider>
-        </Router>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <AppWrapper>
+        <GlobalStyle />
+        <Routes />
+      </AppWrapper>
+    </ThemeProvider>
   );
 }
 
