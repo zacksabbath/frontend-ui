@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 type AvatarProps = {
   variant: string;
@@ -145,7 +146,7 @@ function Avatar(props: any) {
     children = alt[0];
   } else {
     console.log('Fallback image!!!!!!!');
-    children = <FontAwesomeIcon icon="user" size="lg" />;
+    children = <FontAwesomeIcon icon={faUser} size="lg" />;
   }
 
   return (
