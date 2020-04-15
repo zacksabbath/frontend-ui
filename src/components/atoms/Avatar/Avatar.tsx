@@ -3,26 +3,41 @@ import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
-type AvatarProps = {
-  variant: string;
-  size: Sizes;
-};
-
 //All of this junk will be replaced with themes
-function getAvatarSize(size: Sizes) {
+function getAvatarSize(size?: Sizes) {
   switch (size) {
+    case 'xs':
+      return '2.75em';
     case 'sm':
-      return '30px';
-    case 'md':
-      return '50px';
+      return '2.875em;';
     case 'lg':
-      return '80px';
+      return '3.33333em';
     case '1x':
-      return '100px';
+      return '3em';
+    case '2x':
+      return '4em';
+    case '3x':
+      return '5em';
+    case '4x':
+      return '6em';
+    case '5x':
+      return '7em';
+    case '6x':
+      return '8em';
+    case '7x':
+      return '9em';
+    case '8x':
+      return '10em';
+    case '9x':
+      return '11em';
+    case '10x':
+      return '12em';
+    default:
+      return '3em';
   }
 }
 
-function getBorderRadius(variant: string) {
+function getBorderRadius(variant?: string) {
   switch (variant) {
     case 'circle':
       return '50%';
@@ -35,7 +50,36 @@ function getBorderRadius(variant: string) {
   }
 }
 
-const AvatarWrapper = styled.div<AvatarProps>(props => {
+type Sizes =
+  | 'xs'
+  | 'lg'
+  | 'sm'
+  | '1x'
+  | '2x'
+  | '3x'
+  | '4x'
+  | '5x'
+  | '6x'
+  | '7x'
+  | '8x'
+  | '9x'
+  | '10x';
+type Variants = 'circle' | 'square' | 'rounded';
+
+type AvatarWrapperProps = {
+  size?: Sizes;
+  variant?: Variants;
+};
+
+type AvatarProps = AvatarWrapperProps & {
+  alt?: string;
+  children?: React.ReactNode;
+  imgProps?: HTMLImageElement;
+  src?: string;
+  srcSet?: string;
+};
+
+const AvatarWrapper = styled.div<AvatarWrapperProps>(props => {
   const { variant, size } = props;
   const borderRadius = getBorderRadius(variant);
   const avatarSize = getAvatarSize(size);
@@ -65,15 +109,12 @@ const AvatarImage = styled.img({
   borderRadius: 'inherit',
 });
 
-type Sizes = 'sm' | 'md' | 'lg' | '1x';
-// type Variants = 'circle' | 'square' | 'rounded';
-
-function Avatar(props: any) {
+function Avatar(props: AvatarProps) {
   const {
     alt,
     children: childrenProp,
     imgProps = {},
-    size = 'md',
+    size = '1x',
     src,
     srcSet,
     variant = 'circle',
