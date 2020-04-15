@@ -3,59 +3,51 @@ import { createGlobalStyle } from 'styled-components';
 export default createGlobalStyle`
 body {
   margin: 0;
-  font-family: 'Galiano Grotesque Regular', Arial, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-family: 'Galano Grotesque', Arial, 'Helvetica Neue', Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'Galano Grotesque';
+  src: url(./fonts/GalanoGrotesque-Regular.otf) format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'Galiano Grotesque Regular';
-  src: url(./fonts/GalanoGrotesque-Regular.otf);
+  font-family: 'Galano Grotesque';
+  src: url(./fonts/GalanoGrotesque-Medium.otf) format('opentype');
+  font-weight: 500;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'Galiano Grotesque Medium';
-  src: url(./fonts/GalanoGrotesque-Medium.otf);
+  font-family: 'Galano Grotesque';
+  src: url(./fonts/GalanoGrotesque-SemiBold.otf) format('opentype');
+  font-weight: 600;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: 'Galiano Grotesque SemiBold';
-  src: url(./fonts/GalanoGrotesque-SemiBold.otf);
+  font-family: 'Galiano Grotesque';
+  src: url(./fonts/GalanoGrotesque-Italic.otf) format('opentype');
+  font-weight: normal;
+  font-style: italic;
 }
 
 @font-face {
-  font-family: 'Galiano Grotesque Italic';
-  src: url(./fonts/GalanoGrotesque-Italic.otf);
-}
-
-@font-face {
-  font-family: 'Galiano Grotesque MediumItalic';
-  src: url(./fonts/GalanoGrotesque-MediumItalic.otf);
+  font-family: 'Galiano Grotesque';
+  src: url(./fonts/GalanoGrotesque-MediumItalic.otf) format('opentype');
+  font-weight: 500;
+  font-style: italic;
 }
 
 @font-face {
   font-family: 'Galiano Grotesque SemiBoldItalic';
-  src: url(./fonts/GalanoGrotesque-SemiBoldItalic.otf);
-}
-
-@font-face {
-    font-family: 'Adelle Light';
-    src: url(./fonts/Adelle_light.otf);
-}
-
-@font-face {
-    font-family: 'Adelle LightItalic';
-    src: url(./fonts/Adelle_light.otf);
-}
-
-@font-face {
-    font-family: 'Adelle Italic';
-    src: url(./fonts/Adelle_light.otf);
+  src: url(./fonts/GalanoGrotesque-SemiBoldItalic.otf) format('opentype');
+  font-weight: 600;
+  font-style: italic;
 }
 
 `;
