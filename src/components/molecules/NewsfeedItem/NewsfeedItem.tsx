@@ -1,8 +1,8 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import { ThumbIcons, Bubble } from 'components';
-
 import { describeISODate } from 'util/dates';
 import { Entity } from 'global/types';
 import { cardTypes } from 'global/theme';
@@ -123,7 +123,7 @@ export default function NewsfeedItem(props: NewsfeedItemProps) {
             <div className="date-description">{dateDescription}</div>
             <EllipsesDropDownMenu>
               <FontAwesomeIcon
-                icon="ellipsis-h"
+                icon={faEllipsisH}
                 size="2x"
                 className="ellipsis-dots"
               />

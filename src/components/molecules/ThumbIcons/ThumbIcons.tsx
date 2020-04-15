@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Bubble } from 'components';
 import styled from 'styled-components';
 
+import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
+
 type ThumbIconsProps = {
   likes: number;
   dislikes: number;
@@ -15,12 +17,12 @@ const Thumbs = styled.div`
   flex-direction: row;
   margin: 10px 0;
   width: 95px;
+`;
 
-  .icon-text {
-    border-radius: 13px;
-    color: white;
-    margin-left: 2px;
-  }
+const IconText = styled.div`
+  border-radius: 13px;
+  color: white;
+  margin-left: 2px;
 `;
 
 export default function ThumbIcons(props: ThumbIconsProps) {
@@ -28,13 +30,13 @@ export default function ThumbIcons(props: ThumbIconsProps) {
   return (
     <Thumbs>
       <Bubble onClick={onLike}>
-        <FontAwesomeIcon icon="thumbs-up" />
-        <div className="icon-text">{likes}</div>
+        <FontAwesomeIcon icon={faThumbsUp} />
+        <IconText className="icon-text">{likes}</IconText>
       </Bubble>
 
       <Bubble onClick={onDislike} style={{ marginLeft: 10 }}>
-        <FontAwesomeIcon icon="thumbs-down" />
-        <div className="icon-text">{dislikes}</div>
+        <FontAwesomeIcon icon={faThumbsDown} />
+        <IconText className="icon-text">{dislikes}</IconText>
       </Bubble>
     </Thumbs>
   );

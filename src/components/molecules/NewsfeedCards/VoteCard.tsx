@@ -21,7 +21,7 @@ export default function VoteCard(props: any) {
   const { politician, vote } = content;
   return (
     <NewsfeedItem {...rest}>
-      <Avatar image={politician.image} />
+      <Avatar src={politician.image} />
       <p>
         <strong>{politician.name}</strong> voted to <strong>{vote}</strong>
       </p>

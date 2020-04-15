@@ -14,7 +14,7 @@ export default function FinanceCard(props: any) {
   const { politician, acceptedAmount, contributor } = content;
   return (
     <NewsfeedItem {...rest}>
-      <Avatar image={politician.image} />
+      <Avatar src={politician.image} />
       <p>
         <strong>{politician.name}</strong> accepted {acceptedAmount} from{' '}
         <strong>{contributor}</strong>
