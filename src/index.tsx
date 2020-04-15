@@ -3,18 +3,6 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import {
-  faThumbsUp,
-  faThumbsDown,
-  faEllipsisH,
-  faCalendarAlt,
-  faStar,
-} from '@fortawesome/free-solid-svg-icons';
-// import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
-
-library.add(faThumbsUp, faThumbsDown, faEllipsisH, faCalendarAlt, faStar);
-
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
