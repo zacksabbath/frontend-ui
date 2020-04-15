@@ -15,26 +15,44 @@ import { Playground, Props } from 'docz';
 
 <Playground>
   <Avatar
-    src="https://api.adorable.io/avatars/285/stump.png"
+    src="https://api.adorable.io/avatars/100/stump.png"
     variant="circle"
-    size="small"
+    size="sm"
   />
   <Avatar
-    src="https://api.adorable.io/avatars/285/stump.png"
+    src="https://api.adorable.io/avatars/100/hello.png"
     variant="rounded"
-    size="medium"
+    size="md"
   />
   <Avatar
-    src="https://api.adorable.io/avatars/285/stump.png"
+    src="https://api.adorable.io/avatars/100/thing.png"
     variant="square"
-    size="large"
+    size="lg"
     alt="User Name"
   />
   <Avatar
-    src="https://api.adorable.io/avatars/285/stump.png"
-    size="xl"
+    src="https://api.adorable.io/avatars/100/hi.png"
+    size="1x"
     alt="User Name"
   />
-  <Avatar src="https://broken.broken/broken.png" size="xl" alt="User Name" />
-  <Avatar src="https://broken.broken/broken.png" size="xl" />
+</Playground>
+
+## Broken image fallback with alt text
+
+<Playground>
+  <Avatar
+    src="https://broken.broken/broken.png"
+    size="sm"
+    alt="Billy Gibbons"
+  />
+  <Avatar src="https://broken.broken/broken.png" size="md" alt="Frank Beard" />
+  <Avatar src="https://broken.broken/broken.png" size="lg" alt="Dusty Hill" />
+</Playground>
+
+## Broken image fallback without alt text
+
+<Playground>
+  <Avatar src="https://broken.broken/broken.png" size="sm" />
+  <Avatar src="https://broken.broken/broken.png" size="md" />
+  <Avatar src="https://broken.broken/broken.png" size="lg" />
 </Playground>

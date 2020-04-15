@@ -8,15 +8,16 @@ type AvatarProps = {
   size: Sizes;
 };
 
+//All of this junk will be replaced with themes
 function getAvatarSize(size: Sizes) {
   switch (size) {
-    case 'small':
+    case 'sm':
       return '30px';
-    case 'medium':
+    case 'md':
       return '50px';
-    case 'large':
+    case 'lg':
       return '80px';
-    case 'xl':
+    case '1x':
       return '100px';
   }
 }
@@ -34,24 +35,22 @@ function getBorderRadius(variant: string) {
   }
 }
 
-const AvatarWrapper = styled.div<AvatarProps>`
-  ${props => {
-    const { variant, size } = props;
-    const borderRadius = getBorderRadius(variant);
-    const avatarSize = getAvatarSize(size);
-    return css`
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      border-radius: ${borderRadius};
-      width: ${avatarSize};
-      height: ${avatarSize};
-      background-color: gray;
-    `;
-  }}
-`;
+const AvatarWrapper = styled.div<AvatarProps>(props => {
+  const { variant, size } = props;
+  const borderRadius = getBorderRadius(variant);
+  const avatarSize = getAvatarSize(size);
+  return css`
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: ${borderRadius};
+    width: ${avatarSize};
+    height: ${avatarSize};
+    background-color: gray;
+  `;
+});
 
 const AvatarImage = styled.img({
   width: '100%',
@@ -66,87 +65,42 @@ const AvatarImage = styled.img({
   borderRadius: 'inherit',
 });
 
-type Sizes = 'small' | 'medium' | 'large' | 'xl';
+type Sizes = 'sm' | 'md' | 'lg' | '1x';
 // type Variants = 'circle' | 'square' | 'rounded';
-
-// export default function Avatar(props: any) {
-
-//   const {
-//     alt,
-//     children: childrenProp,
-//     classes,
-//     className,
-//     component: Component = 'div',
-//     imgProps,
-//     sizes,
-//     src,
-//     srcSet,
-//     variant = 'circle',
-//     ...other
-//   } = props;
-
-//   // const [src, setSrc] = useState(props.src);
-
-//   const image = new Image();
-
-//   // image.onerror =
-
-//   return (
-//     <AvatarWrapper>
-//       <img alt={alt} src={src} onError={() => console} />
-//     </AvatarWrapper>
-//   );
-// }
 
 function Avatar(props: any) {
   const {
     alt,
     children: childrenProp,
-    // classes,
-    // className,
-    // component: Component = 'div',
     imgProps = {},
-    // sizes,
-    size = 'medium',
+    size = 'md',
     src,
     srcSet,
     variant = 'circle',
-    // ...other
   } = props;
 
   let children = null;
 
-  // Use a hook instead of onError on the img element to support server-side rendering.
-  // const loaded = useLoaded({ src, srcSet });
-  // const hasImgNotFailing = hasImg && loaded !== 'error';
-
-  // console.log('!!!!!!!', { loaded, hasImg, hasImgNotFailing });
-
   const hasImg = !!(src || srcSet);
 
-  const [imageWorks, setImageWorks] = useState(true);
-  console.log({ hasImg });
+  const [hasWorkingImg, setHasWorkingImg] = useState(hasImg);
 
-  if (hasImg && imageWorks) {
+  if (hasImg && hasWorkingImg) {
     children = (
       <AvatarImage
         alt={alt}
         src={src}
         srcSet={srcSet}
-        // sizes={sizes}
-        // className={classes.img}
-        onError={() => setImageWorks(false)}
+        onError={() => setHasWorkingImg(false)}
         {...imgProps}
       />
     );
   } else if (childrenProp != null) {
     children = childrenProp;
   } else if (hasImg && alt) {
-    console.log('alt!!!');
     children = alt[0];
   } else {
-    console.log('Fallback image!!!!!!!');
-    children = <FontAwesomeIcon icon={faUser} size="lg" />;
+    children = <FontAwesomeIcon icon={faUser} size={size} />;
   }
 
   return (
@@ -154,59 +108,6 @@ function Avatar(props: any) {
       {children}
     </AvatarWrapper>
   );
-
-  // return (
-  //   <Component
-  //     className={clsx(
-  //       classes.root,
-  //       classes.system,
-  //       classes[variant],
-  //       {
-  //         [classes.colorDefault]: !hasImgNotFailing,
-  //       },
-  //       className,
-  //     )}
-  //     ref={ref}
-  //     {...other}
-  //   >
-  //     {children}
-  //   </Component>
-  // );
 }
-
-// function useLoaded({ src, srcSet }: { src: string; srcSet: string }) {
-//   const [loaded, setLoaded] = React.useState<string | boolean>(false);
-
-//   React.useEffect(() => {
-//     if (!src && !srcSet) {
-//       return undefined;
-//     }
-
-//     setLoaded(false);
-
-//     let active = true;
-//     const image = new Image();
-//     image.src = src;
-//     image.srcset = srcSet;
-//     image.onload = () => {
-//       if (!active) {
-//         return;
-//       }
-//       setLoaded('loaded');
-//     };
-//     image.onerror = () => {
-//       if (!active) {
-//         return;
-//       }
-//       setLoaded('error');
-//     };
-
-//     return () => {
-//       active = false;
-//     };
-//   }, [src, srcSet]);
-
-//   return loaded;
-// }
 
 export default Avatar;

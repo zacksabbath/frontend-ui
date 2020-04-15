@@ -16,7 +16,7 @@ export default function QuestionAnswerCard(props: any) {
 
   return (
     <NewsfeedItem {...rest}>
-      <Avatar image={askedBy.image} />
+      <Avatar src={askedBy.image} />
       <p>
         <Clickable>{askedBy.name}</Clickable> asked <em>"{question}"</em>
       </p>
