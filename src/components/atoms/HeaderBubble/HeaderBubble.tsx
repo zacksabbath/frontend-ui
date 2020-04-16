@@ -15,7 +15,7 @@ const HeaderBubbleWrapper = styled.button`
 type HeaderBubbleProps = {
   onClick: any;
   text: string;
-  icon: string;
+  icon: any;
 };
 
 const BubbleText = styled.div`

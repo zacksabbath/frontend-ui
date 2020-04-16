@@ -4,8 +4,8 @@ name: HeaderBubble
 
 import HeaderBubble from './HeaderBubble';
 import { Playground, Props } from 'docz';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSlidersH } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSliders } from '@fortawesome/free-solid-svg-icons';
 
 # HeaderBubble
 
@@ -17,8 +17,8 @@ import { faSlidersH } from '@fortawesome/free-solid-svg-icons';
 
 <Playground>
   <HeaderBubble
+    icon={faSliders}
     text="My Issues"
-    icon={}
     onClick={() => {
       alert(' Clicked ');
     }}
