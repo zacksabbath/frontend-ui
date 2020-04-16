@@ -3,12 +3,21 @@ name: HeaderBubble
 ---
 
 import HeaderBubble from './HeaderBubble';
-import { Playground } from 'docz';
+import { Playground, Props } from 'docz';
 
 # HeaderBubble
+
+## Properties
+
+<Props of={HeaderBubble} />
 
 ## Basic usage
 
 <Playground>
-  <HeaderBubble />
+  <HeaderBubble
+    text="My Issues"
+    onClick={() => {
+      alert(' Clicked ');
+    }}
+  />
 </Playground>
