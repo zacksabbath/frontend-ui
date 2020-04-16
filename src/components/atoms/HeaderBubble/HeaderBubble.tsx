@@ -15,6 +15,7 @@ const HeaderBubbleWrapper = styled.button`
 type HeaderBubbleProps = {
   onClick: any;
   text: string;
+  icon: string;
 };
 
 const BubbleText = styled.div`
@@ -32,10 +33,10 @@ const BubbleIcon = styled.div`
 `;
 
 export default function HeaderBubble(props: HeaderBubbleProps) {
-  const { onClick, text } = props;
+  const { onClick, text, icon } = props;
   return (
     <HeaderBubbleWrapper onClick={onClick}>
-      <BubbleIcon></BubbleIcon>
+      <BubbleIcon>{icon}</BubbleIcon>
       <BubbleText>{text}</BubbleText>
     </HeaderBubbleWrapper>
   );
