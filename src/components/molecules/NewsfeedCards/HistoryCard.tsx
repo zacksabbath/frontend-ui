@@ -15,7 +15,7 @@ export default function HistoryCard(props: any) {
   const { politician, blurb } = content;
   return (
     <NewsfeedItem {...rest}>
-      <Avatar image={politician.image} />
+      <Avatar src={politician.image} />
       <p>
         <strong>{politician.name}</strong> {blurb}
       </p>

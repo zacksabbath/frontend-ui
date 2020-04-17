@@ -38,7 +38,7 @@ export default function Homepage() {
   return (
     <>
       <AvatarContainer>
-        <Avatar image="http://stump.zackrose.net/images/avatar_sm.png" />
+        <Avatar src="http://stump.zackrose.net/images/avatar_sm.png" />
       </AvatarContainer>
       <LogoImg src="http://stump.zackrose.net/images/stump_logo.png" />
       <FlexWrapper>
