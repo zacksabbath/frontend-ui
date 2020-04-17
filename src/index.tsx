@@ -11,6 +11,7 @@ import {
   faCalendarAlt,
   faStar,
   faSlidersH,
+  faGripLinesVertical,
 } from '@fortawesome/free-solid-svg-icons';
 // import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons';
 
@@ -20,7 +21,8 @@ library.add(
   faEllipsisH,
   faCalendarAlt,
   faStar,
-  faSlidersH
+  faSlidersH,
+  faGripLinesVertical
 );
 
 ReactDOM.render(<App />, document.getElementById('root'));
