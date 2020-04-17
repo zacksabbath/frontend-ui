@@ -16,6 +16,7 @@ export default function Routes() {
         {/*  remove before push, temp route */}
         <Route path="/header" exact>
           <Header />
+          {/*  */}
         </Route>
 
         <Route path="/" exact>

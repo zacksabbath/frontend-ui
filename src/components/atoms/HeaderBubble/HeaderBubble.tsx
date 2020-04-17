@@ -1,7 +1,28 @@
 import styled from 'styled-components';
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faGripLinesVertical,
+  faHome,
+  faCaretDown,
+  faSlidersH,
+} from '@fortawesome/free-solid-svg-icons';
+edited;
 
-const HeaderBubbleWrapper = styled.button`
+function getIcon(iconType: string) {
+  switch (iconType) {
+    case 'home':
+      return faHome;
+    case 'more':
+      return faCaretDown;
+    case 'verticleLines':
+      return faGripLinesVertical;
+    case 'slider':
+      return faSlidersH;
+  }
+}
+
+const HeaderBubbleWrapper = styled.div`
   border-radius: 50px;
   flex: 1 1 200px;
 
@@ -15,7 +36,7 @@ const HeaderBubbleWrapper = styled.button`
 type HeaderBubbleProps = {
   onClick: any;
   text: string;
-  icon: any;
+  iconType: string;
 };
 
 const BubbleText = styled.div`
@@ -26,17 +47,18 @@ const BubbleText = styled.div`
   justify-content: flex-end;
 `;
 
-const BubbleIcon = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-`;
+// const BubbleIcon = styled.div`
+//   display: flex;
+//   align-items: center;
+//   justify-content: flex-start;
+// `;
 
 export default function HeaderBubble(props: HeaderBubbleProps) {
-  const { onClick, text, icon } = props;
+  const { onClick, text, iconType } = props;
+
   return (
     <HeaderBubbleWrapper onClick={onClick}>
-      <BubbleIcon>{icon}</BubbleIcon>
+      <FontAwesomeIcon icon={iconType} />
       <BubbleText>{text}</BubbleText>
     </HeaderBubbleWrapper>
   );
