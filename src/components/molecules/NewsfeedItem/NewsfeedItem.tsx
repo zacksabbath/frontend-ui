@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import { ThumbIcons, Bubble } from 'components';
-import { describeISODate } from 'util/dates';
+import { describeISODate } from 'utils/dateUtils';
 import { Entity } from 'global/types';
 import { cardTypes } from 'global/theme';
 
