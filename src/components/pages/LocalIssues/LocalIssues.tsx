@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { AccordionUL } from 'components';
+import { AccordionUL, AccordionButton } from 'components';
 
 import localIssuesAPI from './localIssuesAPI';
 

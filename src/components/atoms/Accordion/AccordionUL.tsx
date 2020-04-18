@@ -1,24 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import AccordionButton from './AccordionButton';
 
-const Main = styled.button`
-  background-color: ${({ theme }) => theme.main.colors.purple};
-  color: ${({ theme }) => theme.main.colors.white};
-  border-color: ${({ theme }) => theme.main.colors.purple};
-  display: flex;
-  flex-direction: row;
+const Main = styled.ul`
   margin: 0;
-  width: 720px;
-  font-size: 15px;
-  line-height: 22px;
-  border-radius: 1px;
-  height: 50px;
-  position: relative;
-  text-align: left;
-
-  ul {
-    list-style-type: none;
-  }
+  list-style-type: none;
 `;
 
 interface IssuesProps {
@@ -30,9 +16,9 @@ export default function AccordionUL(props: IssuesProps) {
 
   return (
     <Main>
-      <ul className="accordionUl">
+      <AccordionButton>
         <li className="accordionLI">{issues.name}</li>
-      </ul>
+      </AccordionButton>
     </Main>
   );
 }
