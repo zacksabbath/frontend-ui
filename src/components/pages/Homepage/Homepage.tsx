@@ -19,14 +19,9 @@ const LogoImg = styled.img`
 const FlexWrapper = styled.section`
   width: 100%;
   display: flex;
-  flex-direction: column;
-`;
-
-const TopRow = styled.div`
-  width: 100%;
-  display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
 `;
 
 //Push to history once I have somewhere for them to go
@@ -43,23 +38,21 @@ export default function Homepage() {
   return (
     <>
       <AvatarContainer>
-        <Avatar image="http://stump.zackrose.net/images/avatar_sm.png" />
+        <Avatar src="http://stump.zackrose.net/images/avatar_sm.png" />
       </AvatarContainer>
       <LogoImg src="http://stump.zackrose.net/images/stump_logo.png" />
       <FlexWrapper>
-        <TopRow>
-          <ImageButton
-            imageSrc="http://stump.zackrose.net/images/voting_ballot.png"
-            text="My Voting Ballot"
-            onClick={voteBallot}
-          />
+        <ImageButton
+          imageSrc="http://stump.zackrose.net/images/voting_ballot.png"
+          text="My Voting Ballot"
+          onClick={voteBallot}
+        />
 
-          <ImageButton
-            imageSrc="http://stump.zackrose.net/images/issues.png"
-            text="Browse Issues"
-            onClick={browseIssues}
-          />
-        </TopRow>
+        <ImageButton
+          imageSrc="http://stump.zackrose.net/images/issues.png"
+          text="Browse Issues"
+          onClick={browseIssues}
+        />
 
         <ImageButton
           imageSrc="http://stump.zackrose.net/images/news.png"

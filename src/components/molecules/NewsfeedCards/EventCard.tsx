@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { NewsfeedItem } from 'components';
 import { Entity } from 'global/types';
 
@@ -29,7 +30,7 @@ export default function EventCard(props: any) {
     <NewsfeedItem {...rest}>
       <Main>
         <div className="calendar-icon">
-          <FontAwesomeIcon icon="calendar-alt" size="4x" />
+          <FontAwesomeIcon icon={faCalendarAlt} size="4x" />
         </div>
         <div>
           <p>{date}</p>
