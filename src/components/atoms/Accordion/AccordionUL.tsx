@@ -22,14 +22,12 @@ const Main = styled.button`
 `;
 
 interface IssuesProps {
-  issues?: IssuesProps[];
+  issues?: any;
 }
 
-export default function AccordionUL({
-  issues,
-}: {
-  issues: any; //find the exact type, "typescript array"
-}) {
+export default function AccordionUL(props: IssuesProps) {
+  const { issues } = props;
+
   return (
     <Main>
       <ul className="accordionUl">

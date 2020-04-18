@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { AccordionUL, Bubble } from 'components';
+import { AccordionUL } from 'components';
 
 import localIssuesAPI from './localIssuesAPI';
 
