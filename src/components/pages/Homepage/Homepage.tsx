@@ -7,8 +7,8 @@ import { useHistory } from 'react-router-dom';
 const AvatarContainer = styled.div`
   margin: 40px;
   margin-right: 0px;
-  // display: flex;
-  // justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 `;
 
 const LogoImg = styled.img`
