@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import AccordionButton from './AccordionButton';
+import AccordionStar from './AccordionStar';
 
 const Main = styled.ul`
   margin: 0;
@@ -17,7 +18,10 @@ export default function AccordionUL(props: IssuesProps) {
   return (
     <Main>
       <AccordionButton>
-        <li className="accordionLI">{issues.name}</li>
+        <li className="accordionLI">
+          <AccordionStar />
+          {issues.name}
+        </li>
       </AccordionButton>
     </Main>
   );
