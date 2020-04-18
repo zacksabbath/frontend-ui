@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
 const AccordionButton = styled.button`
-  background-color: purple;
+  background-color: #3c266e;
   color: white;
-  border-color: purple;
+  border-color: #3c266e;
   display: flex;
   flex-direction: row;
-  margin: 0;
+  margin: 1px;
   width: 720px;
   font-size: 15px;
   line-height: 50%;
