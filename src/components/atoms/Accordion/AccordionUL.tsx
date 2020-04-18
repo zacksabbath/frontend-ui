@@ -18,10 +18,7 @@ export default function AccordionUL(props: IssuesProps) {
   return (
     <Main>
       <AccordionButton>
-        <li className="accordionLI">
-          <AccordionStar />
-          {issues.name}
-        </li>
+        <li className="accordionLI">{issues.name}</li>
       </AccordionButton>
     </Main>
   );
