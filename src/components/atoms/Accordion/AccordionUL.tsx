@@ -6,6 +6,10 @@ import AccordionStar from './AccordionStar';
 const Main = styled.ul`
   margin: 0;
   list-style-type: none;
+  .accordionLI {
+    float: left;
+    padding: 2px;
+  }
 `;
 
 interface IssuesProps {
@@ -18,7 +22,12 @@ export default function AccordionUL(props: IssuesProps) {
   return (
     <Main>
       <AccordionButton>
-        <li className="accordionLI">{issues.name}</li>
+        <li>
+          <div className="accordionLI">
+            <AccordionStar />
+          </div>
+          <div className="accordionLI">{issues.name}</div>
+        </li>
       </AccordionButton>
     </Main>
   );
