@@ -1,24 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Bubble } from 'components';
 import { Avatar } from 'components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 const HeaderWrapper = styled.div`
   position: absolute;
-  align-items: center;
   width: 100%;
   background: ${({ theme }) => theme.main.colors.purpleDark};
-  body {
-    margin: 0px;
-  }
 `;
 
 const AvatarContainer = styled.div`
-  margin-right: 0px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
 `;
 
 const HeaderText = styled.p`
@@ -31,14 +27,20 @@ const HeaderText = styled.p`
 
 const HeaderIcon = styled.button`
   flex: display;
+  backgroung: ${({ theme }) => theme.main.colors.purpleDark};
 `;
+
+// <Bubble onClick={onLike}>
+//         <FontAwesomeIcon icon={faThumbsUp} />
+//         <IconText className="icon-text">{likes}</IconText>
+//       </Bubble>
 
 export default function Header() {
   return (
     <HeaderWrapper>
-      <HeaderIcon>
-        <FontAwesomeIcon icon={faHome} />
-      </HeaderIcon>
+      <Bubble>
+        <FontAwesomeIcon icon={faHome} size="2x" />
+      </Bubble>
       <HeaderText>Text</HeaderText>
       <AvatarContainer>
         <Avatar src="http://stump.zackrose.net/images/avatar_sm.png" />
