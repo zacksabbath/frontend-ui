@@ -1,25 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link, useLocation } from 'react-router-dom';
 import { ButtonStyle } from 'components';
 
 const FooterStyle = styled.div`
   display: flex;
-  flex-direction: row;
   position: fixed;
   width: 100%;
   background-color: #26154a;
-  color: white;
   bottom: 0;
   height: 10%;
 
   .ButtonStyle {
     width: 34%;
-    text-align: center;
+    font-size: 100%;
+    float: none;
+    border-top-color: #da0064;
+    border-width: 10px 0 0 0;
+    font-family: 'Galano';
   }
 `;
 
-//Push to history once I have somewhere for them to go
+//Place holder. Will replace with onClick={() => history.push('/localPage')}
 const localPage = () => {
   console.log(' Local Page Goes Here ');
 };
@@ -31,8 +33,10 @@ const statePage = () => {
 const federalPage = () => {
   console.log(' Federal Page Goes Here ');
 };
+
 export default function FooterNav() {
   const history = useHistory();
+  const location = useLocation();
   return (
     <>
       <FooterStyle>
