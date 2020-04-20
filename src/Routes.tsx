@@ -6,6 +6,8 @@ import { NewsfeedPage, Homepage, Header } from 'components';
 export default function Routes() {
   return (
     <Router>
+      {/*  remove before push, temp route */}
+      <Header />
       <Switch>
         <Route path="/newsfeed" exact>
           <Link to="/" style={{ color: 'white' }}>
@@ -13,12 +15,6 @@ export default function Routes() {
           </Link>
           <NewsfeedPage />
         </Route>
-        {/*  remove before push, temp route */}
-        <Route path="/header" exact>
-          <Header />
-          {/*  */}
-        </Route>
-
         <Route path="/" exact>
           <Homepage />
         </Route>

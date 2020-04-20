@@ -7,9 +7,6 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 const HeaderWrapper = styled.div`
   position: absolute;
-  display: flex;
-  flex-direction: row;
-
   width: 100%;
   background: ${({ theme }) => theme.main.colors.purpleDark};
 `;
