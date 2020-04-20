@@ -7,14 +7,17 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 const HeaderWrapper = styled.div`
   position: absolute;
+  display: flex;
+  flex-direction: row;
+
   width: 100%;
   background: ${({ theme }) => theme.main.colors.purpleDark};
 `;
 
 const AvatarContainer = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: space between;
 `;
 
 const HeaderText = styled.p`
