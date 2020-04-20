@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import { NewsfeedPage, Homepage } from 'components';
+import { NewsfeedPage, Homepage, LocalIssues } from 'components';
 
 export default function Routes() {
   return (
@@ -16,6 +16,10 @@ export default function Routes() {
 
         <Route path="/" exact>
           <Homepage />
+        </Route>
+
+        <Route path="/localIssues" exact>
+          <LocalIssues />
         </Route>
       </Switch>
     </Router>
