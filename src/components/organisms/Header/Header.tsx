@@ -6,6 +6,10 @@ import { Avatar } from 'components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
+// Notes: - Figure out useHistory
+//        - use theme for icon color
+//        - find correct font for header
+
 const HeaderWrapper = styled.div`
   width: 100vw;
   display: flex;
@@ -27,7 +31,8 @@ export default function Header() {
   // const history = useHistory();
   const history = useHistory();
   const goHome = () => {
-    history.push('/');
+    alert('Home!');
+    // history.push('/');
   };
   return (
     <HeaderWrapper>
