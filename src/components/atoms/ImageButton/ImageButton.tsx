@@ -40,10 +40,11 @@ const ImageButtonWrapper = styled.div<ImageButtonWrapperProps>`
 
 const ImageText = styled.div`
   color: white;
-  font-size: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
+  float: none;
+  font-family: 'Galano';
 `;
 
 type ImageButtonProps = {

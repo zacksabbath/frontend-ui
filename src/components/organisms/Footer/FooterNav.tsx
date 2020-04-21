@@ -11,13 +11,17 @@ const FooterStyle = styled.div`
   bottom: 0;
   height: 10%;
 
-  .ButtonStyle {
+  button {
     width: 34%;
     font-size: 100%;
-    float: none;
+  }
+  .currentButton {
     border-top-color: #da0064;
     border-width: 10px 0 0 0;
-    font-family: 'Galano';
+  }
+
+  .notCurrent {
+    border: none;
   }
 `;
 
@@ -40,13 +44,13 @@ export default function FooterNav() {
   return (
     <>
       <FooterStyle>
-        <ButtonStyle className="ButtonStyle" onClick={localPage}>
+        <ButtonStyle className="currentButton" onClick={localPage}>
           Local
         </ButtonStyle>
-        <ButtonStyle className="ButtonStyle" onClick={statePage}>
+        <ButtonStyle className="notCurrent" onClick={statePage}>
           State
         </ButtonStyle>
-        <ButtonStyle className="ButtonStyle" onClick={federalPage}>
+        <ButtonStyle className="notCurrent" onClick={federalPage}>
           Federal
         </ButtonStyle>
       </FooterStyle>
