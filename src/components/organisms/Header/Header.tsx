@@ -33,29 +33,18 @@ const HeaderIcon = styled.button`
   backgroung: ${({ theme }) => theme.main.colors.purpleDark};
 `;
 
-function goHome() {
-  history.push('/');
-}
-
-// <Bubble onClick={onLike}>
-//         <FontAwesomeIcon icon={faThumbsUp} />
-//         <IconText className="icon-text">{likes}</IconText>
-//       </Bubble>
-
-type HeaderProps = {
-  text: string;
-  onClick: any;
-};
-
-export default function Header(props: HeaderProps) {
+export default function Header() {
   // const history = useHistory();
-  const { text, onClick } = props;
+  const history = useHistory();
+  const goHome = () => {
+    history.push('/');
+  };
   return (
     <HeaderWrapper>
       <Bubble onClick={goHome}>
         <FontAwesomeIcon icon={faHome} size="2x" />
       </Bubble>
-      <HeaderText>{text}</HeaderText>
+      <HeaderText>Local Issues</HeaderText>
       <AvatarContainer>
         <Avatar src="http://stump.zackrose.net/images/avatar_sm.png" />
       </AvatarContainer>
