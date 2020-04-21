@@ -1,13 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 import { Bubble } from 'components';
 import { Avatar } from 'components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 const HeaderWrapper = styled.div`
-  position: absolute;
   width: 100%;
+  display: flex;
+  flex: 2;
+  background-size: cover;
   background: ${({ theme }) => theme.main.colors.purpleDark};
 `;
 
@@ -30,18 +33,29 @@ const HeaderIcon = styled.button`
   backgroung: ${({ theme }) => theme.main.colors.purpleDark};
 `;
 
+function goHome() {
+  history.push('/');
+}
+
 // <Bubble onClick={onLike}>
 //         <FontAwesomeIcon icon={faThumbsUp} />
 //         <IconText className="icon-text">{likes}</IconText>
 //       </Bubble>
 
-export default function Header() {
+type HeaderProps = {
+  text: string;
+  onClick: any;
+};
+
+export default function Header(props: HeaderProps) {
+  // const history = useHistory();
+  const { text, onClick } = props;
   return (
     <HeaderWrapper>
-      <Bubble>
+      <Bubble onClick={goHome}>
         <FontAwesomeIcon icon={faHome} size="2x" />
       </Bubble>
-      <HeaderText>Text</HeaderText>
+      <HeaderText>{text}</HeaderText>
       <AvatarContainer>
         <Avatar src="http://stump.zackrose.net/images/avatar_sm.png" />
       </AvatarContainer>
