@@ -10,33 +10,17 @@ const HeaderWrapper = styled.div`
   width: 100vw;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   background-size: cover;
   background: ${({ theme }) => theme.main.colors.purpleDark};
   margin-top: -50px;
   //   ^ This needs to be adjusted
 `;
 
-const AvatarContainer = styled.div`
-  //   display: flex;
-  //   align-items: flex-end;
-  //   justify-content: space between;
-`;
-
 const HeaderText = styled.p`
   display: flex;
   color: white;
   font-size: 50px;
-  align-items: center;
-  justify-content: center;
-`;
-
-const HeaderIcon = styled.button`
-  //   flex: display;
-  //   align-items: flex-end;
-  //   justify-content: space between;
-  background: ${({ theme }) => theme.main.colors.purpleDark};
-  color: ${({ theme }) => theme.main.colors.purple};
 `;
 
 export default function Header() {
@@ -48,12 +32,12 @@ export default function Header() {
   return (
     <HeaderWrapper>
       <Bubble onClick={goHome}>
-        <FontAwesomeIcon icon={faHome} size="3x" />
+        <FontAwesomeIcon icon={faHome} size="4x" />
       </Bubble>
       <HeaderText>Local Issues</HeaderText>
-      <AvatarContainer>
+      <Bubble>
         <Avatar src="http://stump.zackrose.net/images/avatar_sm.png" />
-      </AvatarContainer>
+      </Bubble>
     </HeaderWrapper>
   );
 }
