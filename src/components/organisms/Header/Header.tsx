@@ -7,9 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 const HeaderWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex: 2;
+  width: 100vw;
   background-size: cover;
   background: ${({ theme }) => theme.main.colors.purpleDark};
 `;
