@@ -32,7 +32,7 @@ export default function Header() {
   return (
     <HeaderWrapper>
       <Bubble onClick={goHome} style={{ margin: 30 }}>
-        <FontAwesomeIcon icon={faHome} size="5x" />
+        <FontAwesomeIcon icon={faHome} size="5x" style={{ color: 'purple' }} />
       </Bubble>
       <HeaderText>Local Issues</HeaderText>
       <Bubble style={{ margin: 30 }}>
