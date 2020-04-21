@@ -8,27 +8,35 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 const HeaderWrapper = styled.div`
   width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   background-size: cover;
   background: ${({ theme }) => theme.main.colors.purpleDark};
+  margin-top: -50px;
+  //   ^ This needs to be adjusted
 `;
 
 const AvatarContainer = styled.div`
-  display: flex;
-  align-items: flex-end;
-  justify-content: space between;
+  //   display: flex;
+  //   align-items: flex-end;
+  //   justify-content: space between;
 `;
 
 const HeaderText = styled.p`
   display: flex;
   color: white;
-  font-size: 30px;
+  font-size: 50px;
   align-items: center;
   justify-content: center;
 `;
 
 const HeaderIcon = styled.button`
-  flex: display;
-  backgroung: ${({ theme }) => theme.main.colors.purpleDark};
+  //   flex: display;
+  //   align-items: flex-end;
+  //   justify-content: space between;
+  background: ${({ theme }) => theme.main.colors.purpleDark};
+  color: ${({ theme }) => theme.main.colors.purple};
 `;
 
 export default function Header() {
@@ -40,7 +48,7 @@ export default function Header() {
   return (
     <HeaderWrapper>
       <Bubble onClick={goHome}>
-        <FontAwesomeIcon icon={faHome} size="2x" />
+        <FontAwesomeIcon icon={faHome} size="3x" />
       </Bubble>
       <HeaderText>Local Issues</HeaderText>
       <AvatarContainer>
