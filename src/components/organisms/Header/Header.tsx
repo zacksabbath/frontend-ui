@@ -31,12 +31,15 @@ export default function Header() {
   };
   return (
     <HeaderWrapper>
-      <Bubble onClick={goHome}>
-        <FontAwesomeIcon icon={faHome} size="4x" />
+      <Bubble onClick={goHome} style={{ margin: 30 }}>
+        <FontAwesomeIcon icon={faHome} size="5x" />
       </Bubble>
       <HeaderText>Local Issues</HeaderText>
-      <Bubble>
-        <Avatar src="http://stump.zackrose.net/images/avatar_sm.png" />
+      <Bubble style={{ margin: 30 }}>
+        <Avatar
+          src="http://stump.zackrose.net/images/avatar_sm.png"
+          size="3x"
+        />
       </Bubble>
     </HeaderWrapper>
   );
