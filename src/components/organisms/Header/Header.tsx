@@ -28,8 +28,7 @@ const HeaderText = styled.p`
 `;
 
 export default function Header() {
-  // const history = useHistory();
-  const history = useHistory();
+  //   const history = useHistory();
   const goHome = () => {
     alert('Home!');
     // history.push('/');
