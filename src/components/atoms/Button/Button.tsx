@@ -1,8 +1,6 @@
 import styled, { css } from 'styled-components';
 
 const ButtonStyle = styled.button(props => {
-  const { color } = props;
-
   return css`
     background-color: #3c266e;
     color: white;

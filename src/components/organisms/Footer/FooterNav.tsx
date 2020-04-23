@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useHistory, Link, useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { ButtonStyle } from 'components';
 
 const FooterStyle = styled.div`
@@ -25,32 +25,48 @@ const FooterStyle = styled.div`
   }
 `;
 
-//Place holder. Will replace with onClick={() => history.push('/localPage')}
-const localPage = () => {
-  console.log(' Local Page Goes Here ');
+type FooterProps = {
+  isCurrent?: string;
+  navRoute?: string;
 };
 
-const statePage = () => {
-  console.log(' State Page Goes Here ');
-};
+export default function FooterNav(props: FooterProps) {
+  var history = useHistory();
+  var location = useLocation();
+  let currentLocation = location.pathname;
 
-const federalPage = () => {
-  console.log(' Federal Page Goes Here ');
-};
+  let isLocal;
+  let isState;
+  let isFederal;
 
-export default function FooterNav() {
-  const history = useHistory();
-  const location = useLocation();
+  if (currentLocation === '/LocalIssues') {
+    isLocal = true;
+    console.log('true');
+  } else if (currentLocation === '/StateIssues') {
+    isState = true;
+  } else if (currentLocation === '/FederalIssues') {
+    isFederal = true;
+  }
+
   return (
     <>
       <FooterStyle>
-        <ButtonStyle className="currentButton" onClick={localPage}>
+        <ButtonStyle
+          className={isLocal ? 'currentButton' : 'notCurrent'}
+          onClick={() => history.push('/LocalIssues')}
+        >
           Local
         </ButtonStyle>
-        <ButtonStyle className="notCurrent" onClick={statePage}>
+        <ButtonStyle
+          className={isState ? 'currentButton' : 'notCurrent'}
+          onClick={() => history.push('/StateIssues')}
+        >
           State
         </ButtonStyle>
-        <ButtonStyle className="notCurrent" onClick={federalPage}>
+        <ButtonStyle
+          className={isFederal ? 'currentButton' : 'notCurrent'}
+          onClick={() => history.push('/FederalIssues')}
+        >
           Federal
         </ButtonStyle>
       </FooterStyle>
