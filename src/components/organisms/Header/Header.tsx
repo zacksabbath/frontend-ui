@@ -19,6 +19,9 @@ const HeaderWrapper = styled.div`
   background-size: cover;
   background: ${({ theme }) => theme.main.colors.purpleDark};
   margin-top: -50px;
+  .icon {
+    color: ${({ theme }) => theme.main.colors.purple};
+  }
 `;
 
 const HeaderText = styled.p`
@@ -36,7 +39,7 @@ export default function Header() {
   return (
     <HeaderWrapper>
       <Bubble onClick={goHome} style={{ margin: 30 }}>
-        <FontAwesomeIcon icon={faHome} size="5x" style={{ color: 'purple' }} />
+        <FontAwesomeIcon icon={faHome} size="5x" className="icon" />
       </Bubble>
       <HeaderText>Local Issues</HeaderText>
       <Bubble style={{ margin: 30 }}>

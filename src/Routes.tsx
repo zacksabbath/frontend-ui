@@ -1,11 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import { NewsfeedPage, Homepage } from 'components';
+import { NewsfeedPage, Homepage, Header } from 'components';
 
 export default function Routes() {
   return (
     <Router>
+      <Header />
+
       <Switch>
         <Route path="/newsfeed" exact>
           <Link to="/" style={{ color: 'white' }}>
