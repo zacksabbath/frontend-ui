@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { useHistory, useLocation } from 'react-router-dom';
 import { ButtonStyle } from 'components';
@@ -41,7 +41,6 @@ export default function FooterNav(props: FooterProps) {
 
   if (currentLocation === '/LocalIssues') {
     isLocal = true;
-    console.log('true');
   } else if (currentLocation === '/StateIssues') {
     isState = true;
   } else if (currentLocation === '/FederalIssues') {
