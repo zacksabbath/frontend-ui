@@ -9,6 +9,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 // Notes: - Figure out useHistory
 //        - use theme for icon color
 //        - find correct font for header
+//        - adjust HW negative margin
 
 const HeaderWrapper = styled.div`
   width: 100vw;
@@ -18,7 +19,6 @@ const HeaderWrapper = styled.div`
   background-size: cover;
   background: ${({ theme }) => theme.main.colors.purpleDark};
   margin-top: -50px;
-  //   ^ This needs to be adjusted
 `;
 
 const HeaderText = styled.p`
