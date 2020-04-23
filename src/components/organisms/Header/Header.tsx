@@ -7,9 +7,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 // Notes: - Figure out useHistory
-//        - use theme for icon color
 //        - find correct font for header
 //        - adjust HW negative margin
+//        -user auth for avatar
 
 const HeaderWrapper = styled.div`
   width: 100vw;
