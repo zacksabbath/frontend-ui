@@ -13,7 +13,6 @@ export default function Routes() {
           </Link>
           <NewsfeedPage />
         </Route>
-
         <Route path="/" exact>
           <Homepage />
         </Route>
