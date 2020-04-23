@@ -19,19 +19,6 @@ export default function Routes() {
           </Link>
           <NewsfeedPage />
         </Route>
-
-        <Route path="/FederalIssues" exact>
-          <FederalIssues />
-        </Route>
-
-        <Route path="/StateIssues" exact>
-          <StateIssues />
-        </Route>
-
-        <Route path="/localIssues" exact>
-          <LocalIssues />
-        </Route>
-
         <Route path="/" exact>
           <Homepage />
         </Route>
