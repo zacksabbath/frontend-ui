@@ -6,10 +6,10 @@ import { Avatar } from 'components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
-// Notes: - Figure out useHistory
+// Notes: - user auth for avatar
 //        - find correct font for header
 //        - adjust HW negative margin
-//        -user auth for avatar
+//        - user auth for avatar
 
 const HeaderWrapper = styled.div`
   width: 100vw;
@@ -31,10 +31,11 @@ const HeaderText = styled.p`
 `;
 
 export default function Header() {
-  //   const history = useHistory();
+  const history = useHistory();
+
   const goHome = () => {
     alert('Home!');
-    // history.push('/');
+    history.push('/newsfeed');
   };
   return (
     <HeaderWrapper>
