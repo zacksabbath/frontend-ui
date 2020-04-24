@@ -1,3 +1,5 @@
+import { normalize } from 'path';
+
 // Primary Colors
 const purple = '#6340B2';
 const purpleDark = '#3C266E';
@@ -45,17 +47,95 @@ const darkGrey = '#333333';
 
 //Typography
 const mainFont = 'Galano Grotesque';
-const t12 = '.75rem';
-const t13 = '.8125rem';
-const t14 = '.875rem';
-const t15 = '.9375rem';
-const t16 = '1rem';
-const t19 = '1.1875rem';
-const t20 = '1.25rem';
-const t22 = '1.375rem';
-const t24 = '1.5rem';
-const t26 = '1.625rem';
-const t30 = '1.875rem';
+const t12rem = '.75rem';
+const t13rem = '.8125rem';
+const t14rem = '.875rem';
+const t15rem = '.9375rem';
+const t16rem = '1rem';
+const t19rem = '1.1875rem';
+const t20rem = '1.25rem';
+const t22rem = '1.375rem';
+const t24rem = '1.5rem';
+const t26rem = '1.625rem';
+const t30rem = '1.875rem';
+
+const t12 = {
+  fontFamily: mainFont,
+  fontSize: t12rem,
+  fontWeight: 400,
+  fontStyle: 'normal',
+  lineHeight: t14rem,
+};
+const t13 = {
+  fontFamily: mainFont,
+  fontSize: t13rem,
+  fontWeight: 400,
+  fontStyle: 'normal',
+  lineHeight: t16rem,
+};
+const t14 = {
+  fontFamily: mainFont,
+  fontSize: t14rem,
+  fontWeight: 400,
+  fontStyle: 'normal',
+  lineHeight: t20rem,
+};
+const t15 = {
+  fontFamily: mainFont,
+  fontSize: t15rem,
+  fontWeight: 400,
+  fontStyle: 'normal',
+  lineHeight: t20rem,
+};
+const t16 = {
+  fontFamily: mainFont,
+  fontSize: t16rem,
+  fontWeight: 400,
+  fontStyle: 'normal',
+  lineHeight: t20rem,
+};
+const t19 = {
+  fontFamily: mainFont,
+  fontSize: t19rem,
+  fontWeight: 400,
+  fontStyle: 'normal',
+  lineHeight: t26rem,
+};
+const t20 = {
+  fontFamily: mainFont,
+  fontSize: t20rem,
+  fontWeight: 400,
+  fontStyle: 'normal',
+  lineHeight: t26rem,
+};
+const t22 = {
+  fontFamily: mainFont,
+  fontSize: t22rem,
+  fontWeight: 400,
+  fontStyle: 'normal',
+  lineHeight: t26rem,
+};
+const t24 = {
+  fontFamily: mainFont,
+  fontSize: t24rem,
+  fontWeight: 400,
+  fontStyle: 'normal',
+  lineHeight: t26rem,
+};
+const t26 = {
+  fontFamily: mainFont,
+  fontSize: t26rem,
+  fontWeight: 400,
+  fontStyle: 'normal',
+  lineHeight: t26rem,
+};
+const t30 = {
+  fontFamily: mainFont,
+  fontSize: t30rem,
+  fontWeight: 400,
+  fontStyle: 'normal',
+  lineHeight: t30rem,
+};
 
 export default {
   breakpoints: {
@@ -82,6 +162,14 @@ export default {
   // },
   overrides: {},
   palette: {
+    white: white,
+    black: black,
+    grey: {
+      lightestGrey: '#f3f3f3',
+      lightGrey: lightGrey,
+      middleGrey: middleGrey,
+      darkGrey: darkGrey,
+    },
     main: {
       //purple theme
       background: {
@@ -120,6 +208,7 @@ export default {
         selected: magenta,
       },
     },
+
     news: {
       primary: orange,
       secondary: orangeDark,
@@ -130,6 +219,7 @@ export default {
         primaryLight: orangeLightText,
       },
     },
+
     quote: {
       primary: teal,
       secondary: tealDark,
@@ -139,6 +229,7 @@ export default {
         secondary: white,
       },
     },
+
     history: {
       primary: aqua,
       secondary: aquaDark,
@@ -148,6 +239,7 @@ export default {
         secondary: white,
       },
     },
+
     finances: {
       primary: olive,
       secondary: oliveDark,
@@ -157,6 +249,7 @@ export default {
         secondary: white,
       },
     },
+
     event: {
       primary: violet,
       secondary: violetDark,
@@ -167,7 +260,8 @@ export default {
         primaryLight: white,
       },
     },
-    leg: {
+
+    legis: {
       primary: white,
       secondary: lightGrey,
       icon: middleGrey,
@@ -298,123 +392,85 @@ export default {
 
     mainHeader: {
       //22px bold
-      fontFamily: mainFont,
-      fontSize: t22,
+      ...t22,
       fontWeight: 600,
-      lineHeight: '1.3rem',
     },
     h1: {
       //30px medium
-      fontFamily: mainFont,
-      fontSize: t30,
+      ...t30,
       fontWeight: 500,
-      lineHeight: '1.3rem',
     },
     h2: {
       //26px bold
-      fontFamily: mainFont,
-      fontSize: t26,
+      ...t26,
       fontWeight: 600,
-      lineHeight: '1.3rem',
     },
     h3: {
       //22px bold
-      fontFamily: mainFont,
-      fontSize: t22,
+      ...t22,
       fontWeight: 600,
-      lineHeight: '1.3rem',
     },
     h4: {
       //20px medium, section header
-      fontFamily: mainFont,
-      fontSize: t20,
+      ...t20,
       fontWeight: 500,
-      lineHeight: '1.3rem',
     },
     h5: {
       //19px medium, body header
-      fontFamily: mainFont,
-      fontSize: t19,
-      fontWeight: 400,
-      lineHeight: '1.4rem',
+      ...t19,
+      fontWeight: 500,
     },
     body1: {
       //15px regular
-      fontFamily: mainFont,
-      fontSize: t15,
-      fontWeight: 400,
-      lineHeight: '1.333rem',
+      ...t15,
     },
     body2: {
       //14px regular
-      fontFamily: mainFont,
-      fontSize: t14,
-      fontWeight: 400,
-      lineHeight: '1.333rem',
+      ...t14,
     },
     body3: {
       //13px regular
-      fontFamily: mainFont,
-      fontSize: t13,
-      fontWeight: 400,
-      lineHeight: '1.333rem',
+      ...t13,
     },
     button: {
       //15px regular
-      fontFamily: mainFont,
-      fontSize: t15,
-      fontWeight: 400,
-      lineHeight: '1.333rem',
+      ...t15,
     },
     nav: {
       //16px medium
-      fontFamily: mainFont,
-      fontSize: t16,
+      ...t16,
       fontWeight: 500,
-      lineHeight: '1.2rem',
     },
     nameSm: {
       //12px medium
-      fontFamily: mainFont,
-      fontSize: t12,
+      ...t12,
       fontWeight: 500,
-      lineHeight: '1.333rem',
     },
     nameMed: {
       //15px medium
-      fontFamily: mainFont,
-      fontSize: t15,
+      ...t15,
       fontWeight: 500,
-      lineHeight: '1.333rem',
     },
     counts: {
       //14px bold
-      fontFamily: mainFont,
-      fontSize: t14,
+      ...t14,
       fontWeight: 600,
-      lineHeight: '1.2rem',
     },
     tag: {
       //13px medium
-      fontFamily: mainFont,
-      fontSize: t13,
+      ...t13,
       fontWeight: 500,
-      lineHeight: '1.2rem',
     },
-    leg: {
+    legis: {
       header: {
         //16px bold
-        fontFamily: mainFont,
-        fontSize: t16,
+        ...t16,
         fontWeight: 600,
-        lineHeight: '1.2rem',
       },
       name: {
         //26px medium
-        fontFamily: mainFont,
-        fontSize: t26,
+        ...t26,
         fontWeight: 500,
-        lineHeight: '1.3rem',
       },
     },
 
@@ -423,109 +479,79 @@ export default {
     card: {
       date: {
         //13px regular
-        fontFamily: mainFont,
-        fontSize: t13,
-        fontWeight: 400,
-        lineHeight: '1.2rem',
+        ...t13,
       },
       subject: {
         //15px medium
-        fontFamily: mainFont,
-        fontSize: t15,
+        ...t15,
         fontWeight: 500,
-        lineHeight: t20,
       },
       body: {
         //15px regular
-        fontFamily: mainFont,
-        fontSize: t15,
-        fontWeight: 400,
-        lineHeight: t20,
+        ...t15,
       },
       emphasis: {
-        //15px regular
-        fontFamily: mainFont,
-        fontSize: t15,
-        fontWeight: 400,
-        lineHeight: t20,
+        //15px medium
+        ...t15,
+        fontWeight: 500,
       },
       quote: {
         //15px medium
-        fontFamily: mainFont,
-        fontSize: t15,
+        ...t15,
         fontWeight: 500,
-        lineHeight: t20,
         fontStyle: 'italic',
       },
       event: {
         date: {
           //14px medium
-          fontFamily: mainFont,
-          fontSize: t14,
+          ...t14,
           fontWeight: 500,
-          lineHeight: '1.2rem',
         },
         title: {
           //15px medium
-          fontFamily: mainFont,
-          fontSize: t15,
+          ...t15,
           fontWeight: 500,
-          lineHeight: t20,
         },
         location: {
           //14px medium
-          fontFamily: mainFont,
-          fontSize: t14,
+          ...t14,
           fontWeight: 500,
-          lineHeight: '1.2rem',
         },
       },
-      leg: {
+      legis: {
         name: {
           //20px bold
-          fontFamily: mainFont,
-          fontSize: t20,
+          ...t20,
           fontWeight: 600,
-          lineHeight: '1.2rem',
         },
         status: {
           //16px medium
-          fontFamily: mainFont,
-          fontSize: t16,
+          ...t16,
           fontWeight: 500,
-          lineHeight: '1.2rem',
         },
       },
       news: {
         source: {
           //14px bold
-          fontFamily: mainFont,
-          fontSize: t14,
+          ...t14,
           fontWeight: 600,
-          lineHeight: '1.2rem',
         },
         headline: {
           //20px medium
-          fontFamily: mainFont,
-          fontSize: t20,
+          ...t20,
           fontWeight: 500,
-          lineHeight: t26,
         },
       },
       newsSm: {
         source: {
           //14px bold
-          fontFamily: mainFont,
-          fontSize: t14,
+          ...t14,
           fontWeight: 600,
-          lineHeight: '1.2rem',
         },
         headline: {
           //16px medium
-          fontFamily: mainFont,
-          fontSize: t16,
+          ...t16,
           fontWeight: 500,
-          lineHeight: t22,
         },
       },
     },
