@@ -30,21 +30,21 @@ body {
 }
 
 @font-face {
-  font-family: 'Galiano Grotesque';
+  font-family: 'Galano Grotesque';
   src: url(./fonts/GalanoGrotesque-Italic.otf) format('opentype');
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Galiano Grotesque';
+  font-family: 'Galano Grotesque';
   src: url(./fonts/GalanoGrotesque-MediumItalic.otf) format('opentype');
   font-weight: 500;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Galiano Grotesque SemiBoldItalic';
+  font-family: 'Galano Grotesque';
   src: url(./fonts/GalanoGrotesque-SemiBoldItalic.otf) format('opentype');
   font-weight: 600;
   font-style: italic;

@@ -1,3 +1,62 @@
+// Primary Colors
+const purple = '#6340B2';
+const purpleDark = '#3C266E';
+const purpleDarker = '#26154A';
+const purpleDarkest = '#1E103A';
+const purpleLightText = '#A48ED4';
+const purpleDarkText = '#7764A1';
+
+const magenta = '#DA0064';
+
+const yellow = '#FFD52D';
+const yellowDark = '#DDC255';
+const yellowDarkText = '#564810';
+
+const green = '#46B918';
+
+// Secondary Colors
+const teal = '#77CCC5';
+const tealDark = '#5CA29D';
+const tealText = '#203735';
+
+const orange = '#FE8E4D';
+const orangeDark = '#DF7A3E';
+const orangeText = '#5E351C';
+const orangeLightText = '#AB5D30';
+
+const aqua = '#4ECC8F';
+const aquaDark = '#3EA271';
+const aquaText = '#1E4F37';
+
+const violet = '#AB96C7';
+const violetDark = '#866CA9';
+const violetText = '#412C5E';
+
+const olive = '#9ACC64';
+const oliveDark = '#78A746';
+const oliveText = '#39521F';
+
+// Greyscale
+const white = '#FFFFFF';
+const black = '#000000';
+const lightGrey = '#EEEEEE';
+const middleGrey = '#AAAAAA';
+const darkGrey = '#333333';
+
+//Typography
+const mainFont = 'Galano Grotesque';
+const t12 = '.75rem';
+const t13 = '.8125rem';
+const t14 = '.875rem';
+const t15 = '.9375rem';
+const t16 = '1rem';
+const t19 = '1.1875rem';
+const t20 = '1.25rem';
+const t22 = '1.375rem';
+const t24 = '1.5rem';
+const t26 = '1.625rem';
+const t30 = '1.875rem';
+
 export default {
   breakpoints: {
     keys: ['xs', 'sm', 'md', 'lg', 'xl'],
@@ -26,17 +85,19 @@ export default {
     main: {
       //purple theme
       background: {
-        primary: '#1E103A',
-        secondary: '#26154A',
+        primary: purpleDarkest,
+        secondary: purpleDarker,
         gradient: {
+          //primary gradient is brighter
           primary: {
             light: '#301D58',
-            dark: '#26154A',
+            dark: purpleDarker,
             // lightBorder: '#3C266E',
             // darkBorder: '#2D1A57'
           },
+          //secondary gradient is more subtle
           secondary: {
-            light: '#26154A',
+            light: purpleDarker,
             dark: '#221242',
             // lightBorder: '#26154A',
             // darkBorder: '#26154A'
@@ -44,73 +105,75 @@ export default {
         },
       },
       foreground: {
-        primary: '3C266E',
-        secondary: '#6340B2',
+        //primary is darker
+        primary: purpleDark,
+        //secondary is brighter
+        secondary: purple,
       },
       text: {
-        primary: '#FFFFFF',
-        secondary: '#A48ED4',
-        selected: '#FFFFFF',
-        disabled: '#7764A1',
+        primary: white,
+        secondary: purpleLightText,
+        selected: white,
+        disabled: purpleDarkText,
       },
       action: {
-        selected: '#DA0064',
+        selected: magenta,
       },
     },
     news: {
-      primary: '#FE8E4D',
-      secondary: '#DF7A3E',
-      icon: '#FFFFFF',
+      primary: orange,
+      secondary: orangeDark,
+      icon: white,
       text: {
-        primary: '#4D2B17',
-        secondary: '#FFFFFF',
-        primaryLight: '#AB5D30',
+        primary: orangeText,
+        secondary: white,
+        primaryLight: orangeLightText,
       },
     },
-    qa: {
-      primary: '#77CCC5',
-      secondary: '#5CA29D',
-      icon: '#FFFFFF',
+    quote: {
+      primary: teal,
+      secondary: tealDark,
+      icon: white,
       text: {
-        primary: '#203735',
-        secondary: '#FFFFFF',
+        primary: tealText,
+        secondary: white,
       },
     },
     history: {
-      primary: '#4ECC8F',
-      secondary: '#3EA271',
-      icon: '#FFFFFF',
+      primary: aqua,
+      secondary: aquaDark,
+      icon: white,
       text: {
-        primary: '#1E4F37',
-        secondary: '#FFFFFF',
+        primary: aquaText,
+        secondary: white,
       },
     },
     finances: {
-      primary: '#9ACC64',
-      secondary: '#78A746',
-      icon: '#FFFFFF',
+      primary: olive,
+      secondary: oliveDark,
+      icon: white,
       text: {
-        primary: '#39521F',
-        secondary: '#FFFFFF',
+        primary: oliveText,
+        secondary: white,
       },
     },
     event: {
-      primary: '#AB96C7',
-      secondary: '#866CA9',
-      icon: '#FFFFFF',
+      primary: violet,
+      secondary: violetDark,
+      icon: white,
       text: {
-        primary: '#412C5E',
-        secondary: '#FFFFFF',
-        primaryLight: '#FFFFFF',
+        primary: violetText,
+        secondary: white,
+        primaryLight: white,
       },
     },
-    bill: {
-      primary: '#FFFFFF',
-      secondary: '#EEEEEE',
-      icon: '#AAAAAA',
+    leg: {
+      primary: white,
+      secondary: lightGrey,
+      icon: middleGrey,
       text: {
-        primary: '#000000',
-        secondary: '#333333',
+        primary: black,
+        secondary: darkGrey,
       },
     },
   },
@@ -230,9 +293,254 @@ export default {
   //   '0px 11px 14px -7px rgba(0,0,0,0.2),0px 23px 36px 3px rgba(0,0,0,0.14),0px 9px 44px 8px rgba(0,0,0,0.12)',
   //   '0px 11px 15px -7px rgba(0,0,0,0.2),0px 24px 38px 3px rgba(0,0,0,0.14),0px 9px 46px 8px rgba(0,0,0,0.12)',
   // ],
+  typography: {
+    htmlFontSize: 16,
+
+    mainHeader: {
+      //22px bold
+      fontFamily: mainFont,
+      fontSize: t22,
+      fontWeight: 600,
+      lineHeight: '1.3rem',
+    },
+    h1: {
+      //30px medium
+      fontFamily: mainFont,
+      fontSize: t30,
+      fontWeight: 500,
+      lineHeight: '1.3rem',
+    },
+    h2: {
+      //26px bold
+      fontFamily: mainFont,
+      fontSize: t26,
+      fontWeight: 600,
+      lineHeight: '1.3rem',
+    },
+    h3: {
+      //22px bold
+      fontFamily: mainFont,
+      fontSize: t22,
+      fontWeight: 600,
+      lineHeight: '1.3rem',
+    },
+    h4: {
+      //20px medium, section header
+      fontFamily: mainFont,
+      fontSize: t20,
+      fontWeight: 500,
+      lineHeight: '1.3rem',
+    },
+    h5: {
+      //19px medium, body header
+      fontFamily: mainFont,
+      fontSize: t19,
+      fontWeight: 400,
+      lineHeight: '1.4rem',
+    },
+    body1: {
+      //15px regular
+      fontFamily: mainFont,
+      fontSize: t15,
+      fontWeight: 400,
+      lineHeight: '1.333rem',
+    },
+    body2: {
+      //14px regular
+      fontFamily: mainFont,
+      fontSize: t14,
+      fontWeight: 400,
+      lineHeight: '1.333rem',
+    },
+    body3: {
+      //13px regular
+      fontFamily: mainFont,
+      fontSize: t13,
+      fontWeight: 400,
+      lineHeight: '1.333rem',
+    },
+    button: {
+      //15px regular
+      fontFamily: mainFont,
+      fontSize: t15,
+      fontWeight: 400,
+      lineHeight: '1.333rem',
+    },
+    nav: {
+      //16px medium
+      fontFamily: mainFont,
+      fontSize: t16,
+      fontWeight: 500,
+      lineHeight: '1.2rem',
+    },
+    nameSm: {
+      //12px medium
+      fontFamily: mainFont,
+      fontSize: t12,
+      fontWeight: 500,
+      lineHeight: '1.333rem',
+    },
+    nameMed: {
+      //15px medium
+      fontFamily: mainFont,
+      fontSize: t15,
+      fontWeight: 500,
+      lineHeight: '1.333rem',
+    },
+    counts: {
+      //14px bold
+      fontFamily: mainFont,
+      fontSize: t14,
+      fontWeight: 600,
+      lineHeight: '1.2rem',
+    },
+    tag: {
+      //13px medium
+      fontFamily: mainFont,
+      fontSize: t13,
+      fontWeight: 500,
+      lineHeight: '1.2rem',
+    },
+    leg: {
+      header: {
+        //16px bold
+        fontFamily: mainFont,
+        fontSize: t16,
+        fontWeight: 600,
+        lineHeight: '1.2rem',
+      },
+      name: {
+        //26px medium
+        fontFamily: mainFont,
+        fontSize: t26,
+        fontWeight: 500,
+        lineHeight: '1.3rem',
+      },
+    },
+
+    //cards
+
+    card: {
+      date: {
+        //13px regular
+        fontFamily: mainFont,
+        fontSize: t13,
+        fontWeight: 400,
+        lineHeight: '1.2rem',
+      },
+      subject: {
+        //15px medium
+        fontFamily: mainFont,
+        fontSize: t15,
+        fontWeight: 500,
+        lineHeight: t20,
+      },
+      body: {
+        //15px regular
+        fontFamily: mainFont,
+        fontSize: t15,
+        fontWeight: 400,
+        lineHeight: t20,
+      },
+      emphasis: {
+        //15px regular
+        fontFamily: mainFont,
+        fontSize: t15,
+        fontWeight: 400,
+        lineHeight: t20,
+      },
+      quote: {
+        //15px medium
+        fontFamily: mainFont,
+        fontSize: t15,
+        fontWeight: 500,
+        lineHeight: t20,
+        fontStyle: 'italic',
+      },
+      event: {
+        date: {
+          //14px medium
+          fontFamily: mainFont,
+          fontSize: t14,
+          fontWeight: 500,
+          lineHeight: '1.2rem',
+        },
+        title: {
+          //15px medium
+          fontFamily: mainFont,
+          fontSize: t15,
+          fontWeight: 500,
+          lineHeight: t20,
+        },
+        location: {
+          //14px medium
+          fontFamily: mainFont,
+          fontSize: t14,
+          fontWeight: 500,
+          lineHeight: '1.2rem',
+        },
+      },
+      leg: {
+        name: {
+          //20px bold
+          fontFamily: mainFont,
+          fontSize: t20,
+          fontWeight: 600,
+          lineHeight: '1.2rem',
+        },
+        status: {
+          //16px medium
+          fontFamily: mainFont,
+          fontSize: t16,
+          fontWeight: 500,
+          lineHeight: '1.2rem',
+        },
+      },
+      news: {
+        source: {
+          //14px bold
+          fontFamily: mainFont,
+          fontSize: t14,
+          fontWeight: 600,
+          lineHeight: '1.2rem',
+        },
+        headline: {
+          //20px medium
+          fontFamily: mainFont,
+          fontSize: t20,
+          fontWeight: 500,
+          lineHeight: t26,
+        },
+      },
+      newsSm: {
+        source: {
+          //14px bold
+          fontFamily: mainFont,
+          fontSize: t14,
+          fontWeight: 600,
+          lineHeight: '1.2rem',
+        },
+        headline: {
+          //16px medium
+          fontFamily: mainFont,
+          fontSize: t16,
+          fontWeight: 500,
+          lineHeight: t22,
+        },
+      },
+    },
+  },
+  spacing: {
+    sm: 10,
+    med: 15,
+    l: 20,
+    xl: 25,
+    xxl: 30,
+    xxxl: 40,
+  },
   // typography: {
   //   htmlFontSize: 16,
-  //   fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+  //   fontFamily: 'Galano Grotesque',
   //   fontSize: 14,
   //   fontWeightLight: 300,
   //   fontWeightRegular: 400,
