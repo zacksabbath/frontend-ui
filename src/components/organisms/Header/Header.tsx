@@ -6,11 +6,6 @@ import { Avatar } from 'components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
-// Notes: - user auth for avatar
-//        - find correct font for header
-//        - adjust HW negative margin
-//        - user auth for avatar
-
 const HeaderWrapper = styled.div`
   width: 100vw;
   display: flex;
