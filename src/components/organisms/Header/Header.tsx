@@ -6,11 +6,6 @@ import { Avatar } from 'components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
-// Notes: - Figure out useHistory
-//        - use theme for icon color
-//        - find correct font for header
-//        - adjust HW negative margin
-
 const HeaderWrapper = styled.div`
   width: 100vw;
   display: flex;
@@ -19,6 +14,9 @@ const HeaderWrapper = styled.div`
   background-size: cover;
   background: ${({ theme }) => theme.main.colors.purpleDark};
   margin-top: -50px;
+  .icon {
+    color: ${({ theme }) => theme.main.colors.purple};
+  }
 `;
 
 const HeaderText = styled.p`
@@ -28,15 +26,16 @@ const HeaderText = styled.p`
 `;
 
 export default function Header() {
-  //   const history = useHistory();
+  const history = useHistory();
+
   const goHome = () => {
     alert('Home!');
-    // history.push('/');
+    history.push('/newsfeed');
   };
   return (
     <HeaderWrapper>
       <Bubble onClick={goHome} style={{ margin: 30 }}>
-        <FontAwesomeIcon icon={faHome} size="5x" style={{ color: 'purple' }} />
+        <FontAwesomeIcon icon={faHome} size="5x" className="icon" />
       </Bubble>
       <HeaderText>Local Issues</HeaderText>
       <Bubble style={{ margin: 30 }}>
