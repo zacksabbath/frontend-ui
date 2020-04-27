@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { FooterNav } from 'components';
+import { IssuesFooter } from 'components';
 
-export default function StateIssues() {
+export default function State() {
   return (
     <>
-      <FooterNav />
+      <IssuesFooter />
     </>
   );
 }

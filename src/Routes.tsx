@@ -1,13 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import {
-  NewsfeedPage,
-  Homepage,
-  LocalIssues,
-  FederalIssues,
-  StateIssues,
-} from 'components';
+import { NewsfeedPage, Homepage, Local, Federal, State } from 'components';
 
 export default function Routes() {
   return (
@@ -24,14 +18,14 @@ export default function Routes() {
         </Route>
 
         {/* Standin for the Issues Pages  */}
-        <Route path="/LocalIssues" exact>
-          <LocalIssues />
+        <Route path="/Local" exact>
+          <Local />
         </Route>
-        <Route path="/FederalIssues" exact>
-          <FederalIssues />
+        <Route path="/Federal" exact>
+          <Federal />
         </Route>
-        <Route path="/StateIssues" exact>
-          <StateIssues />
+        <Route path="/State" exact>
+          <State />
         </Route>
         {/* end of standing */}
       </Switch>

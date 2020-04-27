@@ -4,10 +4,11 @@ const ButtonStyle = styled.button(props => {
   return css`
     background-color: #3c266e;
     color: white;
-    flex: left;
+    flex: right;
     flex-direction: row;
     text-align: center;
-    display: inline;
+    position: relative;
+    display: row;
   `;
 });
 
