@@ -2,15 +2,65 @@
 name: Bubble
 ---
 
-<!-- this isnt actually working -->
-
 import Bubble from './Bubble';
 import { Playground } from 'docz';
+import theme, { cardThemes } from '../../../global/theme';
+import { ThemeProvider } from 'styled-components';
 
 # Bubble
 
-## Basic usage
+## Main theme
 
 <Playground>
-  <Bubble />
+  <ThemeProvider theme={theme}>
+    <Bubble>Main Text</Bubble>
+  </ThemeProvider>
+</Playground>
+
+## News theme
+
+<Playground>
+  <ThemeProvider theme={cardThemes.news}>
+    <Bubble>News Card</Bubble>
+  </ThemeProvider>
+</Playground>
+
+## Quote Theme
+
+<Playground>
+  <ThemeProvider theme={cardThemes.question}>
+    <Bubble>Question Card</Bubble>
+  </ThemeProvider>
+</Playground>
+
+## Finance Theme
+
+<Playground>
+  <ThemeProvider theme={cardThemes.contribution}>
+    <Bubble>Contribution Card</Bubble>
+  </ThemeProvider>
+</Playground>
+
+## Legislation Theme
+
+<Playground>
+  <ThemeProvider theme={cardThemes.vote}>
+    <Bubble>Vote Card</Bubble>
+  </ThemeProvider>
+</Playground>
+
+## History Theme
+
+<Playground>
+  <ThemeProvider theme={cardThemes.history}>
+    <Bubble>History Card</Bubble>
+  </ThemeProvider>
+</Playground>
+
+## Event Theme
+
+<Playground>
+  <ThemeProvider theme={cardThemes.event}>
+    <Bubble>Event Card</Bubble>
+  </ThemeProvider>
 </Playground>

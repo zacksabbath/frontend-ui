@@ -48,7 +48,7 @@ export default function NewsFeed(props: NewsfeedProps) {
 
         const nestedTheme = (currentTheme: Object) => ({
           ...currentTheme,
-          cardTheme: getCardTheme(type),
+          ...getCardTheme(type),
         });
 
         return (
