@@ -14,12 +14,13 @@ export type EventCardProps = {
   };
 };
 
-const Main = styled.div`
+const Content = styled.div`
   display: flex;
   flex-direction: row;
-  .calendar-icon {
-    color: ${({ theme }) => theme.cardTheme?.secondary};
-  }
+`;
+
+const CalendarIcon = styled.div`
+  color: ${({ theme }) => theme.background.secondary};
 `;
 
 export default function EventCard(props: any) {
@@ -28,16 +29,16 @@ export default function EventCard(props: any) {
   const { date, name } = content;
   return (
     <NewsfeedItem {...rest}>
-      <Main>
-        <div className="calendar-icon">
+      <Content>
+        <CalendarIcon>
           <FontAwesomeIcon icon={faCalendarAlt} size="4x" />
-        </div>
+        </CalendarIcon>
         <div>
           <p>{date}</p>
           <p>{name}</p>
           {/* <p>{location}</p> */}
         </div>
-      </Main>
+      </Content>
     </NewsfeedItem>
   );
 }
