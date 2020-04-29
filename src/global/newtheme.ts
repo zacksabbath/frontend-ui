@@ -41,6 +41,7 @@ const oliveText = '#39521F';
 // Greyscale
 const white = '#FFFFFF';
 const black = '#000000';
+const lightestGrey = '#F3F3F3';
 const lightGrey = '#EEEEEE';
 const middleGrey = '#AAAAAA';
 const darkGrey = '#333333';
@@ -121,6 +122,12 @@ const t30 = {
   lineHeight: t30rem,
 };
 
+export const fontWeights = {
+  normal: 'normal',
+  medium: 500,
+  semiBold: 600,
+};
+
 export default {
   breakpoints: {
     keys: ['xs', 'sm', 'md', 'lg', 'xl'],
@@ -149,10 +156,10 @@ export default {
     white: white,
     black: black,
     grey: {
-      lightestGrey: '#f3f3f3',
-      lightGrey: lightGrey,
-      middleGrey: middleGrey,
-      darkGrey: darkGrey,
+      lightestGrey,
+      lightGrey,
+      middleGrey,
+      darkGrey,
     },
     main: {
       //purple theme
@@ -224,7 +231,7 @@ export default {
       },
     },
 
-    finances: {
+    finance: {
       primary: olive,
       secondary: oliveDark,
       icon: white,
@@ -262,32 +269,32 @@ export default {
     mainHeader: {
       //22px bold
       ...t22,
-      fontWeight: 600,
+      fontWeight: fontWeights.medium,
     },
     h1: {
       //30px medium
       ...t30,
-      fontWeight: 500,
+      fontWeight: fontWeights.medium,
     },
     h2: {
       //26px bold
       ...t26,
-      fontWeight: 600,
+      fontWeight: fontWeights.semiBold,
     },
     h3: {
       //22px bold
       ...t22,
-      fontWeight: 600,
+      fontWeight: fontWeights.semiBold,
     },
     h4: {
       //20px medium, section header
       ...t20,
-      fontWeight: 500,
+      fontWeight: fontWeights.medium,
     },
     h5: {
       //19px medium, body header
       ...t19,
-      fontWeight: 500,
+      fontWeight: fontWeights.medium,
     },
     body1: {
       //15px regular
@@ -308,38 +315,38 @@ export default {
     nav: {
       //16px medium
       ...t16,
-      fontWeight: 500,
+      fontWeight: fontWeights.medium,
     },
     nameSm: {
       //12px medium
       ...t12,
-      fontWeight: 500,
+      fontWeight: fontWeights.medium,
     },
     nameMed: {
       //15px medium
       ...t15,
-      fontWeight: 500,
+      fontWeight: fontWeights.medium,
     },
     counts: {
       //14px bold
       ...t14,
-      fontWeight: 600,
+      fontWeight: fontWeights.semiBold,
     },
     tag: {
       //13px medium
       ...t13,
-      fontWeight: 500,
+      fontWeight: fontWeights.medium,
     },
     legis: {
       header: {
         //16px bold
         ...t16,
-        fontWeight: 600,
+        fontWeight: fontWeights.semiBold,
       },
       name: {
         //26px medium
         ...t26,
-        fontWeight: 500,
+        fontWeight: fontWeights.medium,
       },
     },
 
@@ -353,7 +360,7 @@ export default {
       subject: {
         //15px medium
         ...t15,
-        fontWeight: 500,
+        fontWeight: fontWeights.medium,
       },
       body: {
         //15px regular
@@ -362,65 +369,65 @@ export default {
       emphasis: {
         //15px medium
         ...t15,
-        fontWeight: 500,
+        fontWeight: fontWeights.medium,
       },
       quote: {
         //15px medium
         ...t15,
-        fontWeight: 500,
+        fontWeight: fontWeights.medium,
         fontStyle: 'italic',
       },
       event: {
         date: {
           //14px medium
           ...t14,
-          fontWeight: 500,
+          fontWeight: fontWeights.medium,
         },
         title: {
           //15px medium
           ...t15,
-          fontWeight: 500,
+          fontWeight: fontWeights.medium,
         },
         location: {
           //14px medium
           ...t14,
-          fontWeight: 500,
+          fontWeight: fontWeights.medium,
         },
       },
       legis: {
         name: {
           //20px bold
           ...t20,
-          fontWeight: 600,
+          fontWeight: fontWeights.semiBold,
         },
         status: {
           //16px medium
           ...t16,
-          fontWeight: 500,
+          fontWeight: fontWeights.medium,
         },
       },
       news: {
         source: {
           //14px bold
           ...t14,
-          fontWeight: 600,
+          fontWeight: fontWeights.semiBold,
         },
         headline: {
           //20px medium
           ...t20,
-          fontWeight: 500,
+          fontWeight: fontWeights.medium,
         },
       },
       newsSm: {
         source: {
           //14px bold
           ...t14,
-          fontWeight: 600,
+          fontWeight: fontWeights.semiBold,
         },
         headline: {
           //16px medium
           ...t16,
-          fontWeight: 500,
+          fontWeight: fontWeights.medium,
         },
       },
     },
@@ -433,138 +440,4 @@ export default {
     xxl: 30,
     xxxl: 40,
   },
-  // typography: {
-  //   htmlFontSize: 16,
-  //   fontFamily: 'Galano Grotesque',
-  //   fontSize: 14,
-  //   fontWeightLight: 300,
-  //   fontWeightRegular: 400,
-  //   fontWeightMedium: 500,
-  //   fontWeightBold: 700,
-  //   h1: {
-  //     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-  //     fontWeight: 300,
-  //     fontSize: '6rem',
-  //     lineHeight: 1.167,
-  //     letterSpacing: '-0.01562em',
-  //   },
-  //   h2: {
-  //     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-  //     fontWeight: 300,
-  //     fontSize: '3.75rem',
-  //     lineHeight: 1.2,
-  //     letterSpacing: '-0.00833em',
-  //   },
-  //   h3: {
-  //     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-  //     fontWeight: 400,
-  //     fontSize: '3rem',
-  //     lineHeight: 1.167,
-  //     letterSpacing: '0em',
-  //   },
-  //   h4: {
-  //     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-  //     fontWeight: 400,
-  //     fontSize: '2.125rem',
-  //     lineHeight: 1.235,
-  //     letterSpacing: '0.00735em',
-  //   },
-  //   h5: {
-  //     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-  //     fontWeight: 400,
-  //     fontSize: '1.5rem',
-  //     lineHeight: 1.334,
-  //     letterSpacing: '0em',
-  //   },
-  //   h6: {
-  //     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-  //     fontWeight: 500,
-  //     fontSize: '1.25rem',
-  //     lineHeight: 1.6,
-  //     letterSpacing: '0.0075em',
-  //   },
-  //   subtitle1: {
-  //     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-  //     fontWeight: 400,
-  //     fontSize: '1rem',
-  //     lineHeight: 1.75,
-  //     letterSpacing: '0.00938em',
-  //   },
-  //   subtitle2: {
-  //     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-  //     fontWeight: 500,
-  //     fontSize: '0.875rem',
-  //     lineHeight: 1.57,
-  //     letterSpacing: '0.00714em',
-  //   },
-  //   body1: {
-  //     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-  //     fontWeight: 400,
-  //     fontSize: '1rem',
-  //     lineHeight: 1.5,
-  //     letterSpacing: '0.00938em',
-  //   },
-  //   body2: {
-  //     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-  //     fontWeight: 400,
-  //     fontSize: '0.875rem',
-  //     lineHeight: 1.43,
-  //     letterSpacing: '0.01071em',
-  //   },
-  //   button: {
-  //     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-  //     fontWeight: 500,
-  //     fontSize: '0.875rem',
-  //     lineHeight: 1.75,
-  //     letterSpacing: '0.02857em',
-  //     textTransform: 'uppercase',
-  //   },
-  //   caption: {
-  //     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-  //     fontWeight: 400,
-  //     fontSize: '0.75rem',
-  //     lineHeight: 1.66,
-  //     letterSpacing: '0.03333em',
-  //   },
-  //   overline: {
-  //     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-  //     fontWeight: 400,
-  //     fontSize: '0.75rem',
-  //     lineHeight: 2.66,
-  //     letterSpacing: '0.08333em',
-  //     textTransform: 'uppercase',
-  //   },
-  // },
-  // shape: {
-  //   borderRadius: 4,
-  // },
-  // transitions: {
-  //   easing: {
-  //     easeInOut: 'cubic-bezier(0.4, 0, 0.2, 1)',
-  //     easeOut: 'cubic-bezier(0.0, 0, 0.2, 1)',
-  //     easeIn: 'cubic-bezier(0.4, 0, 1, 1)',
-  //     sharp: 'cubic-bezier(0.4, 0, 0.6, 1)',
-  //   },
-  //   duration: {
-  //     shortest: 150,
-  //     shorter: 200,
-  //     short: 250,
-  //     standard: 300,
-  //     complex: 375,
-  //     enteringScreen: 225,
-  //     leavingScreen: 195,
-  //   },
-  // },
-  // zIndex: {
-  //   mobileStepper: 1000,
-  //   speedDial: 1050,
-  //   appBar: 1100,
-  //   drawer: 1200,
-  //   modal: 1300,
-  //   snackbar: 1400,
-  //   tooltip: 1500,
-  // },
-  // nprogress: {
-  //   color: '#fff',
-  // },
 };
