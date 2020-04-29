@@ -104,10 +104,47 @@ const breakpoints = {
   },
 };
 
-// primary: Main card background
-// Secondary: ellipses and bubble background
-// text: Main Text
-// secondary text: Date in bottom right
+/********** Main Theme (purple) **********/
+export const main = {
+  background: {
+    primary: purpleDarkest,
+    secondary: purpleDarker,
+    gradient: {
+      //primary gradient is brighter
+      primary: {
+        light: '#301D58',
+        dark: purpleDarker,
+        // lightBorder: '#3C266E',
+        // darkBorder: '#2D1A57'
+      },
+      //secondary gradient is more subtle
+      secondary: {
+        light: purpleDarker,
+        dark: '#221242',
+        // lightBorder: '#26154A',
+        // darkBorder: '#26154A'
+      },
+    },
+  },
+  foreground: {
+    //primary is darker
+    primary: purpleDark,
+    //secondary is brighter
+    secondary: purple,
+    icon: purple,
+  },
+  text: {
+    primary: white,
+    secondary: purpleLightText,
+    selected: white,
+    disabled: purpleDarkText,
+  },
+  action: {
+    selected: magenta,
+  },
+};
+
+/********** Theme Overrides **********/
 
 const news = {
   background: {
@@ -125,7 +162,7 @@ const news = {
   },
 };
 
-//question become quote
+// TODO: "question" becomes "quote"
 const question = {
   background: {
     primary: teal,
@@ -141,7 +178,7 @@ const question = {
   },
 };
 
-//contribution becomes finance
+//TODO: "contribution" becomes "finance"
 const contribution = {
   background: {
     primary: olive,
@@ -157,7 +194,7 @@ const contribution = {
   },
 };
 
-//vote becomes legislation
+//TODO: "vote" becomes "legislation"
 const vote = {
   background: {
     primary: white,
@@ -205,6 +242,8 @@ const event = {
   },
 };
 
+/********** Theme Extraction Logic **********/
+
 export const cardThemes = {
   news,
   question,
@@ -224,45 +263,7 @@ export type cardTypes =
 
 export const getCardTheme = (key: cardTypes) => cardThemes[key];
 
-export const main = {
-  //purple theme
-  background: {
-    primary: purpleDarkest,
-    secondary: purpleDarker,
-    gradient: {
-      //primary gradient is brighter
-      primary: {
-        light: '#301D58',
-        dark: purpleDarker,
-        // lightBorder: '#3C266E',
-        // darkBorder: '#2D1A57'
-      },
-      //secondary gradient is more subtle
-      secondary: {
-        light: purpleDarker,
-        dark: '#221242',
-        // lightBorder: '#26154A',
-        // darkBorder: '#26154A'
-      },
-    },
-  },
-  foreground: {
-    //primary is darker
-    primary: purpleDark,
-    //secondary is brighter
-    secondary: purple,
-    icon: purple,
-  },
-  text: {
-    primary: white,
-    secondary: purpleLightText,
-    selected: white,
-    disabled: purpleDarkText,
-  },
-  action: {
-    selected: magenta,
-  },
-};
+/********** Default Export **********/
 
 export default {
   spacing,
