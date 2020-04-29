@@ -1,6 +1,6 @@
 import React from 'react';
 import { Entity } from 'global/types';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import { Avatar, NewsfeedItem } from 'components';
 
 export type VoteCardProps = {
