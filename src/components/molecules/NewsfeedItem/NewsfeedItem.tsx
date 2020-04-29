@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import { ThumbIcons, Bubble } from 'components';
@@ -18,33 +18,37 @@ export type NewsfeedItemProps = {
   key?: string;
 };
 
-const CardWrapper = styled.div`
-  width: 100%;
-  font-family: 'Galano Grotesque Regular', Futura, 'Trebuchet MS', Arial,
-    sans-serif;
-  background-color: ${({ theme }) => theme.cardTheme?.primary};
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
-  text-align: left;
-  position: relative;
+const CardWrapper = styled.div(({ theme }) => {
+  const { background, spacing } = theme;
 
-  margin-bottom: 10px;
+  return css`
+    width: 100%;
+    font-family: 'Galano Grotesque Regular', Futura, 'Trebuchet MS', Arial,
+      sans-serif;
+    background-color: ${background.primary};
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    text-align: left;
+    position: relative;
 
-  .newsfeed-content {
-    padding: 10px;
-  }
-`;
+    margin-bottom: ${spacing.sm};
+  `;
+});
+
+const NewsFeedContent = styled.div(({ theme }) => ({
+  padding: theme.spacing.sm,
+}));
 
 const TopWrapper = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
+`;
 
-  img {
-    border-radius: 8px 8px 0 0;
-    width: 100%;
-    height: auto;
-  }
+const CardImage = styled.img`
+  border-radius: 8px 8px 0 0;
+  width: 100%;
+  height: auto;
 `;
 
 const BottomWrapper = styled.div`
@@ -54,16 +58,16 @@ const BottomWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
 
-  .card-bottom-group {
-    display: flex;
-    justify-content: space-around;
+const CardBottomGroup = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
 
-    .date-description {
-      margin: auto;
-      color: ${({ theme }) => theme.cardTheme?.secondaryText};
-    }
-  }
+const DateDescription = styled.div`
+  margin: auto;
+  color: ${({ theme }) => theme.foreground.primary};
 `;
 
 const BubbleWrap = styled.div`
@@ -77,17 +81,18 @@ const BubbleWrap = styled.div`
   }
 `;
 
-const EllipsesDropDownMenu = styled.div`
-  width: 95px;
-  height: 52px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-right: 8px;
-  .ellipsis-dots {
-    color: ${({ theme }) => theme.cardTheme?.secondary};
-  }
-`;
+const EllipsesDropDownMenu = styled.div(({ theme }) => {
+  const { foreground, spacing } = theme;
+  return css`
+    width: 95px;
+    height: 52px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: ${spacing.sm};
+    color: ${foreground.primary};
+  `;
+});
 
 export default function NewsfeedItem(props: NewsfeedItemProps) {
   const [likes, setLikes] = useState(Math.floor(Math.random() * 20 + 1));
@@ -95,7 +100,7 @@ export default function NewsfeedItem(props: NewsfeedItemProps) {
   const { image, topic, bill, children, date } = props;
 
   // TODO: customize date descriptions e.g 'Yesterday' instead of 'a day ago'
-  let dateDescription = describeISODate(date);
+  const dateDescription = describeISODate(date);
 
   return (
     <CardWrapper>
@@ -104,33 +109,29 @@ export default function NewsfeedItem(props: NewsfeedItemProps) {
           <Bubble>{topic.name}</Bubble>
           {bill?.name && <Bubble>{bill.name}</Bubble>}
         </BubbleWrap>
-        {image && <img src={image} alt="Background" />}
+        {image && <CardImage src={image} alt="Background" />}
       </TopWrapper>
 
-      <div className="newsfeed-content">
+      <NewsFeedContent>
         {children}
 
         <BottomWrapper>
-          <div className={'card-bottom-group'}>
+          <CardBottomGroup>
             <ThumbIcons
               likes={likes}
               dislikes={dislikes}
               onLike={() => setLikes(likes + 1)}
               onDislike={() => setDislikes(dislikes + 1)}
             />
-          </div>
-          <div className={'card-bottom-group'}>
-            <div className="date-description">{dateDescription}</div>
+          </CardBottomGroup>
+          <CardBottomGroup>
+            <DateDescription>{dateDescription}</DateDescription>
             <EllipsesDropDownMenu>
-              <FontAwesomeIcon
-                icon={faEllipsisH}
-                size="2x"
-                className="ellipsis-dots"
-              />
+              <FontAwesomeIcon icon={faEllipsisH} size="2x" />
             </EllipsesDropDownMenu>
-          </div>
+          </CardBottomGroup>
         </BottomWrapper>
-      </div>
+      </NewsFeedContent>
     </CardWrapper>
   );
 }
