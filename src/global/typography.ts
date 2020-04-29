@@ -1,3 +1,5 @@
+/* This file is not being used at the moment but may in the future */
+
 //Typography
 const mainFont = 'Galano Grotesque';
 const t12rem = '.75rem';
