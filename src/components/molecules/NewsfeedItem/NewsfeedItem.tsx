@@ -23,14 +23,11 @@ const CardWrapper = styled.div(({ theme }) => {
 
   return css`
     width: 100%;
-    font-family: 'Galano Grotesque Regular', Futura, 'Trebuchet MS', Arial,
-      sans-serif;
     background-color: ${background.primary};
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
     border-radius: 8px;
     text-align: left;
     position: relative;
-
     margin-bottom: ${spacing.sm};
   `;
 });
