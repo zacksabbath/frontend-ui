@@ -1,25 +1,27 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { NewsfeedItem } from 'components';
 
-const Main = styled.div`
-  .card-heading {
+const NewsSource = styled.div(({ theme }) => {
+  const { fontWeights, text } = theme;
+  return css`
+    font-weight: ${fontWeights.semiBold};
+    font-size: 14px;
+    color: ${text.secondary}; /* #A082E3;*/
+    padding-bottom: 10px;
+  `;
+});
+
+const Headline = styled.div(({ theme }) => {
+  const { text } = theme;
+  return css`
     font-weight: medium;
     text-align: left;
-    /* font-family: GalanoGrotesque-Medium;*/
     font-size: 20px;
-    color: ${({ theme }) => theme.cardTheme?.primaryText};
+    color: ${text.primary};
     line-height: 26px;
-  }
-
-  .news-source {
-    font-weight: semibold;
-    /* font-family: GalanoGrotesque-SemiBold;*/
-    font-size: 14px;
-    color: ${({ theme }) => theme.cardTheme?.secondaryText}; /* #A082E3;*/
-    padding-bottom: 10px;
-  }
-`;
+  `;
+});
 
 export type NewsCardProps = {
   content: {
@@ -34,11 +36,8 @@ export default function NewsCard(props: any) {
 
   return (
     <NewsfeedItem {...rest}>
-      <Main>
-        <div className="news-source">{source}</div>
-
-        <div className="card-heading">{heading}</div>
-      </Main>
+      <NewsSource>{source}</NewsSource>
+      <Headline>{heading}</Headline>
     </NewsfeedItem>
   );
 }
