@@ -15,9 +15,10 @@ type TabProps = TabWrapperProps & {
 
 const TabWrapper = styled.div<TabWrapperProps>(
   ({ theme, linePosition = 'top', isActive }) => {
-    const { spacing, action, text } = theme;
+    const { spacing, action, text, background } = theme;
 
     return {
+      backgroundColor: background.secondary, //not needed
       fontSize: 16,
       color: text.primary,
       padding: spacing.sm,
