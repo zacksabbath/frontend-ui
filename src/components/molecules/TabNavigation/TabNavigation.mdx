@@ -1,0 +1,47 @@
+---
+name: TabNavigation
+---
+
+import TabNavigation, { Tab } from './TabNavigation';
+import { Playground, Props } from 'docz';
+import theme from '../../../global/theme';
+import { ThemeProvider } from 'styled-components';
+
+# Tab Navigation
+
+## TabProps
+
+<Props of={Tab} />
+
+## TabNavigationProps
+
+<Props of={TabNavigation} />
+
+## Tabs on top
+
+<Playground>
+  <ThemeProvider theme={theme}>
+    <TabNavigation
+      tabs={[
+        { text: 'Tab 1', onClick: () => alert('Tab 1!') },
+        { text: 'Tab 2', onClick: () => alert('Tab 2!'), isActive: true },
+        { text: 'Tab 3', onClick: () => alert('Tab 3!') },
+      ]}
+      linePosition="top"
+    />
+  </ThemeProvider>
+</Playground>
+
+## Tabs on bottom
+
+<Playground>
+  <ThemeProvider theme={theme}>
+    <TabNavigation
+      tabs={[
+        { text: 'Tab 1', onClick: () => alert('Tab 1!!!'), isActive: false },
+        { text: 'Tab 2', onClick: () => alert('Tab 2!!!'), isActive: true },
+      ]}
+      linePosition="bottom"
+    />
+  </ThemeProvider>
+</Playground>
