@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { NewsfeedItem } from 'components';
+import { NewsfeedItem } from '../../../components';
 
 const NewsSource = styled.div(({ theme }) => {
   const { fontWeights, text } = theme;

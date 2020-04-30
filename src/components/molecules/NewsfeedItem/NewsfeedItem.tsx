@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
-import { ThumbIcons, Bubble } from 'components';
-import { describeISODate } from 'utils/dateUtils';
-import { Entity } from 'global/types';
-import { cardTypes } from 'global/theme';
+import { ThumbIcons, Bubble } from '../../../components';
+import { describeISODate } from '../../../utils/dateUtils';
+import { Entity } from '../../../global/types';
+import { cardTypes } from '../../../global/theme';
 
 export type NewsfeedItemProps = {
   topic: Entity;

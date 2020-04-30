@@ -1,6 +1,6 @@
 import React from 'react';
-import { Entity } from 'global/types';
-import { Avatar, NewsfeedItem } from 'components';
+import { Entity } from '../../../global/types';
+import { Avatar, NewsfeedItem } from '../../../components';
 
 export type FinanceCardProps = {
   content: {

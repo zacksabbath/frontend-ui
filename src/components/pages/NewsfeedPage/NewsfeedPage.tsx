@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Newsfeed } from 'components';
+import { Newsfeed } from '../../../components';
 
 export default function NewsfeedPage() {
   const [newsfeedItems, setNewsfeedItems] = useState();
