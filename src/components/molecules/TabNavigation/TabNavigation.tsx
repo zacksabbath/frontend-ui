@@ -14,21 +14,20 @@ type TabProps = TabWrapperProps & {
 };
 
 const TabWrapper = styled.div<TabWrapperProps>(
-  ({ theme, linePosition = 'top', isActive }) => {
-    const { spacing, action, text, background } = theme;
+  ({ theme, isActive, linePosition = 'top' }) => {
+    const { spacing, action, text, foreground } = theme;
 
     return {
-      backgroundColor: background.secondary, //not needed
       fontSize: 16,
-      color: text.primary,
+      color: isActive ? text.primary : text.disabled,
       padding: spacing.sm,
       flexBasis: '100%',
-      [`border-${linePosition}`]: isActive
-        ? `4px solid ${action.selected}`
-        : 'none',
-      [':hover']: {
+      [`border-${linePosition}`]: `4px solid ${
+        isActive ? action.selected : foreground.primary
+      }`,
+      ':hover': {
         cursor: 'pointer',
-        color: text.secondary,
+        color: text.primary,
       },
     };
   }
@@ -62,8 +61,12 @@ export default function TabNavigation(props: TabNavigationProps) {
   const { tabs, linePosition = 'top' } = props;
   return (
     <TabNavigationWrapper>
-      {tabs.map(tabProps => (
-        <Tab {...tabProps} linePosition={linePosition} />
+      {tabs.map((tabProps, i) => (
+        <Tab
+          {...tabProps}
+          key={`tabNav-${linePosition}-${i}`}
+          linePosition={linePosition}
+        />
       ))}
     </TabNavigationWrapper>
   );
