@@ -1,22 +1,35 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import { Bubble, Avatar } from '../../../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
-const HeaderWrapper = styled.div`
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-size: cover;
-  background: ${({ theme }) => theme.main.colors.purpleDark};
-  margin-top: -50px;
-  .icon {
-    color: ${({ theme }) => theme.main.colors.purple};
-  }
-`;
+const HeaderWrapper = styled.div(({ theme }) => {
+  const { background } = theme;
+
+  return css`
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-size: cover;
+    background-color: ${background.primary};
+  `;
+});
+
+// const HeaderWrapper = styled.div`
+//   width: 100vw;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   background-size: cover;
+//   background: ${({ theme }) => main.background.primary};
+//   margin-top: -50px;
+//   .icon {
+//     color: ${({ theme }) => theme.main.colors.purple};
+//   }
+// `;
 
 const HeaderText = styled.p`
   display: flex;
