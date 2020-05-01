@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { getCardTheme } from 'global/theme';
+import { getCardTheme } from '../../../global/theme';
 
 import {
   EventCard,
@@ -9,7 +9,7 @@ import {
   NewsCard,
   QuestionAnswerCard,
   VoteCard,
-} from 'components';
+} from '../../../components';
 
 import { NewsfeedItemProps } from 'components/molecules/NewsfeedItem/NewsfeedItem';
 

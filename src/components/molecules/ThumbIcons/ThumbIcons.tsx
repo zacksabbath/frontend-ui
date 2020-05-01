@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Bubble } from 'components';
+import { Bubble } from '../../../components';
 import styled from 'styled-components';
 
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';

@@ -1,0 +1,30 @@
+---
+name: Template-Default
+route: /Templates/Default
+---
+
+import { Playground, Props } from 'docz';
+import DefaultTemplate from './DefaultTemplate';
+import { Content, Header, Footer } from './SampleContent';
+
+# Default Template
+
+## Props
+
+<Props of={DefaultTemplate} />
+
+## Content with Header / Footer
+
+<Playground>
+  <DefaultTemplate
+    header={<Header />}
+    content={<Content />}
+    footer={<Footer />}
+  />
+</Playground>
+
+## Content with Header only
+
+<Playground>
+  <DefaultTemplate header={<Header />} content={<Content />} />
+</Playground>
