@@ -36,6 +36,10 @@ const HeaderText = styled.p`
   font-size: 50px;
 `;
 
+const TabNavWrapper = styled.div`
+  width: 100vw;
+`;
+
 export default function Header() {
   const history = useHistory();
 
@@ -62,13 +66,23 @@ export default function Header() {
           />
         </OnClickWrapper>
       </HeaderWrapper>
-      <TabNavigation
-        tabs={[
-          { text: 'Tab 1', onClick: () => alert('Tab 1!!!'), isActive: false },
-          { text: 'Tab 2', onClick: () => alert('Tab 2!!!'), isActive: true },
-        ]}
-        linePosition="bottom"
-      />
+      <TabNavWrapper>
+        <TabNavigation
+          tabs={[
+            {
+              text: 'Elections',
+              onClick: () => alert('Elections'),
+              isActive: false,
+            },
+            {
+              text: 'Initiatives',
+              onClick: () => alert('Initiatives'),
+              isActive: true,
+            },
+          ]}
+          linePosition="bottom"
+        />
+      </TabNavWrapper>
     </>
   );
 }
