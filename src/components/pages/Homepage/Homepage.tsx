@@ -3,6 +3,7 @@ import { ImageButton } from '../../../components';
 import styled from 'styled-components';
 import { Avatar } from '../../../components';
 import { useHistory } from 'react-router-dom';
+import { Header } from '../../../components';
 
 const AvatarContainer = styled.div`
   margin: 40px;
@@ -37,6 +38,7 @@ export default function Homepage() {
   const history = useHistory();
   return (
     <>
+      <Header />
       <AvatarContainer>
         <Avatar src="http://stump.zackrose.net/images/avatar_sm.png" />
       </AvatarContainer>

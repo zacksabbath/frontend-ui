@@ -17,12 +17,6 @@ const HeaderWrapper = styled.div(({ theme }) => {
     background-size: cover;
     background-color: ${background.primary};
     margin-top: -50px;
-    .icon {
-      background-color: ${background.primary};
-    }
-    .image {
-      margin: 30px;
-    }
   `;
 });
 
