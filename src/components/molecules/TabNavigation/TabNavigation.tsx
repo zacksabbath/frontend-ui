@@ -8,7 +8,7 @@ type TabWrapperProps = {
   linePosition?: linePositionType;
 };
 
-type TabProps = TabWrapperProps & {
+export type TabProps = TabWrapperProps & {
   onClick: () => void;
   text: string;
 };

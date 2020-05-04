@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { Avatar } from '../../../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
-import { TabNavigation } from '../../../components';
+import { TabProps, TabNavigation } from '../../../components';
 
 const HeaderWrapper = styled.div(({ theme }) => {
   const { background } = theme;
@@ -34,13 +34,19 @@ const TabNavWrapper = styled.div`
   width: 100vw;
 `;
 
-export default function Header() {
+type HeaderProps = { navTabs: TabProps[] };
+
+export default function Header({ navTabs }: HeaderProps) {
   const history = useHistory();
 
   const goHome = () => {
     alert('Home!');
     history.push('/newsfeed');
   };
+
+  {
+  }
+
   return (
     <>
       <HeaderWrapper>
@@ -61,21 +67,7 @@ export default function Header() {
         </OnClickWrapper>
       </HeaderWrapper>
       <TabNavWrapper>
-        <TabNavigation
-          tabs={[
-            {
-              text: 'Elections',
-              onClick: () => alert('Elections'),
-              isActive: false,
-            },
-            {
-              text: 'Initiatives',
-              onClick: () => alert('Initiatives'),
-              isActive: true,
-            },
-          ]}
-          linePosition="bottom"
-        />
+        {navTabs && <TabNavigation tabs={navTabs} linePosition="bottom" />}
       </TabNavWrapper>
     </>
   );
