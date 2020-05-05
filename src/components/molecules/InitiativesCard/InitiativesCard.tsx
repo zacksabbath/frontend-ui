@@ -47,19 +47,30 @@ type InitiativesCardProps = {
   votesAgainst: number;
 };
 
+// TODO: make this a class component and keep track of votesFor and
+// votesAgainst in state
 export default function InitiativesCard(props: InitiativesCardProps) {
   return (
     <InitiativesCardWrapper>
       <div className={'issues-card-top'}>
-        <div>Initiative Type: {props.initiativeType}</div>
-        <div>Issue: {props.issue}</div>
+        <div className={'initiative-type'}>
+          Initiative Type: {props.initiativeType}
+        </div>
+        <div className={'issue'}>Issue: {props.issue}</div>
       </div>
       <div className={'issues-card-mid'}>
-        <div>Initiative Name: {props.initiativeName}</div>
+        <div className={'initiative-name'}>
+          Initiative Name: {props.initiativeName}
+        </div>
       </div>
       <div className={'issues-card-bottom'}>
-        <div>Votes For: {props.votesFor}</div>
-        <div>Votes Against: {props.votesAgainst}</div>
+        {/* TODO: make these clickable and add an onClick to increase the vote tally */}
+        <div className={'vote-tally votes-for'}>
+          Votes For: {props.votesFor}
+        </div>
+        <div className={'vote-tally votes-against'}>
+          Votes Against: {props.votesAgainst}
+        </div>
       </div>
     </InitiativesCardWrapper>
   );
