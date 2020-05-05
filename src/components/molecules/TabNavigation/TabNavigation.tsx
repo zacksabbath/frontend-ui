@@ -3,17 +3,22 @@ import styled, { css } from 'styled-components';
 
 type linePositionType = 'top' | 'bottom';
 
-type TabWrapperProps = {
+interface ITabWrapperProps {
   isActive?: boolean;
   linePosition?: linePositionType;
-};
+}
 
-export type TabProps = TabWrapperProps & {
-  onClick: () => void;
+export interface ITabProps extends ITabWrapperProps {
+  onClick(): void;
   text: string;
-};
+}
 
-const TabWrapper = styled.div<TabWrapperProps>(
+// export type TabProps = TabWrapperProps & {
+//   onClick: () => void;
+//   text: string;
+// };
+
+const TabWrapper = styled.div<ITabWrapperProps>(
   ({ theme, isActive, linePosition = 'top' }) => {
     const { spacing, action, text, foreground } = theme;
 
@@ -33,14 +38,14 @@ const TabWrapper = styled.div<TabWrapperProps>(
   }
 );
 
-export function Tab(props: TabProps) {
+export function Tab(props: ITabProps) {
   const { text, ...tabProps } = props;
 
   return <TabWrapper {...tabProps}>{text}</TabWrapper>;
 }
 
 type TabNavigationProps = {
-  tabs: TabProps[];
+  tabs: ITabProps[];
   linePosition?: linePositionType;
 };
 

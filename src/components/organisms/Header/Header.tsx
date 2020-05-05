@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { Avatar } from '../../../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
-import { TabProps, TabNavigation } from '../../../components';
+import { ITabProps, TabNavigation } from '../../../components';
 
 const HeaderWrapper = styled.div(({ theme }) => {
   const { background } = theme;
@@ -34,9 +34,11 @@ const TabNavWrapper = styled.div`
   width: 100vw;
 `;
 
-type HeaderProps = { navTabs: TabProps[] };
+// interface IHeaderProps {
+//    navTabs: ITabProps[],
+//    };
 
-export default function Header({ navTabs }: HeaderProps) {
+export default function Header({ navTabs }: IHeaderProps) {
   const history = useHistory();
 
   const goHome = () => {
