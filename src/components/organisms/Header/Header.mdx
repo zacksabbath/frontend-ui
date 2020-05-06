@@ -5,7 +5,25 @@ route: /Header
 
 import Header from './Header';
 import { Playground } from 'docz';
+import theme from '../../../global/theme';
+import { ThemeProvider } from 'styled-components';
 
 # Header
 
-## Main theme
+## HeaderProps
+
+<Props of={Header} />
+
+## Basic usage
+
+<Playground>
+  <ThemeProvider theme={theme}>
+    <Header
+      onHomeClick={() => alert('Home')}
+      navTabs={[
+        { text: 'Tab 1', onClick: () => alert('Tab 1!!!'), isActive: false },
+        { text: 'Tab 2', onClick: () => alert('Tab 2!!!'), isActive: true },
+      ]}
+    />
+  </ThemeProvider>
+</Playground>

@@ -1,18 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { ITabWrapper, ITab, ITabNavigation } from '../../../components';
-
-// type linePositionType = 'top' | 'bottom';
-
-// interface ITabWrapper {
-//   isActive?: boolean;
-//   linePosition?: linePositionType;
-// };
-
-// export interface ITab extends ITabWrapper {
-//   onClick: () => void;
-//   text: string;
-// };
+import { ITabWrapper, INavTab, ITabNavigation } from '../../../components';
 
 const TabWrapper = styled.div<ITabWrapper>(
   ({ theme, isActive, linePosition = 'top' }) => {
@@ -34,16 +22,11 @@ const TabWrapper = styled.div<ITabWrapper>(
   }
 );
 
-export function Tab(props: ITab) {
+export function NavTab(props: INavTab) {
   const { text, ...tabProps } = props;
 
   return <TabWrapper {...tabProps}>{text}</TabWrapper>;
 }
-
-// interface ITabNavigation {
-//   tabs: ITab[];
-//   linePosition?: linePositionType;
-// };
 
 const TabNavigationWrapper = styled.div(({ theme }) => {
   const { background } = theme;
@@ -63,7 +46,7 @@ export default function TabNavigation(props: ITabNavigation) {
   return (
     <TabNavigationWrapper>
       {tabs.map((tabProps, i) => (
-        <Tab
+        <NavTab
           {...tabProps}
           key={`tabNav-${linePosition}-${i}`}
           linePosition={linePosition}

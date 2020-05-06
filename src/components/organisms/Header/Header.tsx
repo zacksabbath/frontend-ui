@@ -1,10 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { useHistory } from 'react-router-dom';
-import { Avatar } from '../../../components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
-import { ITab, TabNavigation } from '../../../components';
+import { INavTab, TabNavigation, Avatar } from '../../../components';
 
 const HeaderWrapper = styled.div(({ theme }) => {
   const { background } = theme;
@@ -35,21 +33,12 @@ const TabNavWrapper = styled.div`
 `;
 
 interface IHeader {
-  navTabs: ITab[];
+  navTabs: INavTab[];
+  onHomeClick: () => void;
 }
 
 export default function Header(props: IHeader) {
-  const { navTabs } = props;
-
-  const history = useHistory();
-
-  const goHome = () => {
-    alert('Home!');
-    history.push('/newsfeed');
-  };
-
-  {
-  }
+  const { navTabs, onHomeClick } = props;
 
   return (
     <>
@@ -59,7 +48,7 @@ export default function Header(props: IHeader) {
             icon={faHome}
             size="4x"
             className="icon"
-            onClick={goHome}
+            onClick={onHomeClick}
           />
         </OnClickWrapper>
         <HeaderText>Local Issues</HeaderText>
@@ -70,9 +59,11 @@ export default function Header(props: IHeader) {
           />
         </OnClickWrapper>
       </HeaderWrapper>
-      <TabNavWrapper>
-        {navTabs && <TabNavigation tabs={navTabs} linePosition="bottom" />}
-      </TabNavWrapper>
+      {navTabs && (
+        <TabNavWrapper>
+          <TabNavigation tabs={navTabs} linePosition="bottom" />
+        </TabNavWrapper>
+      )}
     </>
   );
 }
