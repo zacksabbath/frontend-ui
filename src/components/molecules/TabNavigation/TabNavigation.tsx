@@ -1,24 +1,20 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { ITabWrapper, ITab, ITabNavigation } from '../../../components';
 
-type linePositionType = 'top' | 'bottom';
+// type linePositionType = 'top' | 'bottom';
 
-interface ITabWrapperProps {
-  isActive?: boolean;
-  linePosition?: linePositionType;
-}
+// interface ITabWrapper {
+//   isActive?: boolean;
+//   linePosition?: linePositionType;
+// };
 
-export interface ITabProps extends ITabWrapperProps {
-  onClick(): void;
-  text: string;
-}
-
-// export type TabProps = TabWrapperProps & {
+// export interface ITab extends ITabWrapper {
 //   onClick: () => void;
 //   text: string;
 // };
 
-const TabWrapper = styled.div<ITabWrapperProps>(
+const TabWrapper = styled.div<ITabWrapper>(
   ({ theme, isActive, linePosition = 'top' }) => {
     const { spacing, action, text, foreground } = theme;
 
@@ -38,16 +34,16 @@ const TabWrapper = styled.div<ITabWrapperProps>(
   }
 );
 
-export function Tab(props: ITabProps) {
+export function Tab(props: ITab) {
   const { text, ...tabProps } = props;
 
   return <TabWrapper {...tabProps}>{text}</TabWrapper>;
 }
 
-type TabNavigationProps = {
-  tabs: ITabProps[];
-  linePosition?: linePositionType;
-};
+// interface ITabNavigation {
+//   tabs: ITab[];
+//   linePosition?: linePositionType;
+// };
 
 const TabNavigationWrapper = styled.div(({ theme }) => {
   const { background } = theme;
@@ -62,7 +58,7 @@ const TabNavigationWrapper = styled.div(({ theme }) => {
   `;
 });
 
-export default function TabNavigation(props: TabNavigationProps) {
+export default function TabNavigation(props: ITabNavigation) {
   const { tabs, linePosition = 'top' } = props;
   return (
     <TabNavigationWrapper>
