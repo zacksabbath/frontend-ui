@@ -8,13 +8,11 @@ const HeaderWrapper = styled.div(({ theme }) => {
   const { background } = theme;
 
   return css`
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-size: cover;
     background-color: ${background.primary};
-    margin-top: -50px;
   `;
 });
 
@@ -29,7 +27,7 @@ const HeaderText = styled.p`
 `;
 
 const TabNavWrapper = styled.div`
-  width: 100vw;
+  width: 100%;
 `;
 
 interface IHeader {
