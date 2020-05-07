@@ -1,7 +1,6 @@
 import React from 'react';
-import { ImageButton } from '../../../components';
 import styled from 'styled-components';
-import { Avatar } from '../../../components';
+import { Avatar, ImageButton } from '../../../components';
 import { useHistory } from 'react-router-dom';
 
 const AvatarContainer = styled.div`

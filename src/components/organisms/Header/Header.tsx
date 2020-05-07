@@ -1,21 +1,23 @@
 import React from 'react';
-import styled from 'styled-components';
-import { useHistory } from 'react-router-dom';
-import { Bubble, Avatar } from '../../../components';
+import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { INavTab, TabNavigation, Avatar } from '../../../components';
 
-const HeaderWrapper = styled.div`
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-size: cover;
-  background: ${({ theme }) => theme.main.colors.purpleDark};
-  margin-top: -50px;
-  .icon {
-    color: ${({ theme }) => theme.main.colors.purple};
-  }
+const HeaderWrapper = styled.div(({ theme }) => {
+  const { background } = theme;
+
+  return css`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: ${background.primary};
+  `;
+});
+
+const OnClickWrapper = styled.div`
+  margin: 40px;
 `;
 
 const HeaderText = styled.p`
@@ -24,25 +26,42 @@ const HeaderText = styled.p`
   font-size: 50px;
 `;
 
-export default function Header() {
-  const history = useHistory();
+const TabNavWrapper = styled.div`
+  width: 100%;
+`;
 
-  const goHome = () => {
-    alert('Home!');
-    history.push('/newsfeed');
-  };
+interface IHeader {
+  navTabs: INavTab[];
+  onHomeClick: () => void;
+}
+
+export default function Header(props: IHeader) {
+  const { navTabs, onHomeClick } = props;
+
   return (
-    <HeaderWrapper>
-      <Bubble onClick={goHome} style={{ margin: 30 }}>
-        <FontAwesomeIcon icon={faHome} size="5x" className="icon" />
-      </Bubble>
-      <HeaderText>Local Issues</HeaderText>
-      <Bubble style={{ margin: 30 }}>
-        <Avatar
-          src="http://stump.zackrose.net/images/avatar_sm.png"
-          size="3x"
-        />
-      </Bubble>
-    </HeaderWrapper>
+    <>
+      <HeaderWrapper>
+        <OnClickWrapper>
+          <FontAwesomeIcon
+            icon={faHome}
+            size="4x"
+            className="icon"
+            onClick={onHomeClick}
+          />
+        </OnClickWrapper>
+        <HeaderText>Local Issues</HeaderText>
+        <OnClickWrapper>
+          <Avatar
+            src="http://stump.zackrose.net/images/avatar_sm.png"
+            size="3x"
+          />
+        </OnClickWrapper>
+      </HeaderWrapper>
+      {navTabs && (
+        <TabNavWrapper>
+          <TabNavigation tabs={navTabs} linePosition="bottom" />
+        </TabNavWrapper>
+      )}
+    </>
   );
 }
