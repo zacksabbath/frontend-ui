@@ -5,14 +5,14 @@ import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { NewsfeedItem } from '../../../components';
 import { Entity } from '../../../global/types';
 
-export type EventCardProps = {
+export interface IEventCardProps {
   bill: Entity;
   content: {
     date: string;
     name: string;
     // location?: Location Type,
   };
-};
+}
 
 const Content = styled.div`
   display: flex;

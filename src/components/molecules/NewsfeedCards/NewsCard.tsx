@@ -23,12 +23,12 @@ const Headline = styled.div(({ theme }) => {
   `;
 });
 
-export type NewsCardProps = {
+export interface INewsCardProps {
   content: {
     source: string;
     heading: string;
   };
-};
+}
 
 export default function NewsCard(props: any) {
   const { content, ...rest } = props;

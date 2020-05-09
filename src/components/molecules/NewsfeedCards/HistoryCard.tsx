@@ -2,12 +2,12 @@ import React from 'react';
 import { Entity } from '../../../global/types';
 import { Avatar, NewsfeedItem } from '../../../components';
 
-export type HistoryCardProps = {
+export interface IHistoryCardProps {
   content: {
     politician: Entity;
     blurb: string;
   };
-};
+}
 
 export default function HistoryCard(props: any) {
   const { content, ...rest } = props;

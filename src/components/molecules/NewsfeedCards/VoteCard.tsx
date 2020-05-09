@@ -3,12 +3,12 @@ import { Entity } from '../../../global/types';
 // import styled from 'styled-components';
 import { Avatar, NewsfeedItem } from '../../../components';
 
-export type VoteCardProps = {
+export interface IVoteCardProps {
   content: {
     politician: Entity;
     vote: string;
   };
-};
+}
 
 //creator
 

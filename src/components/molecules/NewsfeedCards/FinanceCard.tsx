@@ -2,12 +2,12 @@ import React from 'react';
 import { Entity } from '../../../global/types';
 import { Avatar, NewsfeedItem } from '../../../components';
 
-export type FinanceCardProps = {
+export interface IFinanceCardProps {
   content: {
     politician: Entity;
     acceptedAmount: string;
   };
-};
+}
 
 export default function FinanceCard(props: any) {
   const { content, ...rest } = props;

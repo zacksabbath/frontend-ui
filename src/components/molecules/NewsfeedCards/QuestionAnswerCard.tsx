@@ -2,12 +2,12 @@ import React from 'react';
 import { Entity } from '../../../global/types';
 import { Avatar, NewsfeedItem, Clickable } from '../../../components';
 
-export type QuestionAnswerCardProps = {
+export interface IQuestionAnswerCardProps {
   content: {
     askedBy: Entity;
     question: string;
   };
-};
+}
 
 export default function QuestionAnswerCard(props: any) {
   //Question or answer
