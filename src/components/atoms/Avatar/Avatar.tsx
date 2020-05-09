@@ -66,20 +66,20 @@ type Sizes =
   | '10x';
 type Variants = 'circle' | 'square' | 'rounded';
 
-type AvatarWrapperProps = {
+interface IAvatarWrapperProps {
   size?: Sizes;
   variant?: Variants;
-};
+}
 
-type AvatarProps = AvatarWrapperProps & {
+interface IAvatarProps extends IAvatarWrapperProps {
   alt?: string;
   children?: React.ReactNode;
   imgProps?: HTMLImageElement;
   src?: string;
   srcSet?: string;
-};
+}
 
-const AvatarWrapper = styled.div<AvatarWrapperProps>(props => {
+const AvatarWrapper = styled.div<IAvatarWrapperProps>(props => {
   const { variant, size } = props;
   const borderRadius = getBorderRadius(variant);
   const avatarSize = getAvatarSize(size);
@@ -109,7 +109,7 @@ const AvatarImage = styled.img({
   borderRadius: 'inherit',
 });
 
-function Avatar(props: AvatarProps) {
+function Avatar(props: IAvatarProps) {
   const {
     alt,
     children: childrenProp,
