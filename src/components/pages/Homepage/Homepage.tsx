@@ -1,16 +1,26 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Avatar, ImageButton } from '../../../components';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
+
+const HomeWrapper = styled.div(({ theme }) => {
+  const { background } = theme;
+
+  return css`
+    background-color: ${background.primary};
+  `;
+});
 
 const AvatarContainer = styled.div`
   margin: 40px;
   margin-right: 0px;
-  display: flex;
-  justify-content: flex-end;
+  // display: flex;
+  // justify-content: center;
 `;
 
 const LogoImg = styled.img`
+  display: flex;
+  justify-content: flex-end;
   width: 60%;
   margin: 40px;
 `;
@@ -32,10 +42,13 @@ const browseIssues = () => {
   alert(' Browse Issues ');
 };
 
+const newsActivities = () => {
+  alert('newsfeed');
+};
+
 export default function Homepage() {
-  const history = useHistory();
   return (
-    <>
+    <HomeWrapper>
       <AvatarContainer>
         <Avatar src="http://stump.zackrose.net/images/avatar_sm.png" />
       </AvatarContainer>
@@ -56,9 +69,9 @@ export default function Homepage() {
         <ImageButton
           imageSrc="http://stump.zackrose.net/images/news.png"
           text="News & Activities"
-          onClick={() => history.push('/newsfeed')}
+          onClick={newsActivities}
         />
       </FlexWrapper>
-    </>
+    </HomeWrapper>
   );
 }
