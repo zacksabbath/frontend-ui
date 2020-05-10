@@ -23,6 +23,7 @@ const CalendarIcon = styled.div`
   color: ${({ theme }) => theme.background.secondary};
 `;
 
+// TODO: Work with Henry to flesh out UI for this card (and thus replay 'any' with better type checking)
 export default function EventCard(props: any) {
   const { eventProps, content, ...rest } = props;
 

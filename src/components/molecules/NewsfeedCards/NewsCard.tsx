@@ -23,13 +23,14 @@ const Headline = styled.div(({ theme }) => {
   `;
 });
 
-export interface INewsCardProps {
+export interface INewsCard {
   content: {
     source: string;
     heading: string;
   };
 }
 
+// TODO: Work with Henry to flesh out UI for this card (and thus replay 'any' with better type checking)
 export default function NewsCard(props: any) {
   const { content, ...rest } = props;
   const { heading, source } = content;

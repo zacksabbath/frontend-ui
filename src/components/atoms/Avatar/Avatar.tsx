@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
-//All of this junk will be replaced with themes
+//All of this will be replaced with themes in time
 function getAvatarSize(size?: Sizes) {
   switch (size) {
     case 'xs':
@@ -37,6 +37,7 @@ function getAvatarSize(size?: Sizes) {
   }
 }
 
+// This will also be added to the theme
 function getBorderRadius(variant?: string) {
   switch (variant) {
     case 'circle':
@@ -64,22 +65,23 @@ type Sizes =
   | '8x'
   | '9x'
   | '10x';
+
 type Variants = 'circle' | 'square' | 'rounded';
 
-interface IAvatarWrapperProps {
+interface IAvatarWrapper {
   size?: Sizes;
   variant?: Variants;
 }
 
-interface IAvatarProps extends IAvatarWrapperProps {
+interface IAvatar extends IAvatarWrapper {
   alt?: string;
   children?: React.ReactNode;
-  imgProps?: HTMLImageElement;
+  // imgProps?: HTMLImageElement;
   src?: string;
   srcSet?: string;
 }
 
-const AvatarWrapper = styled.div<IAvatarWrapperProps>(props => {
+const AvatarWrapper = styled.div<IAvatarWrapper>(props => {
   const { variant, size } = props;
   const borderRadius = getBorderRadius(variant);
   const avatarSize = getAvatarSize(size);
@@ -109,11 +111,11 @@ const AvatarImage = styled.img({
   borderRadius: 'inherit',
 });
 
-function Avatar(props: IAvatarProps) {
+function Avatar(props: IAvatar) {
   const {
     alt,
     children: childrenProp,
-    imgProps = {},
+    // imgProps = {},
     size = '1x',
     src,
     srcSet,
@@ -133,7 +135,7 @@ function Avatar(props: IAvatarProps) {
         src={src}
         srcSet={srcSet}
         onError={() => setHasWorkingImg(false)}
-        {...imgProps}
+        // {...imgProps}
       />
     );
   } else if (childrenProp != null) {

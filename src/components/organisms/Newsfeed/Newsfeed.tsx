@@ -9,12 +9,11 @@ import {
   NewsCard,
   QuestionAnswerCard,
   VoteCard,
+  INewsfeedItem,
 } from '../../../components';
 
-import { INewsfeedItemProps } from 'components/molecules/NewsfeedItem/NewsfeedItem';
-
-interface INewsfeedProps {
-  newsfeedItems?: INewsfeedItemProps[];
+interface INewsfeed {
+  newsfeedItems?: INewsfeedItem[];
 }
 
 function getComponent(newsfeedItemProps: any) {
@@ -38,7 +37,7 @@ function getComponent(newsfeedItemProps: any) {
   }
 }
 
-export default function NewsFeed(props: INewsfeedProps) {
+export default function NewsFeed(props: INewsfeed) {
   const { newsfeedItems } = props;
 
   return (

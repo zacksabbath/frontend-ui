@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import React from 'react';
 
-interface IImageButtonWrapperProps {
+interface IImageButtonWrapper {
   backgroundImage: string;
 }
 
-const ImageButtonWrapper = styled.div<IImageButtonWrapperProps>`
+const ImageButtonWrapper = styled.div<IImageButtonWrapper>`
   border-radius: 35px;
   flex: 1 1 200px;
 
@@ -46,13 +46,13 @@ const ImageText = styled.div`
   justify-content: center;
 `;
 
-interface IImageButtonProps {
+interface IImageButton {
   imageSrc: string;
   text: string;
   onClick: any;
 }
 
-export default function ImageButton(props: IImageButtonProps) {
+export default function ImageButton(props: IImageButton) {
   const { imageSrc, text, onClick } = props;
   return (
     <ImageButtonWrapper backgroundImage={imageSrc} onClick={onClick}>

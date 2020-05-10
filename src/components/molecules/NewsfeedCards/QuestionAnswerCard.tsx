@@ -2,15 +2,15 @@ import React from 'react';
 import { Entity } from '../../../global/types';
 import { Avatar, NewsfeedItem, Clickable } from '../../../components';
 
-export interface IQuestionAnswerCardProps {
+export interface IQuestionAnswerCard {
   content: {
     askedBy: Entity;
     question: string;
   };
 }
 
+// TODO: Work with Henry to flesh out UI for this card (and thus replay 'any' with better type checking)
 export default function QuestionAnswerCard(props: any) {
-  //Question or answer
   const { content, ...rest } = props;
   const { askedBy, question } = content;
 
