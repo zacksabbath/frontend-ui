@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-type ScrollContainerProps = {
+interface IScrollContainer {
   maxHeight?: string | number; // ie, 500, '200px', '3rem', or '30%'
-};
+}
 
-const ScrollContainer = styled.div<ScrollContainerProps>(props => {
+const ScrollContainer = styled.div<IScrollContainer>(props => {
   const { maxHeight = 500 } = props;
   return {
     overflowY: 'auto',

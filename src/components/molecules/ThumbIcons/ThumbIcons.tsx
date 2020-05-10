@@ -5,12 +5,12 @@ import styled from 'styled-components';
 
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 
-type ThumbIconsProps = {
+interface IThumbIcons {
   likes: number;
   dislikes: number;
   onLike: () => void;
   onDislike: () => void;
-};
+}
 
 const Thumbs = styled.div`
   display: flex;
@@ -25,7 +25,7 @@ const IconText = styled.div`
   margin-left: 2px;
 `;
 
-export default function ThumbIcons(props: ThumbIconsProps) {
+export default function ThumbIcons(props: IThumbIcons) {
   const { likes, dislikes, onLike, onDislike } = props;
   return (
     <Thumbs>

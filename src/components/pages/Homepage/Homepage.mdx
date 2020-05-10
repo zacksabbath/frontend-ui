@@ -1,0 +1,19 @@
+---
+name: Homepage
+route: /Homepage
+---
+
+import Homepage from './Homepage';
+import { Playground } from 'docz';
+import theme from '../../../global/theme';
+import { ThemeProvider } from 'styled-components';
+
+# Homepage
+
+## Basic usage
+
+<Playground>
+  <ThemeProvider theme={theme}>
+    <Homepage />
+  </ThemeProvider>
+</Playground>
