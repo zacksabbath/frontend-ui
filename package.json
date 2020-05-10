@@ -37,7 +37,7 @@
     "docz": "docz dev --port 1337",
     "docz:dev": "docz dev --port 1337",
     "docz:build": "docz build",
-    "docz:serve": "docz build && docz serve"
+    "docz:serve": "docz build && docz serve --port 2337"
   },
   "eslintConfig": {
     "extends": "react-app"
