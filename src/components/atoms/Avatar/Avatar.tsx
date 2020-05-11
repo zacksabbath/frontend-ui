@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
-//All of this junk will be replaced with themes
+//All of this will be replaced with themes in time
 function getAvatarSize(size?: Sizes) {
   switch (size) {
     case 'xs':
@@ -37,6 +37,7 @@ function getAvatarSize(size?: Sizes) {
   }
 }
 
+// This will also be added to the theme
 function getBorderRadius(variant?: string) {
   switch (variant) {
     case 'circle':
@@ -64,12 +65,13 @@ type Sizes =
   | '8x'
   | '9x'
   | '10x';
+
 type Variants = 'circle' | 'square' | 'rounded';
 
-type IAvatarWrapper = {
+interface IAvatarWrapper {
   size?: Sizes;
   variant?: Variants;
-};
+}
 
 export interface IAvatar extends IAvatarWrapper {
   alt?: string;

@@ -2,13 +2,14 @@ import React from 'react';
 import { Entity } from '../../../global/types';
 import { Avatar, NewsfeedItem } from '../../../components';
 
-export type FinanceCardProps = {
+export interface IFinanceCard {
   content: {
     politician: Entity;
     acceptedAmount: string;
   };
-};
+}
 
+// TODO: Work with Henry to flesh out UI for this card (and thus replay 'any' with better type checking)
 export default function FinanceCard(props: any) {
   const { content, ...rest } = props;
   const { politician, acceptedAmount, contributor } = content;

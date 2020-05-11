@@ -1,18 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Avatar, ImageButton } from '../../../components';
+import styled, { css } from 'styled-components';
+import { ImageButton } from '../../../components';
 import { useHistory } from 'react-router-dom';
 
-const AvatarContainer = styled.div`
-  margin: 40px;
-  margin-right: 0px;
-  display: flex;
-  justify-content: flex-end;
-`;
+const HomeWrapper = styled.div(({ theme }) => {
+  const { background } = theme;
+
+  return css`
+    background-color: ${background.primary};
+  `;
+});
 
 const LogoImg = styled.img`
-  width: 60%;
-  margin: 40px;
+  margin-top: ${({ theme }) => theme.spacing.xxxl};
 `;
 
 const FlexWrapper = styled.section`
@@ -23,22 +23,18 @@ const FlexWrapper = styled.section`
   flex-wrap: wrap;
 `;
 
-//Push to history once I have somewhere for them to go
 const voteBallot = () => {
-  alert(' voted ');
+  alert(' Go to Ballot ');
 };
 
 const browseIssues = () => {
-  alert(' Browse Issues ');
+  alert(' Go to Browse Issues ');
 };
 
 export default function Homepage() {
   const history = useHistory();
   return (
-    <>
-      <AvatarContainer>
-        <Avatar src="http://stump.zackrose.net/images/avatar_sm.png" />
-      </AvatarContainer>
+    <HomeWrapper>
       <LogoImg src="http://stump.zackrose.net/images/stump_logo.png" />
       <FlexWrapper>
         <ImageButton
@@ -59,6 +55,6 @@ export default function Homepage() {
           onClick={() => history.push('/newsfeed')}
         />
       </FlexWrapper>
-    </>
+    </HomeWrapper>
   );
 }
