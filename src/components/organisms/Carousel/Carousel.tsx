@@ -37,7 +37,7 @@ const SCarouselSlides = styled.div<ICarouselProps>`
 `;
 
 interface IProps {
-  children: JSX.Element[];
+  children: React.ReactNode;
 }
 
 const SlideButton = styled.button`
@@ -62,8 +62,10 @@ const GoRightButton = styled(SlideButton)`
   right: 0;
 `;
 
-const Carousel = ({ children }: IProps) => {
+const Carousel = ({ children: rawChildren }: IProps) => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
+
+  const children = React.Children.toArray(rawChildren);
 
   const activeSlide = children.map((slide, index) => (
     <SCarouselSlide active={currentSlide === index} key={index}>
