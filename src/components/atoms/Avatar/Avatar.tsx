@@ -66,20 +66,19 @@ type Sizes =
   | '10x';
 type Variants = 'circle' | 'square' | 'rounded';
 
-type AvatarWrapperProps = {
+type IAvatarWrapper = {
   size?: Sizes;
   variant?: Variants;
 };
 
-type AvatarProps = AvatarWrapperProps & {
+export interface IAvatar extends IAvatarWrapper {
   alt?: string;
   children?: React.ReactNode;
-  imgProps?: HTMLImageElement;
   src?: string;
   srcSet?: string;
-};
+}
 
-const AvatarWrapper = styled.div<AvatarWrapperProps>(props => {
+const AvatarWrapper = styled.div<IAvatarWrapper>(props => {
   const { variant, size } = props;
   const borderRadius = getBorderRadius(variant);
   const avatarSize = getAvatarSize(size);
@@ -109,11 +108,10 @@ const AvatarImage = styled.img({
   borderRadius: 'inherit',
 });
 
-function Avatar(props: AvatarProps) {
+function Avatar(props: IAvatar) {
   const {
     alt,
     children: childrenProp,
-    imgProps = {},
     size = '1x',
     src,
     srcSet,
@@ -133,7 +131,6 @@ function Avatar(props: AvatarProps) {
         src={src}
         srcSet={srcSet}
         onError={() => setHasWorkingImg(false)}
-        {...imgProps}
       />
     );
   } else if (childrenProp != null) {
