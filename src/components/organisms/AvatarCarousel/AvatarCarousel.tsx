@@ -21,7 +21,7 @@ export default function AvatarCarousel(props: IAvatarGroup) {
     if (avatars.length) {
       setSlides(splitIntoPages(avatars, pageSize));
     }
-  }, [pageSize]);
+  }, [pageSize, avatars]);
 
   return (
     <Carousel>
