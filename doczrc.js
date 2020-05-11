@@ -7,5 +7,6 @@ export default {
     'code_of_conduct.md',
     'contributing.md',
     'license.md',
+    'pull_request_template.md',
   ],
 };
