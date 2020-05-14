@@ -4,8 +4,11 @@ route: /AvatarCarousel
 ---
 
 import AvatarCarousel from './AvatarCarousel';
-import { mockAvatars } from './MockAvatars';
+import { mockAvatars } from '../../../mocks/MockAvatars';
+import theme from '../../../global/theme';
+import { ThemeProvider } from 'styled-components';
 import { Playground, Props } from 'docz';
+import GlobalStyle from '../../../GlobalStyle';
 
 # AvatarCarousel
 
@@ -16,5 +19,8 @@ import { Playground, Props } from 'docz';
 ## Usage
 
 <Playground>
-  <AvatarCarousel avatars={mockAvatars} />
+  <GlobalStyle />
+  <ThemeProvider theme={theme}>
+    <AvatarCarousel avatars={mockAvatars} />
+  </ThemeProvider>
 </Playground>

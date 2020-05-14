@@ -9,6 +9,7 @@ const SCarouselWrapper = styled.div`
   position: relative;
   align-items: center;
   justify-content: center;
+  font-family: ${({ theme }) => theme.font.family};
 `;
 
 interface ICarouselSlide {
@@ -38,12 +39,14 @@ const SCarouselSlides = styled.div<ICarouselProps>`
 
 interface IProps {
   children: React.ReactNode;
+  showArrows?: boolean;
+  showPagination?: boolean;
 }
 
 const SlideButton = styled.button`
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  /* transform: translateY(-50%); */
   font-size: 30px;
   opacity: 0.5;
   border: none;
@@ -62,7 +65,30 @@ const GoRightButton = styled(SlideButton)`
   right: 0;
 `;
 
-const Carousel = ({ children: rawChildren }: IProps) => {
+interface INavDot {
+  isActive: boolean;
+}
+
+const NavDot = styled.span<INavDot>(({ isActive, theme }) => {
+  const { action } = theme;
+  return {
+    fontSize: 75,
+    cursor: 'pointer',
+    color: isActive ? action.selected : action.disabled,
+  };
+});
+
+const Pagination = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+`;
+
+const Carousel = ({
+  children: rawChildren,
+  showArrows = false,
+  showPagination = true,
+}: IProps) => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
 
   const children = React.Children.toArray(rawChildren);
@@ -80,7 +106,7 @@ const Carousel = ({ children: rawChildren }: IProps) => {
           {activeSlide}
         </SCarouselSlides>
       </SCarouselWrapper>
-      {currentSlide > 0 && (
+      {showArrows && currentSlide > 0 && (
         <GoLeftButton
           onClick={() => {
             setCurrentSlide(
@@ -91,7 +117,7 @@ const Carousel = ({ children: rawChildren }: IProps) => {
           <FontAwesomeIcon icon={faArrowLeft} />
         </GoLeftButton>
       )}
-      {currentSlide < children.length - 1 && (
+      {showArrows && currentSlide < children.length - 1 && (
         <GoRightButton
           onClick={() => {
             setCurrentSlide((currentSlide + 1) % activeSlide.length);
@@ -99,6 +125,18 @@ const Carousel = ({ children: rawChildren }: IProps) => {
         >
           <FontAwesomeIcon icon={faArrowRight} />
         </GoRightButton>
+      )}
+      {showPagination && (
+        <Pagination>
+          {children.map((_, slideIndex) => (
+            <NavDot
+              isActive={slideIndex === currentSlide}
+              onClick={() => setCurrentSlide(slideIndex % activeSlide.length)}
+            >
+              .
+            </NavDot>
+          ))}
+        </Pagination>
       )}
     </>
   );
