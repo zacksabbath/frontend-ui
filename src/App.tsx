@@ -4,17 +4,18 @@ import styled, { ThemeProvider } from 'styled-components';
 import GlobalStyle from './GlobalStyle';
 import Routes from './Routes';
 
-const AppWrapper = styled.div`
+export const AppWrapper = styled.div`
   text-align: center;
-  background-color: #282c34;
   min-height: 100vh;
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* font-size: calc(10px + 2vmin); */
   color: white;
-  padding: 50px;
+  max-width: 700px;
+  font-family: ${({ theme }) => theme.font.family};
 `;
 
 function App() {

@@ -3,9 +3,9 @@ import styled, { css } from 'styled-components';
 import { NewsfeedItem } from '../../../components';
 
 const NewsSource = styled.div(({ theme }) => {
-  const { fontWeights, text } = theme;
+  const { font, text } = theme;
   return css`
-    font-weight: ${fontWeights.semiBold};
+    font-weight: ${font.weights.semiBold};
     font-size: 14px;
     color: ${text.secondary}; /* #A082E3;*/
     padding-bottom: 10px;

@@ -242,6 +242,12 @@ const event = {
   },
 };
 
+const font = {
+  family:
+    "'Galano Grotesque', Arial, 'Helvetica Neue', Arial, Helvetica, sans-serif",
+  weights: fontWeights,
+};
+
 /********** Theme Extraction Logic **********/
 
 export const cardThemes = {
@@ -266,6 +272,7 @@ export const getCardTheme = (key: cardTypes) => cardThemes[key];
 /********** Default Export **********/
 
 export default {
+  font,
   spacing,
   palette,
   fontWeights,
