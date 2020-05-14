@@ -5,9 +5,19 @@ route: /inputField
 
 import { Playground, Props } from 'docz';
 import InputField from './InputField';
+import theme from '../../../global/theme';
+import { ThemeProvider } from 'styled-components';
 
-# Input Filed
+# Input Field
+
+## Properties
+
+<Props of={InputField} />
+
+## Basic usage
 
 <Playground>
-  <InputField />
+  <ThemeProvider theme={theme}>
+    <InputField text="City" />
+  </ThemeProvider>
 </Playground>
