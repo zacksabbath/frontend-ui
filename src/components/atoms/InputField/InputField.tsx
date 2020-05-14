@@ -1,14 +1,28 @@
-import React, { ReactNode } from 'react';
-import styled from 'styled-components';
+import React from 'react';
+import styled, { css } from 'styled-components';
+
+const InputWrapper = styled.div(({ theme }) => {
+  const { background } = theme;
+
+  return css`
+    background-color: ${background.primary};
+  `;
+});
 
 const TextField = styled.input`
-  width: 100%;
-  font-size: 14px;
   padding: 6px 8px;
   border-width: 1px;
   border-style: solid;
-  boarder-color: pink;
+  border-radius: 10px;
+  border-color: black;
+  height: 20px;
   margin: 0;
+  :focus {
+    border-width: 4px;
+    border-color: pink;
+    border-radius: 10px;
+    outline: none;
+  }
 `;
 
 export default function InputField() {
