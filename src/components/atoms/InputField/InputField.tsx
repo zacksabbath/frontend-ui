@@ -19,12 +19,16 @@ const TextField = styled.input`
   margin: 0;
   :focus {
     border-width: 4px;
-    border-color: pink;
+    border-color: magenta;
     border-radius: 10px;
     outline: none;
   }
 `;
 
 export default function InputField() {
-  return <TextField />;
+  return (
+    <InputWrapper>
+      <TextField />
+    </InputWrapper>
+  );
 }
