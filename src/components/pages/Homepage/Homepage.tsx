@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { ImageButton } from '../../../components';
-import { useHistory } from 'react-router-dom';
+//import { useHistory } from 'react-router-dom';
 
 const HomeWrapper = styled.div(({ theme }) => {
   const { background } = theme;
@@ -31,8 +31,12 @@ const browseIssues = () => {
   alert(' Go to Browse Issues ');
 };
 
+const goNews = () => {
+  alert('/newsfeed');
+};
+
 export default function Homepage() {
-  const history = useHistory();
+  // const history = useHistory();
   return (
     <HomeWrapper>
       <LogoImg src="http://stump.zackrose.net/images/stump_logo.png" />
@@ -52,7 +56,7 @@ export default function Homepage() {
         <ImageButton
           imageSrc="http://stump.zackrose.net/images/news.png"
           text="News & Activities"
-          onClick={() => history.push('/newsfeed')}
+          onClick={goNews}
         />
       </FlexWrapper>
     </HomeWrapper>
