@@ -11,12 +11,10 @@ const InputWrapper = styled.div(({ theme }) => {
 
 const TextField = styled.input`
   padding: 6px 8px;
-  // border-width: 1px;
-  // border-style: solid;
   border-radius: 10px;
   border-color: black;
   height: 20px;
-  margin: 10px;
+  margin-top: 0;
   :focus {
     border-width: 4px;
     border-color: magenta;
@@ -25,8 +23,19 @@ const TextField = styled.input`
   }
 `;
 
+const DropDown = styled(TextField)`
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+`;
+
 const TextID = styled.p`
-  margin: 20px;
+  margin-left: 10px;
+  margin-bottom: 0;
   color: magenta;
 `;
 
