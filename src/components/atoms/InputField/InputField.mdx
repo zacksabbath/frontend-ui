@@ -7,6 +7,7 @@ import { Playground, Props } from 'docz';
 import InputField from './InputField';
 import theme from '../../../global/theme';
 import { ThemeProvider } from 'styled-components';
+import GlobalStyle from '../../../GlobalStyle';
 
 # Input Field
 
@@ -17,7 +18,8 @@ import { ThemeProvider } from 'styled-components';
 ## Basic usage
 
 <Playground>
+  <GlobalStyle />
   <ThemeProvider theme={theme}>
-    <InputField text="City" />
+    <InputField name="City" />
   </ThemeProvider>
 </Playground>
