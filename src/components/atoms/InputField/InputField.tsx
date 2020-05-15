@@ -9,8 +9,6 @@ const InputWrapper = styled.div(({ theme }) => {
     display: flex;
     flex-direction: column;
     padding: 20px;
-      
-    }
   `;
 });
 
@@ -38,7 +36,7 @@ const TextInputField = styled.input`
     border-radius: 10px;
     outline: none;
     color: magenta;
-  
+  }
 `;
 
 interface IInputIdentification {
