@@ -33,7 +33,7 @@ const Icon = styled.span(({ theme }) => {
   };
 });
 
-interface IRaceCard {
+export interface IRaceCard {
   title: string;
   date: string;
   candidates: IAvatar[];
