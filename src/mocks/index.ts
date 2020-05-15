@@ -1,4 +1,4 @@
-const mockAvatars = [
+const beatles = [
   {
     src: 'https://api.adorable.io/avatars/100/hello.png',
     alt: 'George Harrison',
@@ -24,4 +24,15 @@ const mockAvatars = [
   },
 ];
 
-export { mockAvatars };
+const zzTop = [
+  { src: 'https://api.adorable.io/avatars/100/hi.png', alt: 'Frank Beard' },
+  { src: 'https://api.adorable.io/avatars/100/hi5.png', alt: 'Billy Gibbons' },
+  { src: 'https://api.adorable.io/avatars/100/h8i.png', alt: 'Dusty Hill' },
+];
+
+export { beatles as mockAvatars };
+
+export const mockRaceGroup = [
+  { candidates: beatles, title: 'Boulder City Council', date: 'Oct 4, 2017' },
+  { candidates: zzTop, title: 'Boulder House of Pain', date: 'Oct 6, 2019' },
+];

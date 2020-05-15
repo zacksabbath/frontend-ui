@@ -3,9 +3,10 @@ import { palette, main } from './colors';
 export * from './colors';
 
 export const spacing = {
+  xs: '5px',
   sm: '10px',
-  med: '15px',
-  l: '20px',
+  md: '15px',
+  lg: '20px',
   xl: '25px',
   xxl: '30px',
   xxxl: '40px',
