@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { IAvatar, Avatar, Carousel } from '../..';
 import { splitIntoPages } from '../../../utils';
 
-interface IAvatarGroup {
+export interface IAvatarCarousel {
   avatars: IAvatar[];
   pageSize: number;
 }
@@ -11,9 +11,14 @@ interface IAvatarGroup {
 const AvatarGroup = styled.div`
   display: flex;
   flex-wrap: wrap;
+
+  > div {
+    padding: ${({ theme }) => theme.spacing.sm};
+    background: none;
+  }
 `;
 
-export default function AvatarCarousel(props: IAvatarGroup) {
+export default function AvatarCarousel(props: IAvatarCarousel) {
   const { avatars, pageSize = 6 } = props;
   const [slides, setSlides] = useState<IAvatar[][]>([]);
 
