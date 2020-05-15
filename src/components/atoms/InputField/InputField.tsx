@@ -39,17 +39,33 @@ const TextID = styled.p`
   color: magenta;
 `;
 
+interface IDropDownNav {
+  onClick: () => void;
+  text: string;
+}
+
+interface IDropTabs {
+  tabs: IDropDownNav[];
+}
+
+export function TabInfo(props: IDropTabs) {
+  const { text, ...tabProps } = props;
+
+  return <TabWrapper {...tabProps}>{text}</TabWrapper>;
+}
+
 interface IInputIdentification {
   text: string;
 }
 
-export default function InputField(props: IInputIdentification) {
-  const { text } = props;
+export default function InputField(props: any) {
+  const { text, tabs } = props;
 
   return (
     <InputWrapper>
       <TextID>{text}</TextID>
       <TextField />
+      <DropDown />
     </InputWrapper>
   );
 }
