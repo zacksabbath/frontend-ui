@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const InputWrapper = styled.div(({ theme }) => {
+const DropdownWrapper = styled.div(({ theme }) => {
   const { background } = theme;
 
   return css`
@@ -12,18 +12,7 @@ const InputWrapper = styled.div(({ theme }) => {
   `;
 });
 
-const TextID = styled.p(({ theme }) => {
-  const { font } = theme;
-
-  return css`
-    margin-left: 10px;
-    margin-bottom: 0;
-    color: white;
-    font-weight: ${font.weights.medium};
-  `;
-});
-
-const TextInputField = styled.input(({ theme }) => {
+const DropdownContainer = styled.input(({ theme }) => {
   const { action } = theme;
 
   return css`
@@ -31,7 +20,6 @@ const TextInputField = styled.input(({ theme }) => {
     border-radius: 10px;
     border-color: black;
     height: 20px;
-    width: 20%;
     &:focus {
       border-width: 4px;
       border-color: magenta;
@@ -42,17 +30,14 @@ const TextInputField = styled.input(({ theme }) => {
   `;
 });
 
-interface IInputIdentification {
-  text: string;
-}
-
-export default function InputField(props: IInputIdentification) {
-  const { text } = props;
+export default function DropdownField() {
+  // const {  } = props;
 
   return (
-    <InputWrapper>
-      <TextID>{text}</TextID>
-      <TextInputField />
-    </InputWrapper>
+    <>
+      <DropdownWrapper>
+        <DropdownContainer />
+      </DropdownWrapper>
+    </>
   );
 }
