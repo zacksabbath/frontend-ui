@@ -1,7 +1,8 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-const StyledCheckBox = styled.div`
+// This component is in progress
+const StyledCheckbox = styled.div`
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -9,6 +10,6 @@ const StyledCheckBox = styled.div`
   transition: all 150ms;
 `;
 
-export default function CheckBox() {
-  return <StyledCheckBox />;
+export default function Checkbox() {
+  return <StyledCheckbox />;
 }
