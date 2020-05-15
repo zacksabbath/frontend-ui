@@ -9,7 +9,8 @@ const InputWrapper = styled.div(({ theme }) => {
   `;
 });
 
-const TextField = styled.input`
+//didnt see magenta in theme colors
+const TextInputField = styled.input`
   padding: 6px 8px;
   border-radius: 10px;
   border-color: black;
@@ -23,49 +24,23 @@ const TextField = styled.input`
   }
 `;
 
-const DropDown = styled(TextField)`
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: 12px 16px;
-  z-index: 1;
-`;
-
 const TextID = styled.p`
   margin-left: 10px;
   margin-bottom: 0;
   color: magenta;
 `;
 
-interface IDropDownNav {
-  onClick: () => void;
-  text: string;
-}
-
-interface IDropTabs {
-  tabs: IDropDownNav[];
-}
-
-export function TabInfo(props: IDropTabs) {
-  const { text, ...tabProps } = props;
-
-  return <TabWrapper {...tabProps}>{text}</TabWrapper>;
-}
-
 interface IInputIdentification {
   text: string;
 }
 
-export default function InputField(props: any) {
-  const { text, tabs } = props;
+export default function InputField(props: IInputIdentification) {
+  const { text } = props;
 
   return (
     <InputWrapper>
       <TextID>{text}</TextID>
-      <TextField />
-      <DropDown />
+      <TextInputField />
     </InputWrapper>
   );
 }
