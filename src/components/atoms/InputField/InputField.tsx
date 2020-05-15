@@ -6,6 +6,9 @@ const InputWrapper = styled.div(({ theme }) => {
 
   return css`
     background-color: ${background.primary};
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
   `;
 });
 
@@ -15,7 +18,7 @@ const TextInputField = styled.input`
   border-radius: 10px;
   border-color: black;
   height: 20px;
-  margin-top: 0;
+  width: 20%;
   :focus {
     border-width: 4px;
     border-color: magenta;
@@ -24,11 +27,16 @@ const TextInputField = styled.input`
   }
 `;
 
-const TextID = styled.p`
-  margin-left: 10px;
-  margin-bottom: 0;
-  color: magenta;
-`;
+const TextID = styled.p(({ theme }) => {
+  const { font } = theme;
+
+  return css`
+    margin-left: 10px;
+    margin-bottom: 0;
+    color: magenta;
+    font-weight: ${font.weights.medium};
+  `;
+});
 
 interface IInputIdentification {
   text: string;
