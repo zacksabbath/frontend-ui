@@ -22,10 +22,9 @@ const Label = styled.span(({ theme }) => {
 });
 
 const TextInputField = styled.input(({ theme }) => {
-  const { action, foreground } = theme;
+  const { action, foreground, spacing } = theme;
   return css`
-    background: transparent;
-    padding: 6px 8px;
+    padding: ${spacing.sm};
     border-radius: 7px;
     border: 2px solid ${foreground.secondary};
     outline: none;
