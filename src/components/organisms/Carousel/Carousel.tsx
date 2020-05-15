@@ -1,8 +1,12 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import {
+  faArrowLeft,
+  faArrowRight,
+  faCircle,
+} from '@fortawesome/free-solid-svg-icons';
 
 const SCarouselWrapper = styled.div`
   display: flex;
@@ -70,11 +74,12 @@ interface INavDot {
 }
 
 const NavDot = styled.span<INavDot>(({ isActive, theme }) => {
-  const { action } = theme;
+  const { action, spacing } = theme;
   return {
-    fontSize: 75,
-    cursor: 'pointer',
+    fontSize: 15,
     color: isActive ? action.selected : action.disabled,
+    paddingRight: spacing.sm,
+    ':hover': { cursor: 'pointer' },
   };
 });
 
@@ -89,9 +94,9 @@ const Carousel = ({
   showArrows = false,
   showPagination = true,
 }: IProps) => {
-  const [currentSlide, setCurrentSlide] = React.useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  const children = React.Children.toArray(rawChildren);
+  const children = React.Children.toArray(rawChildren); // This must be done in case there is a single element
 
   const activeSlide = children.map((slide, index) => (
     <SCarouselSlide active={currentSlide === index} key={index}>
@@ -106,6 +111,7 @@ const Carousel = ({
           {activeSlide}
         </SCarouselSlides>
       </SCarouselWrapper>
+
       {showArrows && currentSlide > 0 && (
         <GoLeftButton
           onClick={() => {
@@ -126,6 +132,7 @@ const Carousel = ({
           <FontAwesomeIcon icon={faArrowRight} />
         </GoRightButton>
       )}
+
       {showPagination && (
         <Pagination>
           {children.map((_, slideIndex) => (
@@ -133,7 +140,7 @@ const Carousel = ({
               isActive={slideIndex === currentSlide}
               onClick={() => setCurrentSlide(slideIndex % activeSlide.length)}
             >
-              .
+              <FontAwesomeIcon icon={faCircle} />
             </NavDot>
           ))}
         </Pagination>
