@@ -11,15 +11,15 @@ const Race = styled.div(({ theme }) => {
     backgroundColor: background?.primary,
     fontFamily: font.family,
     padding: spacing.sm,
+    textAlign: 'center',
   };
 });
 
-const RaceTitle = styled.p({
-  fontSize: 20,
-  ':hover': {
-    cursor: 'pointer',
-  },
-});
+const RaceTitle = styled.p`
+  font-size: 20px;
+  font-weight: ${({ theme }) => theme.font.weights.semiBold};
+  cursor: pointer;
+`;
 
 const RaceDate = styled.p({
   fontSize: 16,
@@ -33,7 +33,7 @@ const Icon = styled.span(({ theme }) => {
   };
 });
 
-interface IRaceCard {
+export interface IRaceCard {
   title: string;
   date: string;
   candidates: IAvatar[];

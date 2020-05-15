@@ -83,22 +83,6 @@ export const main = {
   background: {
     primary: purpleDarkest,
     secondary: purpleDarker,
-    gradient: {
-      //primary gradient is brighter
-      primary: {
-        light: '#301D58',
-        dark: purpleDarker,
-        // lightBorder: '#3C266E',
-        // darkBorder: '#2D1A57'
-      },
-      //secondary gradient is more subtle
-      secondary: {
-        light: purpleDarker,
-        dark: '#221242',
-        // lightBorder: '#26154A',
-        // darkBorder: '#26154A'
-      },
-    },
   },
   foreground: {
     //primary is darker
@@ -107,6 +91,23 @@ export const main = {
     secondary: purple,
     icon: purple,
   },
+  gradient: {
+    //primary gradient is brighter
+    primary: {
+      light: '#301D58',
+      dark: purpleDarker,
+      // lightBorder: '#3C266E',
+      // darkBorder: '#2D1A57'
+    },
+    //secondary gradient is more subtle
+    secondary: {
+      light: purpleDarker,
+      dark: '#221242',
+      // lightBorder: '#26154A',
+      // darkBorder: '#26154A'
+    },
+  },
+
   text: {
     primary: white,
     secondary: purpleLightText,
