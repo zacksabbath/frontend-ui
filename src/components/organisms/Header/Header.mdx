@@ -7,6 +7,7 @@ import Header from './Header';
 import { Playground } from 'docz';
 import theme from '../../../global/theme';
 import { ThemeProvider } from 'styled-components';
+import GlobalStyle from '../../../GlobalStyle';
 
 # Header
 
@@ -17,9 +18,11 @@ import { ThemeProvider } from 'styled-components';
 ## Basic usage
 
 <Playground>
+  <GlobalStyle />
   <ThemeProvider theme={theme}>
     <Header
-      onHomeClick={() => alert('Home')}
+      title="My Page Title"
+      leftIconAction={() => alert('Go Home')}
       navTabs={[
         { text: 'Tab 1', onClick: () => alert('Tab 1!!!'), isActive: false },
         { text: 'Tab 2', onClick: () => alert('Tab 2!!!'), isActive: true },

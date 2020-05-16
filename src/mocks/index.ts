@@ -30,9 +30,40 @@ const zzTop = [
   { src: 'https://api.adorable.io/avatars/100/h8i.png', alt: 'Dusty Hill' },
 ];
 
+const blackSabbath = [
+  { src: 'https://api.adorable.io/avatars/100/fgsdfg.png', alt: 'Tony Iommi' },
+  {
+    src: 'https://api.adorable.io/avatars/100/fdgfdggfgfgs.png',
+    alt: 'Geezer Butler',
+  },
+  {
+    src: 'https://api.adorable.io/avatars/100/fgdfgdfgd.png',
+    alt: 'Bill Ward',
+  },
+  {
+    src: 'https://api.adorable.io/avatars/100/fgdfgdfgd.png',
+    alt: 'Ozzy Osbourne',
+  },
+];
+
 export { beatles as mockAvatars };
 
 export const mockRaceGroup = [
   { candidates: beatles, title: 'Boulder City Council', date: 'Oct 4, 2017' },
-  { candidates: zzTop, title: 'Boulder House of Pain', date: 'Oct 6, 2019' },
+  { candidates: zzTop, title: 'Boulder Other thing', date: 'Oct 6, 2019' },
+];
+
+export const mockRaceGroup2 = [
+  {
+    candidates: blackSabbath,
+    title: 'Boulder County stuff',
+    date: 'Oct 4, 2017',
+  },
+  { candidates: beatles, title: 'Boulder County other', date: 'Oct 4, 2017' },
+  { candidates: zzTop, title: 'Boulder County', date: 'Oct 6, 2019' },
+];
+
+export const mockElection = [
+  { location: 'Boulder City', races: mockRaceGroup },
+  { location: 'Boulder County', races: mockRaceGroup2 },
 ];

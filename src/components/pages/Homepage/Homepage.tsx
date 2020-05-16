@@ -1,15 +1,7 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import { ImageButton } from '../../../components';
+import styled from 'styled-components';
+import { DefaultTemplate, Header, ImageButton } from '../../../components';
 import { useHistory } from 'react-router-dom';
-
-const HomeWrapper = styled.div(({ theme }) => {
-  const { background } = theme;
-
-  return css`
-    background-color: ${background.primary};
-  `;
-});
 
 const LogoImg = styled.img`
   margin-top: ${({ theme }) => theme.spacing.xxxl};
@@ -23,30 +15,22 @@ const FlexWrapper = styled.section`
   flex-wrap: wrap;
 `;
 
-const voteBallot = () => {
-  alert(' Go to Ballot ');
-};
-
-const browseIssues = () => {
-  alert(' Go to Browse Issues ');
-};
-
 export default function Homepage() {
   const history = useHistory();
-  return (
-    <HomeWrapper>
+  const $content = (
+    <>
       <LogoImg src="http://stump.zackrose.net/images/stump_logo.png" />
       <FlexWrapper>
         <ImageButton
           imageSrc="http://stump.zackrose.net/images/voting_ballot.png"
           text="My Voting Ballot"
-          onClick={voteBallot}
+          onClick={() => history.push('/ballot')}
         />
 
         <ImageButton
           imageSrc="http://stump.zackrose.net/images/issues.png"
           text="Browse Issues"
-          onClick={browseIssues}
+          onClick={() => history.push('/issues')}
         />
 
         <ImageButton
@@ -55,6 +39,9 @@ export default function Homepage() {
           onClick={() => history.push('/newsfeed')}
         />
       </FlexWrapper>
-    </HomeWrapper>
+    </>
   );
+  const $header = <Header />;
+
+  return <DefaultTemplate header={$header} content={$content} />;
 }
