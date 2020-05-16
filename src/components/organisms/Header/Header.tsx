@@ -5,7 +5,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { INavTab, TabNavigation, Avatar } from '../../../components';
 
 const HeaderWrapper = styled.div(({ theme }) => {
-  const { background, spacing } = theme;
+  const { background, spacing, font } = theme;
 
   return css`
     width: 100%;
@@ -15,6 +15,7 @@ const HeaderWrapper = styled.div(({ theme }) => {
     align-items: center;
     background-color: ${background.secondary};
     padding: ${spacing.md} 0;
+    font-family: ${font.family};
   `;
 });
 
