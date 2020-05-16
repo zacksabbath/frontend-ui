@@ -13,14 +13,18 @@ const Container = styled.div`
   padding: 0;
 `;
 
+const Wrapper = styled.div`
+  width: 100%;
+`;
+
 export default function DefaultTemplate(props: DefaultTemplateProps) {
   const { header, content, footer } = props;
 
   return (
-    <>
+    <Wrapper>
       <Container>{header}</Container>
       <ScrollContainer maxHeight={400}>{content}</ScrollContainer>
       <Container>{footer}</Container>
-    </>
+    </Wrapper>
   );
 }
