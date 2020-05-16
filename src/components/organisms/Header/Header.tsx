@@ -13,7 +13,7 @@ const HeaderWrapper = styled.div(({ theme }) => {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: ${background.primary};
+    background-color: ${background.secondary};
     padding: ${spacing.md} 0;
   `;
 });
