@@ -23,14 +23,6 @@ const FlexWrapper = styled.section`
   flex-wrap: wrap;
 `;
 
-const voteBallot = () => {
-  alert(' Go to Ballot ');
-};
-
-const browseIssues = () => {
-  alert(' Go to Browse Issues ');
-};
-
 export default function Homepage() {
   const history = useHistory();
   return (
@@ -40,13 +32,13 @@ export default function Homepage() {
         <ImageButton
           imageSrc="http://stump.zackrose.net/images/voting_ballot.png"
           text="My Voting Ballot"
-          onClick={voteBallot}
+          onClick={() => history.push('/ballot')}
         />
 
         <ImageButton
           imageSrc="http://stump.zackrose.net/images/issues.png"
           text="Browse Issues"
-          onClick={browseIssues}
+          onClick={() => history.push('/issues')}
         />
 
         <ImageButton
