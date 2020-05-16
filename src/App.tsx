@@ -10,8 +10,7 @@ export const AppWrapper = styled.div`
   margin: auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   /* font-size: calc(10px + 2vmin); */
   color: white;
   max-width: 700px;
