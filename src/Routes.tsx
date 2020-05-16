@@ -8,9 +8,6 @@ export default function Routes() {
     <Router>
       <Switch>
         <Route path="/newsfeed" exact>
-          <Link to="/" style={{ color: 'red' }}>
-            Go Home
-          </Link>
           <NewsfeedPage />
         </Route>
         <Route path="/ballot" exact>
