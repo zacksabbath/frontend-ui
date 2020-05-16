@@ -43,18 +43,22 @@ const TabNavWrapper = styled.div`
 
 interface IHeader {
   navTabs?: INavTab[];
-  onHomeClick: () => void;
-  title: string;
+  leftIconAction?: () => void;
+  title?: string;
 }
 
 export default function Header(props: IHeader) {
-  const { navTabs, onHomeClick, title } = props;
+  const { navTabs, leftIconAction, title } = props;
 
   return (
     <>
       <HeaderWrapper>
         <OnClickWrapper>
-          <FontAwesomeIcon size="2x" icon={faHome} onClick={onHomeClick} />
+          {leftIconAction ? (
+            <FontAwesomeIcon size="2x" icon={faHome} onClick={leftIconAction} />
+          ) : (
+            <div>&nbsp;</div>
+          )}
         </OnClickWrapper>
         <HeaderText>{title}</HeaderText>
         <OnClickWrapper>

@@ -27,7 +27,7 @@ export default function BallotPage() {
   const $header = (
     <Header
       title="My Ballot"
-      onHomeClick={() => history.push('/')}
+      leftIconAction={() => history.push('/')}
       navTabs={navTabs}
     />
   );
