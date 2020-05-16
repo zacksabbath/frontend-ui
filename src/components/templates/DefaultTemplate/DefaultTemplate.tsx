@@ -23,7 +23,7 @@ export default function DefaultTemplate(props: DefaultTemplateProps) {
   return (
     <Wrapper>
       <Container>{header}</Container>
-      <ScrollContainer maxHeight="80vh">{content}</ScrollContainer>
+      <ScrollContainer height="85vh">{content}</ScrollContainer>
       <Container>{footer}</Container>
     </Wrapper>
   );

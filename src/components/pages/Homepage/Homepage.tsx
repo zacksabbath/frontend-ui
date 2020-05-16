@@ -3,14 +3,6 @@ import styled, { css } from 'styled-components';
 import { DefaultTemplate, Header, ImageButton } from '../../../components';
 import { useHistory } from 'react-router-dom';
 
-const HomeWrapper = styled.div(({ theme }) => {
-  const { background } = theme;
-
-  return css`
-    background-color: ${background.primary};
-  `;
-});
-
 const LogoImg = styled.img`
   margin-top: ${({ theme }) => theme.spacing.xxxl};
 `;
@@ -26,7 +18,7 @@ const FlexWrapper = styled.section`
 export default function Homepage() {
   const history = useHistory();
   const $content = (
-    <HomeWrapper>
+    <>
       <LogoImg src="http://stump.zackrose.net/images/stump_logo.png" />
       <FlexWrapper>
         <ImageButton
@@ -47,7 +39,7 @@ export default function Homepage() {
           onClick={() => history.push('/newsfeed')}
         />
       </FlexWrapper>
-    </HomeWrapper>
+    </>
   );
   const $header = <Header />;
 
