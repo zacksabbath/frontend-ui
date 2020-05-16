@@ -12,20 +12,22 @@ const HeaderWrapper = styled.div(({ theme }) => {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     background-color: ${background.primary};
     padding-top: ${spacing.md};
   `;
 });
 
 const OnClickWrapper = styled.div(({ theme }) => {
-  const { spacing, foreground } = theme;
+  const { spacing, foreground, action } = theme;
 
   return css`
-    font-size: 16px;
     margin: 0 ${spacing.md};
     cursor: pointer;
     color: ${foreground.icon};
+    :hover {
+      color: ${action.selected};
+    }
   `;
 });
 
@@ -52,7 +54,7 @@ export default function Header(props: IHeader) {
     <>
       <HeaderWrapper>
         <OnClickWrapper>
-          <FontAwesomeIcon icon={faHome} onClick={onHomeClick} />
+          <FontAwesomeIcon size="2x" icon={faHome} onClick={onHomeClick} />
         </OnClickWrapper>
         <HeaderText>{title}</HeaderText>
         <OnClickWrapper>
