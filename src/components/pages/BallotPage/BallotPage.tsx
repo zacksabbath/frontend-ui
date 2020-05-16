@@ -33,6 +33,7 @@ export default function BallotPage() {
     />
   );
 
+  // TODO: Make this section more performant (We don't want to necessarily rerender every cycle. Perhaps connect this to state?)
   const $elections = (
     <>
       {mockElection.map(election => (
