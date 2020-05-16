@@ -42,10 +42,7 @@ export default function BallotPage() {
   );
   const $initiatives = <div>Initiatives!!!</div>;
 
-  return (
-    <DefaultTemplate
-      header={$header}
-      content={activeTab === Tab.Elections ? $elections : $initiatives}
-    />
-  );
+  const $content = activeTab === Tab.Elections ? $elections : $initiatives;
+
+  return <DefaultTemplate header={$header} content={$content} />;
 }
