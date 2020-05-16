@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { ImageButton } from '../../../components';
+import { DefaultTemplate, Header, ImageButton } from '../../../components';
 import { useHistory } from 'react-router-dom';
 
 const HomeWrapper = styled.div(({ theme }) => {
@@ -25,7 +25,7 @@ const FlexWrapper = styled.section`
 
 export default function Homepage() {
   const history = useHistory();
-  return (
+  const $content = (
     <HomeWrapper>
       <LogoImg src="http://stump.zackrose.net/images/stump_logo.png" />
       <FlexWrapper>
@@ -49,4 +49,7 @@ export default function Homepage() {
       </FlexWrapper>
     </HomeWrapper>
   );
+  const $header = <Header />;
+
+  return <DefaultTemplate header={$header} content={$content} />;
 }
