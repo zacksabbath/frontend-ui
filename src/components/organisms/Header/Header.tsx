@@ -14,7 +14,7 @@ const HeaderWrapper = styled.div(({ theme }) => {
     justify-content: space-between;
     align-items: center;
     background-color: ${background.primary};
-    padding-top: ${spacing.md};
+    padding: ${spacing.md} 0;
   `;
 });
 
