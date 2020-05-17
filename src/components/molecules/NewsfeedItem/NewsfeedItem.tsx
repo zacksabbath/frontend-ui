@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
-import { ThumbIcons, Bubble } from '../../../components';
+import { ThumbIcons, Bubble, Card } from '../../../components';
 import { describeISODate } from '../../../utils/dateUtils';
 import { Entity } from '../../../global/types';
 import { cardTypes } from '../../../global/theme';
@@ -17,20 +17,6 @@ export interface INewsfeedItem {
   date: string;
   key?: string;
 }
-
-const CardWrapper = styled.div(({ theme }) => {
-  const { background, spacing } = theme;
-
-  return css`
-    width: 100%;
-    background-color: ${background.primary};
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    text-align: left;
-    position: relative;
-    margin-bottom: ${spacing.sm};
-  `;
-});
 
 const NewsFeedContent = styled.div(({ theme }) => ({
   padding: theme.spacing.sm,
@@ -100,7 +86,7 @@ export default function NewsfeedItem(props: INewsfeedItem) {
   const dateDescription = describeISODate(date);
 
   return (
-    <CardWrapper>
+    <Card>
       <TopWrapper>
         <BubbleWrap className={image ? 'absolute' : ''}>
           <Bubble>{topic.name}</Bubble>
@@ -129,6 +115,6 @@ export default function NewsfeedItem(props: INewsfeedItem) {
           </CardBottomGroup>
         </BottomWrapper>
       </NewsFeedContent>
-    </CardWrapper>
+    </Card>
   );
 }
