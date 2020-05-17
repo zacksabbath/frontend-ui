@@ -1,24 +1,24 @@
 ---
-name: InitiativesCard
-route: /InitiativesCard
+name: InitiativeCard
+route: /InitiativeCard
 ---
 
-import InitiativesCard from './InitiativesCard';
+import InitiativeCard from './InitiativeCard';
 import { Playground, Props } from 'docz';
 import theme from '../../../global/theme';
 import { ThemeProvider } from 'styled-components';
 
-# InitiativesCard
+# InitiativeCard
 
 ## Properties
 
-<Props of={InitiativesCard} />
+<Props of={InitiativeCard} />
 
 ## Basic usage
 
 <Playground>
   <ThemeProvider theme={theme}>
-    <InitiativesCard
+    <InitiativeCard
       initiativeName="City Requirement For Voting"
       issue="Suffrage"
       initiativeType="Initiative"
@@ -26,7 +26,7 @@ import { ThemeProvider } from 'styled-components';
       votesAgainst={6}
     />
     <br />
-    <InitiativesCard
+    <InitiativeCard
       initiativeName="Gray Wolf Reintroduction"
       issue="Hunting & Fishing"
       initiativeType="Initiative"
@@ -34,7 +34,7 @@ import { ThemeProvider } from 'styled-components';
       votesAgainst={6}
     />
     <br />
-    <InitiativesCard
+    <InitiativeCard
       initiativeName="National Popular Vote Interstate Compact Referendum"
       issue="Elections"
       initiativeType="Referendum"
