@@ -43,7 +43,7 @@ interface IInitiativeGroup {
 }
 
 const Wrap = styled.div(({ theme }) => {
-  const { background, spacing } = theme;
+  const { background } = theme;
   return {
     backgroundColor: background.primary,
   };
