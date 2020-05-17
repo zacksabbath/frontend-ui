@@ -41,10 +41,6 @@ const DropdownContainer = styled.select(({ theme }) => {
   `;
 });
 
-const DropTabWrapper = styled.div`
-  fontsize: 16px;
-`;
-
 interface TextID {
   text: string;
 }
