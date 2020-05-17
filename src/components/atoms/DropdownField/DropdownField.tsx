@@ -16,7 +16,6 @@ const TextID = styled.p(({ theme }) => {
   const { font } = theme;
 
   return css`
-    margin-left: 10px;
     margin-bottom: 0;
     color: white;
     font-weight: ${font.weights.medium};
@@ -42,20 +41,11 @@ const DropdownContainer = styled.select(({ theme }) => {
   `;
 });
 
-interface IDropNav {
-  tabs: IDropTabs[];
-}
-
 const DropTabWrapper = styled.div`
   fontsize: 16px;
 `;
 
 interface TextID {
-  text: string;
-}
-
-interface IDropTabs {
-  onClick: () => void;
   text: string;
 }
 
