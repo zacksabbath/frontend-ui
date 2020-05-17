@@ -12,7 +12,18 @@ const DropdownWrapper = styled.div(({ theme }) => {
   `;
 });
 
-const DropdownContainer = styled.input(({ theme }) => {
+const TextID = styled.p(({ theme }) => {
+  const { font } = theme;
+
+  return css`
+    margin-left: 10px;
+    margin-bottom: 0;
+    color: white;
+    font-weight: ${font.weights.medium};
+  `;
+});
+
+const DropdownContainer = styled.select(({ theme }) => {
   const { action } = theme;
 
   return css`
@@ -20,6 +31,7 @@ const DropdownContainer = styled.input(({ theme }) => {
     border-radius: 10px;
     border-color: black;
     height: 20px;
+    width: 20%;
     &:focus {
       border-width: 4px;
       border-color: magenta;
@@ -30,12 +42,30 @@ const DropdownContainer = styled.input(({ theme }) => {
   `;
 });
 
-export default function DropdownField() {
-  // const {  } = props;
+interface IDropNav {
+  tabs: IDropTabs[];
+}
+
+const DropTabWrapper = styled.div`
+  fontsize: 16px;
+`;
+
+interface TextID {
+  text: string;
+}
+
+interface IDropTabs {
+  onClick: () => void;
+  text: string;
+}
+
+export default function DropdownField(props: any) {
+  const { text } = props;
 
   return (
     <>
       <DropdownWrapper>
+        <TextID>{text}</TextID>
         <DropdownContainer />
       </DropdownWrapper>
     </>
