@@ -6,7 +6,6 @@ import {
   faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import { Bubble, Card } from '../../../components';
-import { spacing } from 'global/theme';
 
 export interface IInitiativeCard {
   name: string; //title, center
