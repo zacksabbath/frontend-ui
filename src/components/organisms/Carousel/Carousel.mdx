@@ -1,0 +1,29 @@
+---
+name: Carousel
+route: /Carousel
+---
+
+import Carousel from './Carousel';
+import { Playground, Props } from 'docz';
+import theme from '../../../global/theme';
+import { ThemeProvider } from 'styled-components';
+import GlobalStyle from '../../../GlobalStyle';
+
+# Carousel
+
+## Props
+
+<Props of={Carousel} />
+
+## Basic Usage
+
+<Playground>
+  <GlobalStyle />
+  <ThemeProvider theme={theme}>
+    <Carousel>
+      <h1>Slide 1</h1>
+      <h1>Slide 2</h1>
+      <h1>Slide 3</h1>
+    </Carousel>
+  </ThemeProvider>
+</Playground>

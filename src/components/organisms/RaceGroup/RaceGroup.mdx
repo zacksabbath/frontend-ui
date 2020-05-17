@@ -1,0 +1,30 @@
+---
+name: RaceGroup
+route: /RaceGroup
+---
+
+import RaceGroup from './RaceGroup';
+import { mockRaceGroup } from '../../../mocks';
+import theme from '../../../global/theme';
+import { ThemeProvider } from 'styled-components';
+import { Playground, Props } from 'docz';
+import GlobalStyle from '../../../GlobalStyle';
+
+# RaceGroup
+
+## Props
+
+<Props of={RaceGroup} />
+
+## Usage
+
+<Playground>
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <RaceGroup location="Boulder City" races={mockRaceGroup} />
+  </ThemeProvider>
+</Playground>
+
+### mockRaceGroup:
+
+<code>{JSON.stringify(mockRaceGroup)}</code>

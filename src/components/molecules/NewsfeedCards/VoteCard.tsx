@@ -1,20 +1,15 @@
 import React from 'react';
 import { Entity } from '../../../global/types';
-// import styled from 'styled-components';
 import { Avatar, NewsfeedItem } from '../../../components';
 
-export type VoteCardProps = {
+export interface IVoteCard {
   content: {
     politician: Entity;
     vote: string;
   };
-};
+}
 
-//creator
-
-//support or oppose
-
-//bill title
+// TODO: Work with Henry to flesh out UI for this card (and thus replay 'any' with better type checking)
 export default function VoteCard(props: any) {
   const { content, ...rest } = props;
 

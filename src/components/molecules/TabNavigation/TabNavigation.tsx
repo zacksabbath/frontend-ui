@@ -1,6 +1,23 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { ITabWrapper, INavTab, ITabNavigation } from '../../../components';
+
+type linePositionType = 'top' | 'bottom';
+
+export interface INavTab extends ITabWrapper {
+  onClick: () => void;
+  text: string;
+  isActive?: boolean;
+}
+
+interface ITabWrapper {
+  isActive?: boolean;
+  linePosition?: linePositionType;
+}
+
+interface ITabNavigation {
+  tabs: INavTab[];
+  linePosition?: linePositionType;
+}
 
 const TabWrapper = styled.div<ITabWrapper>(
   ({ theme, isActive, linePosition = 'top' }) => {

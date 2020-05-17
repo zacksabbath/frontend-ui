@@ -1,18 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Avatar, ImageButton } from '../../../components';
+import { DefaultTemplate, Header, ImageButton } from '../../../components';
 import { useHistory } from 'react-router-dom';
 
-const AvatarContainer = styled.div`
-  margin: 40px;
-  margin-right: 0px;
-  display: flex;
-  justify-content: flex-end;
-`;
-
 const LogoImg = styled.img`
-  width: 60%;
-  margin: 40px;
+  margin-top: ${({ theme }) => theme.spacing.xxxl};
 `;
 
 const FlexWrapper = styled.section`
@@ -23,34 +15,22 @@ const FlexWrapper = styled.section`
   flex-wrap: wrap;
 `;
 
-//Push to history once I have somewhere for them to go
-const voteBallot = () => {
-  alert(' voted ');
-};
-
-const browseIssues = () => {
-  alert(' Browse Issues ');
-};
-
 export default function Homepage() {
   const history = useHistory();
-  return (
+  const $content = (
     <>
-      <AvatarContainer>
-        <Avatar src="http://stump.zackrose.net/images/avatar_sm.png" />
-      </AvatarContainer>
       <LogoImg src="http://stump.zackrose.net/images/stump_logo.png" />
       <FlexWrapper>
         <ImageButton
           imageSrc="http://stump.zackrose.net/images/voting_ballot.png"
           text="My Voting Ballot"
-          onClick={voteBallot}
+          onClick={() => history.push('/ballot')}
         />
 
         <ImageButton
           imageSrc="http://stump.zackrose.net/images/issues.png"
           text="Browse Issues"
-          onClick={browseIssues}
+          onClick={() => history.push('/issues')}
         />
 
         <ImageButton
@@ -61,4 +41,7 @@ export default function Homepage() {
       </FlexWrapper>
     </>
   );
+  const $header = <Header />;
+
+  return <DefaultTemplate header={$header} content={$content} />;
 }

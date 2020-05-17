@@ -7,7 +7,7 @@ import { describeISODate } from '../../../utils/dateUtils';
 import { Entity } from '../../../global/types';
 import { cardTypes } from '../../../global/theme';
 
-export type NewsfeedItemProps = {
+export interface INewsfeedItem {
   topic: Entity;
   bill?: Entity;
   image?: string;
@@ -16,7 +16,7 @@ export type NewsfeedItemProps = {
   content?: Object;
   date: string;
   key?: string;
-};
+}
 
 const CardWrapper = styled.div(({ theme }) => {
   const { background, spacing } = theme;
@@ -91,7 +91,7 @@ const EllipsesDropDownMenu = styled.div(({ theme }) => {
   `;
 });
 
-export default function NewsfeedItem(props: NewsfeedItemProps) {
+export default function NewsfeedItem(props: INewsfeedItem) {
   const [likes, setLikes] = useState(Math.floor(Math.random() * 20 + 1));
   const [dislikes, setDislikes] = useState(Math.floor(Math.random() * 20 + 1));
   const { image, topic, bill, children, date } = props;

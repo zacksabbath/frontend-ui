@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Newsfeed } from '../../../components';
+import { Newsfeed, DefaultTemplate, Header } from '../../../components';
+import { useHistory } from 'react-router-dom';
 
 export default function NewsfeedPage() {
   const [newsfeedItems, setNewsfeedItems] = useState();
 
+  // This will be replaced by the API layer when we merge into the monorepo.
   async function getNewsfeed() {
     let response = await fetch(
       `http://my-json-server.typicode.com/stump-vote/mock-fe-api/newsFeed`
@@ -12,13 +14,22 @@ export default function NewsfeedPage() {
     setNewsfeedItems(data);
   }
 
+  const history = useHistory();
+
   useEffect(() => {
     getNewsfeed();
   }, []);
 
-  if (!newsfeedItems) {
-    return <div>Loading...</div>;
-  }
+  const $header = (
+    <Header title="Newsfeed" leftIconAction={() => history.push('/')} />
+  );
 
-  return <Newsfeed newsfeedItems={newsfeedItems} />;
+  // Need Loading State here
+  const $content = newsfeedItems ? (
+    <Newsfeed newsfeedItems={newsfeedItems} />
+  ) : (
+    <div>Loading...</div>
+  );
+
+  return <DefaultTemplate header={$header} content={$content} />;
 }

@@ -1,0 +1,30 @@
+---
+name: RaceCard
+route: /RaceCard
+---
+
+import RaceCard from './RaceCard';
+import { mockAvatars } from '../../../mocks';
+import theme from '../../../global/theme';
+import { ThemeProvider } from 'styled-components';
+import { Playground, Props } from 'docz';
+import GlobalStyle from '../../../GlobalStyle';
+
+# RaceCard
+
+## Props
+
+<Props of={RaceCard} />
+
+## Usage
+
+<Playground>
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <RaceCard
+      candidates={mockAvatars}
+      title="Boulder City Council"
+      date="Oct 4, 2017"
+    />
+  </ThemeProvider>
+</Playground>

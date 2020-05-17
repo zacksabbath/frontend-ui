@@ -1,3 +1,25 @@
+# Stump
+
+Welcome to the front-end repo for [Stump](https://stump.vote). Check out the website for more information on what we are building.
+
+## Docz
+
+This project has a built in style library leveraging [Docz](https://www.docz.site/). Here you can see documentation for Components as they are developed, and manipulate code to see how the component will change.
+
+### `npm run docz:dev`
+
+Recommend starting here. This will spin up a live development version of Docz so that you can work on the fly via hotloading / etc. (You can also get here by typing the shorter `npm run docz`) It should automatically open your browser to [http://localhost:1337](http://localhost:1337)
+
+### `npm run docz:build`
+
+This will build a static site using [Gatsby](https://www.gatsbyjs.org/).
+
+### `npm run docz:serve`
+
+This will build the static site the same as above, and then serve it. Once the build completes you can access it at [http://localhost:2337](http://localhost:2337)
+
+# Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
