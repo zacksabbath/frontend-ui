@@ -37,6 +37,7 @@ const TitleSection = styled.div`
 `;
 
 const Title = styled.span`
+  color: black;
   font-weight: ${({ theme: { font } }) => font.weights.semiBold};
 `;
 
