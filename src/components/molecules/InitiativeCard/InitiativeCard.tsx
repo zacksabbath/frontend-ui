@@ -6,8 +6,9 @@ import {
   faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import { Bubble, Card } from '../../../components';
+import { spacing } from 'global/theme';
 
-interface IInitiativeCard {
+export interface IInitiativeCard {
   name: string; //title, center
   issue: string; //top left bubble
   type: string; //top right bubble
@@ -21,9 +22,19 @@ const TopSection = styled.div`
   justify-content: space-between;
 `;
 
+const BlackBubble = styled(Bubble)(({ theme }) => {
+  const { spacing } = theme;
+  return css`
+    color: black;
+    padding: ${spacing.xs} ${spacing.sm};
+    font-size: 12px;
+  `;
+});
+
 const TitleSection = styled.div`
   text-align: center;
-  font-size: 16;
+  font-size: 14;
+  margin: ${({ theme: { spacing } }) => spacing.sm};
 `;
 
 const Title = styled.span`
@@ -34,35 +45,29 @@ const VoteSection = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  > * {
+    margin: 0 ${({ theme: { spacing } }) => spacing.sm};
+  }
 `;
 
-const VoteBubble = styled(Bubble)(({ theme }) => {
-  const { spacing } = theme;
-  return css`
-    padding: ${spacing.xs};
-    margin: ${spacing.xs};
-  `;
-});
-
-const VotesFor = styled(VoteBubble)`
+const VotesFor = styled(BlackBubble)`
   color: green;
 `;
 
-const VotesAgainst = styled(VoteBubble)`
+const VotesAgainst = styled(BlackBubble)`
   color: red;
 `;
 
 const VoteCount = styled.span`
   color: black;
-  font-size: 12px;
   margin-left: ${({ theme: { spacing } }) => spacing.xs};
 `;
 
 const CardWrapper = styled(Card)(({ theme }) => {
   const { spacing } = theme;
-  return {
-    padding: spacing.md,
-  };
+  return css`
+    padding: ${spacing.sm};
+  `;
 });
 
 export default function InitiativeCard(props: IInitiativeCard) {
@@ -70,8 +75,8 @@ export default function InitiativeCard(props: IInitiativeCard) {
   return (
     <CardWrapper>
       <TopSection>
-        <Bubble>{issue}</Bubble>
-        <Bubble>{type}</Bubble>
+        <BlackBubble>{issue}</BlackBubble>
+        <BlackBubble>{type}</BlackBubble>
       </TopSection>
 
       <TitleSection>
@@ -80,11 +85,11 @@ export default function InitiativeCard(props: IInitiativeCard) {
 
       <VoteSection>
         <VotesFor>
-          <FontAwesomeIcon icon={faCheckCircle} />
+          <FontAwesomeIcon icon={faCheckCircle} size="2x" />
           <VoteCount>{votesFor}</VoteCount>
         </VotesFor>
         <VotesAgainst>
-          <FontAwesomeIcon icon={faTimesCircle} />
+          <FontAwesomeIcon icon={faTimesCircle} size="2x" />
           <VoteCount>{votesAgainst}</VoteCount>
         </VotesAgainst>
       </VoteSection>
