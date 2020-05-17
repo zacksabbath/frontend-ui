@@ -17,6 +17,7 @@ const Bubble = styled.span(({ theme }) => {
       outline: none;
     }
     border: none;
+    text-align: center;
   `;
 });
 

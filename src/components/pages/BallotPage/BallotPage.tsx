@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { DefaultTemplate, Header, RaceGroup } from '../../../components';
 import { useHistory } from 'react-router-dom';
-import { mockElection } from '../../../mocks';
+import { mockElection, mockInitiativeGroup } from '../../../mocks';
+import { InitiativeGroup } from 'components/molecules';
 
 enum Tab {
   Elections,
@@ -41,7 +42,13 @@ export default function BallotPage() {
       ))}
     </>
   );
-  const $initiatives = <div>Initiatives!!!</div>;
+  const $initiatives = (
+    <>
+      {[mockInitiativeGroup].map(initiativeGroup => (
+        <InitiativeGroup {...initiativeGroup} />
+      ))}
+    </>
+  );
 
   const $content = activeTab === Tab.Elections ? $elections : $initiatives;
 

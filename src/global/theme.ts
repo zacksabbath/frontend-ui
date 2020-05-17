@@ -44,14 +44,14 @@ export default {
   ...main,
 };
 
-export const getTheme = (cardType: cardTypes) => ({
+export const getTheme = (cardType?: cardTypes) => ({
   font,
   spacing,
   palette,
   breakpoints,
 
   ...main,
-  ...getCardTheme(cardType),
+  ...(cardType ? getCardTheme(cardType) : {}),
 });
 
 export const whiteTheme = getTheme('vote');

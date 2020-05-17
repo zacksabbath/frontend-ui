@@ -1,0 +1,28 @@
+---
+name: InitiativeGroup
+route: /InitiativeGroup
+---
+
+import InitiativeGroup from './InitiativeGroup';
+import { Props, Playground } from 'docz';
+import theme from '../../../global/theme';
+import { ThemeProvider } from 'styled-components';
+import { mockInitiativeGroup } from '../../../mocks';
+
+# InitiativeGroup
+
+## Props
+
+<Props of={InitiativeGroup} />
+
+## Usage
+
+<Playground>
+  <ThemeProvider theme={theme}>
+    <InitiativeGroup
+      location={mockInitiativeGroup.location}
+      date={mockInitiativeGroup.date}
+      initiatives={mockInitiativeGroup.initiatives}
+    />
+  </ThemeProvider>
+</Playground>
