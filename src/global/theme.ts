@@ -53,3 +53,5 @@ export const getTheme = (cardType: cardTypes) => ({
   ...main,
   ...getCardTheme(cardType),
 });
+
+export const whiteTheme = getTheme('vote');
