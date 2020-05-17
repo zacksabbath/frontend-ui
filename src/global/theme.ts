@@ -1,4 +1,4 @@
-import { palette, main } from './colors';
+import { palette, main, getCardTheme, cardTypes } from './colors';
 
 export * from './colors';
 
@@ -43,3 +43,13 @@ export default {
 
   ...main,
 };
+
+export const getTheme = (cardType: cardTypes) => ({
+  font,
+  spacing,
+  palette,
+  breakpoints,
+
+  ...main,
+  ...getCardTheme(cardType),
+});
