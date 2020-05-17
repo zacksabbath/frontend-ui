@@ -5,7 +5,7 @@ route: /InitiativeCard
 
 import InitiativeCard from './InitiativeCard';
 import { Playground, Props } from 'docz';
-import theme from '../../../global/theme';
+import { whiteTheme } from '../../../global/theme';
 import { ThemeProvider } from 'styled-components';
 
 # InitiativeCard
@@ -17,29 +17,7 @@ import { ThemeProvider } from 'styled-components';
 ## Basic usage
 
 <Playground>
-  <ThemeProvider theme={theme}>
-    <InitiativeCard
-      initiativeName="City Requirement For Voting"
-      issue="Suffrage"
-      initiativeType="Initiative"
-      votesFor={4}
-      votesAgainst={6}
-    />
-    <br />
-    <InitiativeCard
-      initiativeName="Gray Wolf Reintroduction"
-      issue="Hunting & Fishing"
-      initiativeType="Initiative"
-      votesFor={5}
-      votesAgainst={6}
-    />
-    <br />
-    <InitiativeCard
-      initiativeName="National Popular Vote Interstate Compact Referendum"
-      issue="Elections"
-      initiativeType="Referendum"
-      votesFor={7}
-      votesAgainst={3}
-    />
+  <ThemeProvider theme={whiteTheme}>
+    <div> Fuck you </div>
   </ThemeProvider>
 </Playground>
