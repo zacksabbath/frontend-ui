@@ -2,56 +2,49 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 const InputWrapper = styled.div(({ theme }) => {
-  const { background } = theme;
-
+  const { font } = theme;
   return css`
-    background-color: ${background.primary};
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    font-family: ${font.family};
   `;
 });
 
-const TextID = styled.p(({ theme }) => {
-  const { font } = theme;
+const Label = styled.span(({ theme }) => {
+  const { font, text, spacing } = theme;
 
   return css`
-    margin-left: 10px;
-    margin-bottom: 0;
-    color: white;
+    font-size: 15px;
+    color: ${text.secondary};
     font-weight: ${font.weights.medium};
+    margin-bottom: ${spacing.xs};
   `;
 });
 
 const TextInputField = styled.input(({ theme }) => {
-  const { action } = theme;
-
+  const { action, foreground, spacing } = theme;
   return css`
-    padding: 6px 8px;
-    border-radius: 10px;
-    border-color: black;
-    height: 20px;
-    width: 20%;
+    padding: ${spacing.sm};
+    border-radius: 7px;
+    border: 2px solid ${foreground.secondary};
+    outline: none;
+
     &:focus {
-      border-width: 4px;
-      border-color: magenta;
-      border-radius: 10px;
-      outline: none;
-      color: ${action.selected};
+      border-color: ${action.selected};
     }
   `;
 });
 
 interface IInputIdentification {
-  text: string;
+  name: string;
 }
 
 export default function InputField(props: IInputIdentification) {
-  const { text } = props;
+  const { name } = props;
 
   return (
     <InputWrapper>
-      <TextID>{text}</TextID>
+      <Label>{name}</Label>
       <TextInputField />
     </InputWrapper>
   );
