@@ -6,6 +6,7 @@ type linePositionType = 'top' | 'bottom';
 export interface INavTab extends ITabWrapper {
   onClick: () => void;
   text: string;
+  isActive?: boolean;
 }
 
 interface ITabWrapper {

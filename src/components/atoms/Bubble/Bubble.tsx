@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const Bubble = styled.div(({ theme }) => {
+const Bubble = styled.span(({ theme }) => {
   const { background, foreground } = theme;
 
   return css`

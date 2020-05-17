@@ -5,25 +5,37 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { INavTab, TabNavigation, Avatar } from '../../../components';
 
 const HeaderWrapper = styled.div(({ theme }) => {
-  const { background } = theme;
+  const { background, spacing, font } = theme;
 
   return css`
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: ${background.primary};
+    align-items: center;
+    background-color: ${background.secondary};
+    padding: ${spacing.md} 0;
+    font-family: ${font.family};
   `;
 });
 
-const OnClickWrapper = styled.div`
-  margin: 40px;
-`;
+const OnClickWrapper = styled.div(({ theme }) => {
+  const { spacing, foreground, action } = theme;
 
-const HeaderText = styled.p`
-  display: flex;
+  return css`
+    margin: 0 ${spacing.md};
+    cursor: pointer;
+    color: ${foreground.icon};
+    :hover {
+      color: ${action.selected};
+    }
+  `;
+});
+
+const HeaderText = styled.span`
   color: white;
-  font-size: 50px;
+  font-size: 20px;
+  font-weight: ${({ theme }) => theme.font.weights.semiBold};
 `;
 
 const TabNavWrapper = styled.div`
@@ -31,29 +43,29 @@ const TabNavWrapper = styled.div`
 `;
 
 interface IHeader {
-  navTabs: INavTab[];
-  onHomeClick: () => void;
+  navTabs?: INavTab[];
+  leftIconAction?: () => void;
+  title?: string;
 }
 
 export default function Header(props: IHeader) {
-  const { navTabs, onHomeClick } = props;
+  const { navTabs, leftIconAction, title } = props;
 
   return (
     <>
       <HeaderWrapper>
         <OnClickWrapper>
-          <FontAwesomeIcon
-            icon={faHome}
-            size="4x"
-            className="icon"
-            onClick={onHomeClick}
-          />
+          {leftIconAction ? (
+            <FontAwesomeIcon size="2x" icon={faHome} onClick={leftIconAction} />
+          ) : (
+            <div>&nbsp;</div>
+          )}
         </OnClickWrapper>
-        <HeaderText>Local Issues</HeaderText>
+        <HeaderText>{title}</HeaderText>
         <OnClickWrapper>
           <Avatar
             src="http://stump.zackrose.net/images/avatar_sm.png"
-            size="3x"
+            size="xs"
           />
         </OnClickWrapper>
       </HeaderWrapper>

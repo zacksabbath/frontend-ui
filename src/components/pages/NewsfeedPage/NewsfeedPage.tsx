@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Newsfeed } from '../../../components';
+import { Newsfeed, DefaultTemplate, Header } from '../../../components';
+import { useHistory } from 'react-router-dom';
 
 export default function NewsfeedPage() {
   const [newsfeedItems, setNewsfeedItems] = useState();
@@ -13,14 +14,22 @@ export default function NewsfeedPage() {
     setNewsfeedItems(data);
   }
 
+  const history = useHistory();
+
   useEffect(() => {
     getNewsfeed();
   }, []);
 
-  // Need Loading State here
-  if (!newsfeedItems) {
-    return <div>Loading...</div>;
-  }
+  const $header = (
+    <Header title="Newsfeed" leftIconAction={() => history.push('/')} />
+  );
 
-  return <Newsfeed newsfeedItems={newsfeedItems} />;
+  // Need Loading State here
+  const $content = newsfeedItems ? (
+    <Newsfeed newsfeedItems={newsfeedItems} />
+  ) : (
+    <div>Loading...</div>
+  );
+
+  return <DefaultTemplate header={$header} content={$content} />;
 }
