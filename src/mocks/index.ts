@@ -67,3 +67,33 @@ export const mockElection = [
   { location: 'Boulder City', races: mockRaceGroup },
   { location: 'Boulder County', races: mockRaceGroup2 },
 ];
+
+export const mockInitiatives = [
+  {
+    name: 'City Requirement For Voting',
+    issue: 'Suffrage',
+    type: 'Initiative',
+    votesFor: 5,
+    votesAgainst: 6,
+  },
+  {
+    name: 'Gray Wolf Reintroduction',
+    issue: 'Hunting & Fishing',
+    type: 'Initiative',
+    votesFor: 5,
+    votesAgainst: 6,
+  },
+  {
+    name: 'National Popular Vote Interstate Compact Referendum',
+    issue: 'Elections',
+    type: 'Referendum',
+    votesFor: 7,
+    votesAgainst: 3,
+  },
+];
+
+export const mockInitiativeGroup = {
+  location: 'Colorado',
+  date: 'Nov 3, 2020',
+  initiatives: mockInitiatives,
+};
