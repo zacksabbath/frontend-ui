@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { DefaultTemplate, Header, RaceGroup } from '../../../components';
+import {
+  DefaultTemplate,
+  Header,
+  RaceGroup,
+  InitiativeGroup,
+} from '../../../components';
 import { useHistory } from 'react-router-dom';
 import { mockElection, mockInitiativeGroup } from '../../../mocks';
-import { InitiativeGroup } from 'components/molecules';
 
 enum Tab {
   Elections,
