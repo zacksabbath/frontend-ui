@@ -8,7 +8,6 @@ import { mockAvatars } from '../../../mocks';
 import theme from '../../../global/theme';
 import { ThemeProvider } from 'styled-components';
 import { Playground, Props } from 'docz';
-import GlobalStyle from '../../../GlobalStyle';
 
 # AvatarCarousel
 
@@ -19,7 +18,6 @@ import GlobalStyle from '../../../GlobalStyle';
 ## Usage
 
 <Playground>
-  <GlobalStyle />
   <ThemeProvider theme={theme}>
     <AvatarCarousel avatars={mockAvatars} />
   </ThemeProvider>

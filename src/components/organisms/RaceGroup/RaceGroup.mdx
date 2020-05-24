@@ -8,7 +8,6 @@ import { mockRaceGroup } from '../../../mocks';
 import theme from '../../../global/theme';
 import { ThemeProvider } from 'styled-components';
 import { Playground, Props } from 'docz';
-import GlobalStyle from '../../../GlobalStyle';
 
 # RaceGroup
 
@@ -20,7 +19,6 @@ import GlobalStyle from '../../../GlobalStyle';
 
 <Playground>
   <ThemeProvider theme={theme}>
-    <GlobalStyle />
     <RaceGroup location="Boulder City" races={mockRaceGroup} />
   </ThemeProvider>
 </Playground>

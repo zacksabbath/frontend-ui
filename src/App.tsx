@@ -1,7 +1,6 @@
 import React from 'react';
 import theme from './global/theme';
 import styled, { ThemeProvider } from 'styled-components';
-import GlobalStyle from './GlobalStyle';
 import Routes from './Routes';
 
 export const AppWrapper = styled.div`
@@ -21,7 +20,6 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <AppWrapper>
-        <GlobalStyle />
         <Routes />
       </AppWrapper>
     </ThemeProvider>
