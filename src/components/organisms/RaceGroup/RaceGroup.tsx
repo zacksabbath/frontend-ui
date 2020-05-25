@@ -9,7 +9,7 @@ interface IRaceGroup {
 
 const RaceLocation = styled.div(({ theme }) => {
   const { spacing, color, font } = theme;
-  console.log('color!!', color);
+
   return css`
     font-family: ${font.family};
     font-size: 15px;

@@ -47,8 +47,7 @@ export function NavTab(props: INavTab) {
 
 const TabNavigationWrapper = styled.div(({ theme }) => {
   const { color } = theme;
-  console.log('TabNavigationWrapper color', color);
-  console.log('TabNavigationWrapper theme', theme);
+
   return css`
     background-color: ${color.background.primary};
     display: flex;
