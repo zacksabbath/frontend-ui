@@ -5,7 +5,7 @@ route: /InitiativeCard
 
 import InitiativeCard from './InitiativeCard';
 import { Playground, Props } from 'docz';
-import { whiteTheme } from '../../../context';
+import { legislationTheme } from '../../../context';
 import { ThemeProvider } from 'styled-components';
 
 # InitiativeCard
@@ -17,7 +17,7 @@ import { ThemeProvider } from 'styled-components';
 ## Basic usage
 
 <Playground>
-  <ThemeProvider theme={whiteTheme}>
+  <ThemeProvider theme={legislationTheme}>
     <InitiativeCard
       name="City Requirement For Voting"
       issue="Suffrage"

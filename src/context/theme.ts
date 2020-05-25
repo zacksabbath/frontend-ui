@@ -41,5 +41,9 @@ export const getTheme = (type?: colors.cardTypes) => ({
 });
 
 export const theme = getTheme();
-
-export const whiteTheme = getTheme('vote');
+export const legislationTheme = getTheme('vote');
+export const newsTheme = getTheme('news');
+export const questionTheme = getTheme('question');
+export const contributionTheme = getTheme('contribution');
+export const historyTheme = getTheme('history');
+export const eventTheme = getTheme('event');

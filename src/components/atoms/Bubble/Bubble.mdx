@@ -5,7 +5,15 @@ route: /Bubble
 
 import Bubble from './Bubble';
 import { Playground } from 'docz';
-import theme, { cardThemes } from '../../../global/theme';
+import {
+  theme,
+  legislationTheme,
+  newsTheme,
+  questionTheme,
+  contributionTheme,
+  historyTheme,
+  eventTheme,
+} from '../../../context';
 import { ThemeProvider } from 'styled-components';
 
 # Bubble
@@ -21,7 +29,7 @@ import { ThemeProvider } from 'styled-components';
 ## News theme
 
 <Playground>
-  <ThemeProvider theme={cardThemes.news}>
+  <ThemeProvider theme={newsTheme}>
     <Bubble>News Card</Bubble>
   </ThemeProvider>
 </Playground>
@@ -29,7 +37,7 @@ import { ThemeProvider } from 'styled-components';
 ## Quote Theme
 
 <Playground>
-  <ThemeProvider theme={cardThemes.question}>
+  <ThemeProvider theme={questionTheme}>
     <Bubble>Question Card</Bubble>
   </ThemeProvider>
 </Playground>
@@ -37,7 +45,7 @@ import { ThemeProvider } from 'styled-components';
 ## Finance Theme
 
 <Playground>
-  <ThemeProvider theme={cardThemes.contribution}>
+  <ThemeProvider theme={contributionTheme}>
     <Bubble>Contribution Card</Bubble>
   </ThemeProvider>
 </Playground>
@@ -45,15 +53,15 @@ import { ThemeProvider } from 'styled-components';
 ## Legislation Theme
 
 <Playground>
-  <ThemeProvider theme={cardThemes.vote}>
-    <Bubble>Vote Card</Bubble>
+  <ThemeProvider theme={legislationTheme}>
+    <Bubble>Legislation Card</Bubble>
   </ThemeProvider>
 </Playground>
 
 ## History Theme
 
 <Playground>
-  <ThemeProvider theme={cardThemes.history}>
+  <ThemeProvider theme={historyTheme}>
     <Bubble>History Card</Bubble>
   </ThemeProvider>
 </Playground>
@@ -61,7 +69,7 @@ import { ThemeProvider } from 'styled-components';
 ## Event Theme
 
 <Playground>
-  <ThemeProvider theme={cardThemes.event}>
+  <ThemeProvider theme={eventTheme}>
     <Bubble>Event Card</Bubble>
   </ThemeProvider>
 </Playground>

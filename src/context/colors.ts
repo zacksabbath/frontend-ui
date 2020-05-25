@@ -241,10 +241,3 @@ export type cardTypes =
 
 export const getColorTheme = (key?: cardTypes) =>
   key && key in cardThemes ? { ...main, ...cardThemes[key] } : main;
-
-// var getColorTheme3 = (key) => {
-//     console.log('key in cardThemes???', key in cardThemes);
-//     console.log('main', main);
-//     console.log('the merge', _.merge(main, cardThemes[key]));
-//     return key in cardThemes ? _.merge(main, cardThemes[key]) : main;
-//   };
