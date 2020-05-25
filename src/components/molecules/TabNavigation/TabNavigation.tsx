@@ -21,19 +21,19 @@ interface ITabNavigation {
 
 const TabWrapper = styled.div<ITabWrapper>(
   ({ theme, isActive, linePosition = 'top' }) => {
-    const { spacing, action, text, foreground } = theme;
+    const { spacing, color } = theme;
 
     return {
       fontSize: 16,
-      color: isActive ? text.primary : text.disabled,
+      color: isActive ? color.text.primary : color.text.disabled,
       padding: spacing.sm,
       flexBasis: '100%',
       [`border-${linePosition}`]: `4px solid ${
-        isActive ? action.selected : foreground.primary
+        isActive ? color.action.selected : color.foreground.primary
       }`,
       ':hover': {
         cursor: 'pointer',
-        color: text.primary,
+        color: color.text.primary,
       },
     };
   }
@@ -46,9 +46,11 @@ export function NavTab(props: INavTab) {
 }
 
 const TabNavigationWrapper = styled.div(({ theme }) => {
-  const { background } = theme;
+  const { color } = theme;
+  console.log('TabNavigationWrapper color', color);
+  console.log('TabNavigationWrapper theme', theme);
   return css`
-    background-color: ${background.primary};
+    background-color: ${color.background.primary};
     display: flex;
     flex-direction: row;
     align-items: center;

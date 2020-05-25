@@ -91,6 +91,17 @@ export const main = {
     secondary: purple,
     icon: purple,
   },
+  text: {
+    primary: white,
+    secondary: purpleLightText,
+    selected: white,
+    disabled: purpleDarkText,
+  },
+
+  action: {
+    selected: magenta,
+    disabled: purple,
+  },
   gradient: {
     //primary gradient is brighter
     primary: {
@@ -108,16 +119,7 @@ export const main = {
     },
   },
 
-  text: {
-    primary: white,
-    secondary: purpleLightText,
-    selected: white,
-    disabled: purpleDarkText,
-  },
-  action: {
-    selected: magenta,
-    disabled: purple,
-  },
+  palette,
 };
 
 /********** Theme Overrides **********/
@@ -237,4 +239,12 @@ export type cardTypes =
   | 'history'
   | 'event';
 
-export const getCardTheme = (key: cardTypes) => cardThemes[key];
+export const getColorTheme = (key?: cardTypes) =>
+  key && key in cardThemes ? { ...main, ...cardThemes[key] } : main;
+
+// var getColorTheme3 = (key) => {
+//     console.log('key in cardThemes???', key in cardThemes);
+//     console.log('main', main);
+//     console.log('the merge', _.merge(main, cardThemes[key]));
+//     return key in cardThemes ? _.merge(main, cardThemes[key]) : main;
+//   };

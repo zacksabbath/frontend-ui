@@ -47,10 +47,10 @@ interface INavDot {
 }
 
 const NavDot = styled.span<INavDot>(({ isActive, theme }) => {
-  const { action, spacing } = theme;
+  const { color, spacing } = theme;
   return {
     fontSize: 15,
-    color: isActive ? action.selected : action.disabled,
+    color: isActive ? color.action.selected : color.action.disabled,
     paddingRight: spacing.sm,
     ':hover': { cursor: 'pointer' },
   };
@@ -85,6 +85,7 @@ const Carousel = ({ children: rawChildren, showPagination = true }: IProps) => {
         <Pagination>
           {children.map((_, slideIndex) => (
             <NavDot
+              key={`slideDot__${slideIndex}`}
               isActive={slideIndex === currentSlide}
               onClick={() => setCurrentSlide(slideIndex % activeSlide.length)}
             >

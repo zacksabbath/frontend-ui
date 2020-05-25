@@ -1,6 +1,4 @@
-import { palette, main, getCardTheme, cardTypes } from './colors';
-
-export * from './colors';
+import * as colors from './colors';
 
 export const spacing = {
   xs: '5px',
@@ -33,25 +31,15 @@ const breakpoints = {
   },
 };
 
-/********** Default Export **********/
+/********** Exports **********/
 
-export default {
+export const getTheme = (type?: colors.cardTypes) => ({
   font,
   spacing,
-  palette,
   breakpoints,
-
-  ...main,
-};
-
-export const getTheme = (cardType?: cardTypes) => ({
-  font,
-  spacing,
-  palette,
-  breakpoints,
-
-  ...main,
-  ...(cardType ? getCardTheme(cardType) : {}),
+  color: colors.getColorTheme(type),
 });
+
+export const theme = getTheme();
 
 export const whiteTheme = getTheme('vote');

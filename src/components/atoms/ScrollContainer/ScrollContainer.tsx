@@ -5,16 +5,12 @@ interface IScrollContainer {
 }
 
 const ScrollContainer = styled.div<IScrollContainer>(props => {
-  const {
-    height = 700,
-    theme: { background },
-  } = props;
+  const { height = 700 } = props;
   return {
     overflowY: 'auto',
     height,
     padding: 0,
     margin: 0,
-    backgroundColor: background.primary,
   };
 });
 

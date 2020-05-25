@@ -1,10 +1,9 @@
 import React from 'react';
-import { Entity } from '../../../global/types';
-import { Avatar, NewsfeedItem } from '../../../components';
+import { Avatar, NewsfeedItem, IEntity } from '../../../components';
 
 export interface IFinanceCard {
   content: {
-    politician: Entity;
+    politician: IEntity;
     acceptedAmount: string;
   };
 }

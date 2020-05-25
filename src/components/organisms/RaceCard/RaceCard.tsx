@@ -5,10 +5,10 @@ import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { AvatarCarousel, IAvatar } from '../../../components';
 
 const Race = styled.div(({ theme }) => {
-  const { background, text, spacing, font } = theme;
+  const { color, spacing, font } = theme;
   return {
-    color: text?.primary,
-    backgroundColor: background?.primary,
+    color: color.text.primary,
+    backgroundColor: color.background.primary,
     fontFamily: font.family,
     padding: spacing.sm,
     textAlign: 'center',
@@ -26,9 +26,9 @@ const RaceDate = styled.p({
 });
 
 const Icon = styled.span(({ theme }) => {
-  const { foreground, spacing } = theme;
+  const { color, spacing } = theme;
   return {
-    color: foreground?.icon,
+    color: color.foreground.icon,
     marginLeft: spacing.sm,
   };
 });

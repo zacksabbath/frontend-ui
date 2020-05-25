@@ -3,22 +3,22 @@ import styled, { css } from 'styled-components';
 import { NewsfeedItem } from '../../../components';
 
 const NewsSource = styled.div(({ theme }) => {
-  const { font, text } = theme;
+  const { font, color } = theme;
   return css`
     font-weight: ${font.weights.semiBold};
     font-size: 14px;
-    color: ${text.secondary}; /* #A082E3;*/
+    color: ${color.text.secondary}; /* #A082E3;*/
     padding-bottom: 10px;
   `;
 });
 
 const Headline = styled.div(({ theme }) => {
-  const { text } = theme;
+  const { color } = theme;
   return css`
     font-weight: medium;
     text-align: left;
     font-size: 20px;
-    color: ${text.primary};
+    color: ${color.text.primary};
     line-height: 26px;
   `;
 });

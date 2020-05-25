@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisH } from '@fortawesome/free-solid-svg-icons';
-import { ThumbIcons, Bubble, Card } from '../../../components';
+import { ThumbIcons, Bubble, Card, IEntity } from '../../../components';
 import { describeISODate } from '../../../utils/dateUtils';
-import { Entity } from '../../../global/types';
-import { cardTypes } from '../../../global/theme';
+import { cardTypes } from '../../../context';
 
 export interface INewsfeedItem {
-  topic: Entity;
-  bill?: Entity;
+  topic: IEntity;
+  bill?: IEntity;
   image?: string;
   children?: React.ReactNode;
   type: cardTypes;
@@ -50,7 +49,7 @@ const CardBottomGroup = styled.div`
 
 const DateDescription = styled.div`
   margin: auto;
-  color: ${({ theme }) => theme.foreground.primary};
+  color: ${({ theme: { color } }) => color.foreground.primary};
 `;
 
 const BubbleWrap = styled.div`
@@ -65,7 +64,7 @@ const BubbleWrap = styled.div`
 `;
 
 const EllipsesDropDownMenu = styled.div(({ theme }) => {
-  const { foreground, spacing } = theme;
+  const { color, spacing } = theme;
   return css`
     width: 95px;
     height: 52px;
@@ -73,7 +72,7 @@ const EllipsesDropDownMenu = styled.div(({ theme }) => {
     justify-content: flex-end;
     align-items: center;
     padding-right: ${spacing.sm};
-    color: ${foreground.primary};
+    color: ${color.foreground.primary};
   `;
 });
 

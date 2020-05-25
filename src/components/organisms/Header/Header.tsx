@@ -5,7 +5,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { INavTab, TabNavigation, Avatar } from '../../../components';
 
 const HeaderWrapper = styled.div(({ theme }) => {
-  const { background, spacing, font } = theme;
+  const { color, spacing, font } = theme;
 
   return css`
     width: 100%;
@@ -13,21 +13,21 @@ const HeaderWrapper = styled.div(({ theme }) => {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: ${background.secondary};
+    background-color: ${color.background.secondary};
     padding: ${spacing.md} 0;
     font-family: ${font.family};
   `;
 });
 
 const OnClickWrapper = styled.div(({ theme }) => {
-  const { spacing, foreground, action } = theme;
+  const { spacing, color } = theme;
 
   return css`
     margin: 0 ${spacing.md};
     cursor: pointer;
-    color: ${foreground.icon};
+    color: ${color.foreground.icon};
     :hover {
-      color: ${action.selected};
+      color: ${color.action.selected};
     }
   `;
 });
@@ -35,7 +35,7 @@ const OnClickWrapper = styled.div(({ theme }) => {
 const HeaderText = styled.span`
   color: white;
   font-size: 20px;
-  font-weight: ${({ theme }) => theme.font.weights.semiBold};
+  font-weight: ${({ theme: { font } }) => font.weights.semiBold};
 `;
 
 const TabNavWrapper = styled.div`

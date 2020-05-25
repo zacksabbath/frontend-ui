@@ -41,15 +41,15 @@ export default function BallotPage() {
   // TODO: Make this section more performant (We don't want to necessarily rerender every cycle. Perhaps connect this to state?)
   const $elections = (
     <>
-      {mockElection.map(election => (
-        <RaceGroup {...election} />
+      {mockElection.map((election, i) => (
+        <RaceGroup {...election} key={i} />
       ))}
     </>
   );
   const $initiatives = (
     <>
-      {[mockInitiativeGroup].map(initiativeGroup => (
-        <InitiativeGroup {...initiativeGroup} />
+      {[mockInitiativeGroup].map((initiativeGroup, i) => (
+        <InitiativeGroup {...initiativeGroup} key={i} />
       ))}
     </>
   );

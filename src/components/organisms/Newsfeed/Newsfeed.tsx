@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { getCardTheme } from '../../../global/theme';
+import { getTheme } from '../../../context';
 
 import {
   EventCard,
@@ -45,13 +45,8 @@ export default function NewsFeed(props: INewsfeed) {
       {newsfeedItems?.map(item => {
         const { key, type } = item;
 
-        const nestedTheme = (currentTheme: Object) => ({
-          ...currentTheme,
-          ...getCardTheme(type),
-        });
-
         return (
-          <ThemeProvider theme={nestedTheme} key={key}>
+          <ThemeProvider theme={getTheme(type)} key={key}>
             {getComponent(item)}
           </ThemeProvider>
         );

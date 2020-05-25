@@ -8,18 +8,22 @@ interface IRaceGroup {
 }
 
 const RaceLocation = styled.div(({ theme }) => {
-  const { gradient, spacing, text, font } = theme;
+  const { spacing, color, font } = theme;
+  console.log('color!!', color);
   return css`
     font-family: ${font.family};
-    color: ${text.primary};
     font-size: 15px;
     text-align: center;
     background-image: linear-gradient(
-      ${gradient.primary.light},
-      ${gradient.primary.dark}
+      ${color.gradient.primary.light},
+      ${color.gradient.primary.dark}
     );
     padding: ${spacing.sm};
     cursor: pointer;
+
+    > * {
+      color: ${color.text.primary};
+    }
   `;
 });
 

@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components';
 
 const Clickable = styled.a(({ theme }) => {
-  const { action, font } = theme;
+  const { color, font } = theme;
 
   return css`
     font-weight: ${font.weights.semiBold};
-    color: ${action.selected};
+    color: ${color.action.selected};
   `;
 });
 

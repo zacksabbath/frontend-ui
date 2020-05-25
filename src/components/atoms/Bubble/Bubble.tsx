@@ -1,14 +1,15 @@
 import styled, { css } from 'styled-components';
 
 const Bubble = styled.span(({ theme }) => {
-  const { background, foreground } = theme;
+  const { color, font } = theme;
 
   return css`
-    background-color: ${background.secondary};
+    font-family: ${font.family};
+    background-color: ${color.background.secondary};
     border-radius: 50px;
     font-weight: normal;
     font-size: 13px;
-    color: ${foreground.icon};
+    color: ${color.foreground.icon};
     padding: 8px;
     display: flex;
     flex-direction: row;

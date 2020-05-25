@@ -31,7 +31,7 @@ export default function AvatarCarousel(props: IAvatarCarousel) {
   return (
     <Carousel>
       {slides.map((slideAvatars, i) => (
-        <AvatarGroup>
+        <AvatarGroup key={`AvatarGroup__${i}`}>
           {slideAvatars.map((a, j) => (
             <Avatar {...a} key={`AvatarSlide__${i}_${j}__${a.alt}`} />
           ))}

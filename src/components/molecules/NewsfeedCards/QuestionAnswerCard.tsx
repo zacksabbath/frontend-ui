@@ -1,10 +1,9 @@
 import React from 'react';
-import { Entity } from '../../../global/types';
-import { Avatar, NewsfeedItem, Clickable } from '../../../components';
+import { Avatar, NewsfeedItem, Clickable, IEntity } from '../../../components';
 
 export interface IQuestionAnswerCard {
   content: {
-    askedBy: Entity;
+    askedBy: IEntity;
     question: string;
   };
 }

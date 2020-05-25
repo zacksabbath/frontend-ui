@@ -2,11 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
-import { NewsfeedItem } from '../../../components';
-import { Entity } from '../../../global/types';
+import { NewsfeedItem, IEntity } from '../../../components';
 
 export interface IEventCard {
-  bill: Entity;
+  bill: IEntity;
   content: {
     date: string;
     name: string;
@@ -20,7 +19,7 @@ const Content = styled.div`
 `;
 
 const CalendarIcon = styled.div`
-  color: ${({ theme }) => theme.background.secondary};
+  color: ${({ theme: { color } }) => color.background.secondary};
 `;
 
 // TODO: Work with Henry to flesh out UI for this card (and thus replay 'any' with better type checking)

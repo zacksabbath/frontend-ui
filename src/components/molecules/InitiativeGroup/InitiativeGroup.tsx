@@ -1,20 +1,20 @@
 import React from 'react';
 import styled, { css, ThemeProvider } from 'styled-components';
 import { InitiativeCard, IInitiativeCard } from '../../../components';
-import { getTheme } from '../../../global/theme';
+import { getTheme } from '../../../context';
 import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Location = styled.div(({ theme }) => {
-  const { gradient, spacing, text, font } = theme;
+  const { spacing, color, font } = theme;
   return css`
     font-family: ${font.family};
-    color: ${text.primary};
+    color: ${color.text.primary};
     font-size: 15px;
     text-align: center;
     background-image: linear-gradient(
-      ${gradient.primary.light},
-      ${gradient.primary.dark}
+      ${color.gradient.primary.light},
+      ${color.gradient.primary.dark}
     );
     padding: ${spacing.sm};
     /* cursor: pointer; */
@@ -24,14 +24,14 @@ const Location = styled.div(({ theme }) => {
 const Date = styled.p`
   font-size: 14px;
   text-align: center;
-  color: ${({ theme: { text } }) => text.primary};
+  color: ${({ theme: { color } }) => color.text.primary};
   font-family: ${({ theme: { font } }) => font.family};
 `;
 
 const Icon = styled.span(({ theme }) => {
-  const { foreground, spacing } = theme;
+  const { color, spacing } = theme;
   return {
-    color: foreground?.icon,
+    color: color.foreground?.icon,
     marginLeft: spacing.sm,
   };
 });
@@ -43,9 +43,9 @@ interface IInitiativeGroup {
 }
 
 const Wrap = styled.div(({ theme }) => {
-  const { background } = theme;
+  const { color } = theme;
   return {
-    backgroundColor: background.primary,
+    backgroundColor: color.background.primary,
   };
 });
 
