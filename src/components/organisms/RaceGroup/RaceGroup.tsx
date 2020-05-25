@@ -20,10 +20,7 @@ const RaceLocation = styled.div(({ theme }) => {
     );
     padding: ${spacing.sm};
     cursor: pointer;
-
-    > * {
-      color: ${color.text.primary};
-    }
+    color: ${color.text.primary};
   `;
 });
 
