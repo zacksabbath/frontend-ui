@@ -1,6 +1,6 @@
 # Stump
 
-Welcome to the front-end repo for [Stump](https://stump.vote). Check out the website for more information on what we are building.
+Welcome to the front-end repo for [Populist](https://populist.vote). Check out the website for more information on what we are building (and a kitty).
 
 ## Docz
 
