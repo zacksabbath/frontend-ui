@@ -5,6 +5,8 @@ body {
   background-color: black;
 }
 
+/* Galano Grotesque */
+
 @font-face {
   font-family: 'Galano Grotesque';
   src: url(./fonts/GalanoGrotesque-Regular.otf) format('opentype');
@@ -44,5 +46,114 @@ body {
   font-family: 'Galano Grotesque';
   src: url(./fonts/GalanoGrotesque-SemiBoldItalic.otf) format('opentype');
   font-weight: 600;
+  font-style: italic;
+}
+
+/* Commuter Sans */
+
+@font-face {
+  font-family: 'Commuter Sans';
+  src: url(./fonts/CommuterSans-Regular.otf) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Commuter Sans';
+  src: url(./fonts/CommuterSans-Light.otf) format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Commuter Sans';
+  src: url(./fonts/CommuterSans-SemiBold.otf) format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Commuter Sans';
+  src: url(./fonts/CommuterSans-Bold.otf) format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Commuter Sans';
+  src: url(./fonts/CommuterSans-Italic.otf) format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Commuter Sans';
+  src: url(./fonts/CommuterSans-LightItalic.otf) format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Commuter Sans';
+  src: url(./fonts/CommuterSans-BoldItalic.otf) format('opentype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Proxima Nova */
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url(./fonts/ProximaNova-Light.otf) format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url(./fonts/ProximaNova-Regular.otf) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url(./fonts/ProximaNova-SemiBold.otf) format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url(./fonts/ProximaNova-Bold.otf) format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url(./fonts/ProximaNova-Italic.otf) format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url(./fonts/ProximaNova-LightItalic.otf) format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url(./fonts/CommuterSans-SemiBoldItalic.otf) format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url(./fonts/CommuterSans-BoldItalic.otf) format('opentype');
+  font-weight: bold;
   font-style: italic;
 }
