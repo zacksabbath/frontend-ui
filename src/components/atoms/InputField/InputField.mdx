@@ -1,0 +1,25 @@
+---
+name: InputField
+route: /inputField
+---
+
+import { Playground, Props } from 'docz';
+import InputField from './InputField';
+import theme from '../../../global/theme';
+import { ThemeProvider } from 'styled-components';
+import GlobalStyle from '../../../GlobalStyle';
+
+# Input Field
+
+## Properties
+
+<Props of={InputField} />
+
+## Basic usage
+
+<Playground>
+  <GlobalStyle />
+  <ThemeProvider theme={theme}>
+    <InputField name="City" />
+  </ThemeProvider>
+</Playground>
